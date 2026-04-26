@@ -1,39 +1,173 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { 
+  ShieldCheck, Zap, Cpu, CheckCircle2, Clock, 
+  Phone, ArrowRight, Star, Heart, MapPin, Wrench, Navigation, Radio
+} from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About QuickCarUnlock NYC | Trusted Auto Locksmiths',
-  description: 'Learn about QuickCarUnlock NYC. We provide professional, certified mobile auto locksmith services across all 5 boroughs with a focus on speed and reliability.',
+  title: 'About QuickCarUnlock NYC | Trusted Auto Locksmith Experts',
+  description: 'NYC\'s most reliable mobile auto locksmith network. We combine advanced logistics with dealership-level technology to provide the fastest vehicle rescue in the five boroughs.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="container" style={{ padding: '4rem 1rem' }}>
-      <h1 className="text-trust-blue text-center" style={{ marginBottom: '2rem' }}>About QuickCarUnlock NYC</h1>
+    <div className="about-page">
       
-      <div className="content-section" style={{ maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' }}>
-        
-        <h3 className="text-trust-blue" style={{ marginTop: '2rem', marginBottom: '1rem' }}>Our Locksmith Experience and Expertise</h3>
-        
-        <h4 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>**Certified Automotive Locksmith Professionals**</h4>
-        <p style={{ marginBottom: '1rem' }}>Our team consists entirely of fully certified **automotive locksmiths** with years of practical experience. We handle everything from basic domestic sedans to highly complex European luxury vehicles. Each technician undergoes rigorous hands-on training for modern electronic locking systems. We never dispatch untrained contractors to handle your valuable property.</p>
-        <p style={{ marginBottom: '1rem' }}>We equip every service vehicle with advanced diagnostic computers and precision key cutting machines. This professional hardware allows us to perform dealership-level programming directly on the street. We resolve the most complicated immobilizer issues without requiring a tow truck. Our technical expertise guarantees a safe and damage-free entry.</p>
-        <p style={{ marginBottom: '1rem' }}>Our deep understanding of vehicle security protects your investment during every single service call. We study the internal wiring and structural components of individual car doors. This specific knowledge prevents accidental damage to side airbags or window regulators. You trust us to provide a flawless resolution to your emergency.</p>
+      {/* Premium Hero Section */}
+      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
+        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '900px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid #3B82F6', color: '#3B82F6', padding: '6px 16px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>
+            <Heart size={16} /> Our Mission
+          </div>
+          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+            To Eliminate the Anxiety of being <span className="text-orange-gradient">Stranded in NYC</span>.
+          </h1>
+          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '2rem' }}>
+            QuickCarUnlock was founded on a simple realization: New York City doesn't need more "general" locksmiths—it needs a specialized, technology-driven rescue network designed specifically for the modern vehicle.
+          </p>
+        </div>
+      </section>
 
-        <h4 style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>**Centralized New York City Dispatch**</h4>
-        <p style={{ marginBottom: '1rem' }}>We operate a sophisticated **centralized dispatch** system that covers all five New York City boroughs. We track the real-time locations of our entire mobile fleet constantly. When you call our emergency line, we identify the absolute closest available technician instantly. This completely eliminates unnecessary waiting times for stranded drivers.</p>
-        <p style={{ marginBottom: '1rem' }}>Our localized approach means you get help fast whether you park in Manhattan or Staten Island. We understand the complex traffic patterns and neighborhood layouts across the city. The assigned locksmith knows the most efficient route to reach your exact GPS coordinates. We prioritize speed without compromising safety on the road.</p>
-        <p style={{ marginBottom: '1rem' }}>This structured routing system allows us to maintain consistent and reliable service hours. We provide true 24/7 coverage regardless of weather conditions or holidays. You never face an automated voicemail when you experience a midnight car lockout. A live dispatcher answers your call and coordinates your rescue immediately.</p>
-
-        <div className="cta-section text-center" style={{ marginTop: '3rem', padding: '2rem', backgroundColor: 'var(--background-light)', borderRadius: '8px' }}>
-          <h3 className="text-trust-blue" style={{ marginBottom: '1rem' }}>Contact Our Team</h3>
-          <p className="text-slate-gray" style={{ marginBottom: '1.5rem' }}>We are ready to assist you anywhere in NYC.</p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <a href="tel:3478017119" className="btn btn-primary">Call (347) 801-7119</a>
-            <Link href="/contact" className="btn btn-secondary">Contact Information</Link>
+      {/* Technical DNA Section */}
+      <section style={{ padding: '5rem 1rem' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <h2 style={{ fontSize: '2.3rem', marginBottom: '1.5rem' }}>Our Technical DNA</h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                We are not general locksmiths who also do cars. We are Automotive Security Specialists. While a traditional locksmith might struggle with high-security door locks or complex transponder frequencies, our team lives and breathes vehicle electronics.
+              </p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
+                From Mercedes-Benz EIS modules to Ford proximity fobs and Tesla emergency entry, we maintain the software and hardware required to service 99% of vehicles on the road today.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
+                  <CheckCircle2 size={18} color="var(--safety-green)" /> EEPROM Mastering
+                </div>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
+                  <CheckCircle2 size={18} color="var(--safety-green)" /> ECU Synchronization
+                </div>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
+                  <CheckCircle2 size={18} color="var(--safety-green)" /> Lishi Decoding
+                </div>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
+                  <CheckCircle2 size={18} color="var(--safety-green)" /> OBD2 Protocols
+                </div>
+              </div>
+            </div>
+            <div className="card" style={{ background: 'var(--bg-secondary)', padding: '2.5rem' }}>
+              <Cpu size={48} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Mobile Dealership Stack</h3>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                Every mobile unit in our fleet carries a technical stack identical to a manufacturer's service center. We bring the diagnostic power directly to your parking spot.
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, color: 'var(--slate-light)', fontSize: '0.9rem' }}>
+                <li style={{ marginBottom: '0.5rem' }}>• Automated CNC Laser Key Cutting</li>
+                <li style={{ marginBottom: '0.5rem' }}>• High-Frequency RF Spectrum Analyzers</li>
+                <li style={{ marginBottom: '0.5rem' }}>• Real-Time OEM Security Database Access</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* The Dispatch Advantage */}
+      <section style={{ padding: '5rem 1rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>The Dispatch Advantage</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Why we arrive while others are still "checking the map."</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            <div style={{ textAlign: 'center' }}>
+              <Navigation size={40} color="#3B82F6" style={{ margin: '0 auto 1.5rem auto' }} />
+              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Active Borough Patrolling</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>We don't sit in a shop waiting for your call. Our units are strategically patrolling NYC's busiest neighborhoods 24/7.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Radio size={40} color="var(--action-orange)" style={{ margin: '0 auto 1.5rem auto' }} />
+              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Centralized Logic</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Our dispatcher uses live GPS data to route the closest possible technician, bypassing traffic using local knowledge.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <Clock size={40} color="var(--safety-green)" style={{ margin: '0 auto 1.5rem auto' }} />
+              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>15-Min Response Goal</h4>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Our entire operational model is optimized for speed. If we can't get to you fast, we'll tell you upfront.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ethics & Transparency */}
+      <section style={{ padding: '6rem 1rem' }}>
+        <div className="container" style={{ maxWidth: '900px' }}>
+          <div className="card" style={{ padding: '4rem 2rem', textAlign: 'center', border: '1px solid var(--border-color)' }}>
+            <ShieldCheck size={50} color="var(--safety-green)" style={{ margin: '0 auto 1.5rem auto' }} />
+            <h2 style={{ fontSize: '2.3rem', marginBottom: '1.5rem' }}>Our Commitment to Ethics</h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+              The NYC locksmith industry is unfortunately plagued by bait-and-switch pricing and destructive entry techniques. QuickCarUnlock was built as an ethical alternative.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+              <div style={{ textAlign: 'left', maxWidth: '250px' }}>
+                <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>No Bait-and-Switch</h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--slate-light)' }}>The price we quote on-site is the price you pay. No hidden "service fees."</p>
+              </div>
+              <div style={{ textAlign: 'left', maxWidth: '250px' }}>
+                <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Damage-Free First</h4>
+                <p style={{ fontSize: '0.9rem', color: 'var(--slate-light)' }}>We exhaust all professional non-destructive entry methods before even discussing alternatives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Knowledge */}
+      <section style={{ padding: '5rem 1rem', background: '#0B1120' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>NYC Through and Through</h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                Our dispatchers aren't in a call center halfway across the country. They are New Yorkers. When you tell us you're stranded near the "Vannie" or stuck on the "FDR," we know exactly what that means.
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--action-orange)', fontWeight: 600 }}>
+                <MapPin size={20} /> Serving Manhattan, Brooklyn, Queens, Bronx, & SI.
+              </div>
+            </div>
+            <div style={{ position: 'relative', height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+              <img src="/locksmith-van.png" alt="QuickCarUnlock NYC Van" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9), transparent)' }}></div>
+              <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white', fontWeight: 'bold' }}>
+                  <CheckCircle2 size={18} color="var(--safety-green)" /> 24/7 Local Presence
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section style={{ padding: '6rem 1rem', textAlign: 'center' }}>
+        <div className="container">
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Experience the Difference.</h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
+            NYC's highest-rated mobile auto locksmith network is ready to assist you.
+          </p>
+          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="tel:3478017119" className="btn btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.3rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <Phone size={24} /> (347) 801-7119
+            </a>
+            <Link href="/services" className="btn btn-secondary" style={{ padding: '1.2rem 3rem', fontSize: '1.3rem' }}>
+              Our Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

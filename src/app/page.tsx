@@ -200,17 +200,17 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>"Locked my keys in my Honda in Williamsburg at 2 AM. The dispatcher was super polite, and a technician showed up in exactly 12 minutes. Got my car open with zero scratches."</p>
+              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Locked my keys in my Honda in Williamsburg at 2 AM. The dispatcher was super polite, and a technician showed up in exactly 12 minutes. Got my car open with zero scratches.</p>
               <div style={{ fontWeight: 600, color: '#0F172A' }}>— Michael T., Brooklyn</div>
             </div>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>"Lost my only fob while shopping in Manhattan. Dealership wanted to tow it and charge me $500. QuickCarUnlock came out, cut a new key, and programmed it right there on the street for half the price."</p>
+              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Lost my only fob while shopping in Manhattan. Dealership wanted to tow it and charge me $500. QuickCarUnlock came out, cut a new key, and programmed it right there on the street for half the price.</p>
               <div style={{ fontWeight: 600, color: '#0F172A' }}>— Sarah J., Manhattan</div>
             </div>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>"My ignition cylinder jammed completely. I was stranded in Queens. They sent out a mobile unit with all the parts. He rebuilt the ignition in under an hour. Absolute lifesavers."</p>
+              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>My ignition cylinder jammed completely. I was stranded in Queens. They sent out a mobile unit with all the parts. He rebuilt the ignition in under an hour. Absolute lifesavers.</p>
               <div style={{ fontWeight: 600, color: '#0F172A' }}>— David R., Queens</div>
             </div>
           </div>

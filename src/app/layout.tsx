@@ -32,8 +32,9 @@ export default function RootLayout({
             <nav className="nav-links">
               <Link href="/services" className="nav-link">Services</Link>
               <Link href="/locations" className="nav-link">Locations</Link>
-              <Link href="/price-estimator" className="nav-link">Price Estimator</Link>
+              <Link href="/request-a-quote" className="nav-link">Request a Quote</Link>
               <Link href="/about" className="nav-link">About</Link>
+              <Link href="/contact" className="nav-link">Contact</Link>
             </nav>
 
             <div className="header-cta">
@@ -97,7 +98,11 @@ export default function RootLayout({
             </div>
             
             <div className="footer-bottom">
-              <p>&copy; {new Date().getFullYear()} QuickCarUnlock NYC. All Rights Reserved. Service Area Business.</p>
+              <p>&copy; {new Date().getFullYear()} QuickCarUnlock NYC. All Rights Reserved.</p>
+              <div style={{ display: 'flex', gap: '20px', marginTop: '10px', justifyContent: 'center' }}>
+                <Link href="/privacy" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Privacy Policy</Link>
+                <Link href="/terms" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Terms of Service</Link>
+              </div>
             </div>
           </div>
         </footer>
