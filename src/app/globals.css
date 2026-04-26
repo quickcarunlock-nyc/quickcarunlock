@@ -1,26 +1,88 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --trust-blue: #1E3A8A;
+  --action-orange: #F97316;
+  --action-orange-hover: #ea580c;
+  --safety-green: #10B981;
+  --clean-white: #FFFFFF;
+  --slate-gray: #475569;
+  --alert-red: #EF4444;
+  --background-light: #f8fafc;
+  --text-dark: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', Roboto, Arial, sans-serif;
+  background-color: var(--clean-white);
+  color: var(--text-dark);
+  line-height: 1.5;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background-color: var(--action-orange);
+  color: var(--clean-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--action-orange-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--trust-blue);
+  color: var(--trust-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--trust-blue);
+  color: var(--clean-white);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center { text-align: center; }
+.text-trust-blue { color: var(--trust-blue); }
+.text-action-orange { color: var(--action-orange); }
+.text-slate-gray { color: var(--slate-gray); }
+.text-safety-green { color: var(--safety-green); }
+.bg-trust-blue { background-color: var(--trust-blue); }
+.bg-clean-white { background-color: var(--clean-white); }
+.bg-light { background-color: var(--background-light); }
