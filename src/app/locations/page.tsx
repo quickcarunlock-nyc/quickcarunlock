@@ -80,20 +80,20 @@ export default function LocationsHubPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card card-hover" style={{ textAlign: 'center', borderTop: '4px solid #3B82F6' }}>
               <Radio size={40} color="#3B82F6" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>1. Live GPS Tracking</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.6' }}>Our centralized system tracks the exact GPS coordinates of every QuickCarUnlock mobile unit actively patrolling the five boroughs.</p>
+              <h3 style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>1. Live GPS Tracking</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Our centralized system tracks the exact GPS coordinates of every QuickCarUnlock mobile unit actively patrolling the five boroughs.</p>
             </div>
             
             <div className="card card-hover" style={{ textAlign: 'center', borderTop: '4px solid var(--action-orange)' }}>
               <Target size={40} color="var(--action-orange)" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>2. Proximity Routing</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.6' }}>When you call, our software instantly identifies the technician closest to your location, calculating real-time traffic and distance.</p>
+              <h3 style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>2. Proximity Routing</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>When you call, our software instantly identifies the technician closest to your location, calculating real-time traffic and distance.</p>
             </div>
 
             <div className="card card-hover" style={{ textAlign: 'center', borderTop: '4px solid var(--safety-green)' }}>
               <Zap size={40} color="var(--safety-green)" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>3. Immediate Dispatch</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.6' }}>The job is beamed directly to the technician's onboard tablet, allowing them to route directly to your vehicle without delays.</p>
+              <h3 style={{ fontSize: '1.3rem', color: 'var(--text-primary)', marginBottom: '1rem' }}>3. Immediate Dispatch</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>The job is beamed directly to the technician's onboard tablet, allowing them to route directly to your vehicle without delays.</p>
             </div>
           </div>
         </div>
@@ -144,17 +144,17 @@ export default function LocationsHubPage() {
             {boroughs.map((b) => (
               <div key={b.id} className="card card-hover" style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                  <h3 style={{ fontSize: '1.6rem', color: '#0F172A', margin: 0 }}>{b.name}</h3>
+                  <h3 style={{ fontSize: '1.6rem', color: 'var(--text-primary)', margin: 0 }}>{b.name}</h3>
                   <Link href={`/locations/${b.id}`} style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)', padding: '6px 12px', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600 }}>View Details</Link>
                 </div>
                 
-                <p style={{ color: '#475569', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>{b.desc}</p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>{b.desc}</p>
                 
-                <div style={{ marginTop: 'auto', borderTop: '1px solid #E2E8F0', paddingTop: '1.5rem' }}>
+                <div style={{ marginTop: 'auto', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem' }}>
                   <p style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px', color: '#94A3B8', marginBottom: '1rem', fontWeight: 600 }}>Popular Neighborhoods Served:</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                     {b.neighborhoods.map((n, i) => (
-                      <span key={i} style={{ fontSize: '0.8rem', background: '#F1F5F9', color: '#475569', padding: '4px 10px', borderRadius: '50px' }}>
+                      <span key={i} style={{ fontSize: '0.8rem', background: 'rgba(255,255,255,0.08)', color: 'var(--text-secondary)', padding: '4px 10px', borderRadius: '50px' }}>
                         {n}
                       </span>
                     ))}

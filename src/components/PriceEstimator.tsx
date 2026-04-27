@@ -23,7 +23,7 @@ export default function PriceEstimator() {
   };
 
   return (
-    <div className="card" style={{ padding: '2rem' }}>
+    <div className="price-estimator card" style={{ padding: '2rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem', justifyContent: 'center' }}>
         <Calculator size={28} color="var(--action-orange)" />
         <h3 style={{ margin: 0, fontSize: '1.5rem' }}>Price Estimator</h3>
