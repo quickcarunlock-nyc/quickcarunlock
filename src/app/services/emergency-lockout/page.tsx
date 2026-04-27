@@ -41,18 +41,18 @@ export default function EmergencyLockoutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card card-hover">
               <Search size={32} color="#3B82F6" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Lishi Picking Technology</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>For high-security vehicles, we utilize Lishi decoders. This allows us to "read" the internal pins of your lock and pick it open exactly as the key would, leaving zero traces of entry.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Lishi Picking Technology</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>For high-security vehicles, we utilize Lishi decoders. This allows us to "read" the internal pins of your lock and pick it open exactly as the key would, leaving zero traces of entry.</p>
             </div>
             <div className="card card-hover">
               <ShieldCheck size={32} color="var(--safety-green)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Non-Marring Air Wedges</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>Our soft-shell air wedges create a microscopic gap in the door frame without bending the metal or scratching the paint, maintaining the structural integrity of your vehicle seals.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Non-Marring Air Wedges</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>Our soft-shell air wedges create a microscopic gap in the door frame without bending the metal or scratching the paint, maintaining the structural integrity of your vehicle seals.</p>
             </div>
             <div className="card card-hover">
               <Unlock size={32} color="var(--action-orange)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Long-Reach Precision</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>We use polymer-coated reach tools to manipulate internal buttons or pull handles. The coating ensures that your interior leather and trim remain completely untouched.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Long-Reach Precision</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>We use polymer-coated reach tools to manipulate internal buttons or pull handles. The coating ensures that your interior leather and trim remain completely untouched.</p>
             </div>
           </div>
         </div>
@@ -64,9 +64,9 @@ export default function EmergencyLockoutPage() {
           <div className="card" style={{ border: '2px solid #EF4444', background: 'rgba(239, 68, 68, 0.02)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
               <AlertTriangle size={32} color="#EF4444" />
-              <h2 style={{ fontSize: '1.8rem', color: '#0F172A', margin: 0 }}>Avoid The "Drill-and-Replace" Scam</h2>
+              <h2 style={{ fontSize: '1.8rem', margin: 0 }}>Avoid The "Drill-and-Replace" Scam</h2>
             </div>
-            <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
               Many uncertified locksmiths will arrive and immediately claim that your lock is "too advanced" or "broken," insisting that they must drill out the lock cylinder. This is almost always a scam designed to charge you hundreds extra for a new lock.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -103,7 +103,7 @@ export default function EmergencyLockoutPage() {
           </div>
           
           <div className="card" style={{ textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1.5rem' }}>Supporting All Major Brands</h3>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem' }}>Supporting All Major Brands</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
               {['toyota', 'honda', 'ford', 'bmw', 'mercedes', 'audi', 'nissan', 'chevrolet', 'jeep'].map((slug) => (
                 <div key={slug} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -147,10 +147,10 @@ export default function EmergencyLockoutPage() {
               { q: "What proof do I need to show the technician?", a: "For your safety and ours, we require a valid ID and proof of vehicle ownership (Registration or Insurance) before we can legally open any vehicle." }
             ].map((item, i) => (
               <div key={i} className="card">
-                <h4 style={{ color: '#0F172A', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h4 style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <HelpCircle size={20} color="var(--action-orange)" /> {item.q}
                 </h4>
-                <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
               </div>
             ))}
           </div>

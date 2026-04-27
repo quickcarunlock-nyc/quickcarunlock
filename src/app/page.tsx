@@ -74,14 +74,14 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card card-hover">
               <CarFront size={40} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.5rem', color: '#0F172A', marginBottom: '1rem' }}>Emergency Lockouts</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Keys locked in the trunk or cabin? We use non-destructive entry methods to get you back inside safely within minutes.</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Emergency Lockouts</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Keys locked in the trunk or cabin? We use non-destructive entry methods to get you back inside safely within minutes.</p>
               <Link href="/services/emergency-lockout" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
             </div>
             <div className="card card-hover">
               <KeyRound size={40} color="#3B82F6" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.5rem', color: '#0F172A', marginBottom: '1rem' }}>Key Replacement</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Lost your only set? We cut and program brand new transponder keys and smart fobs directly at your vehicle's location.</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Key Replacement</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Lost your only set? We cut and program brand new transponder keys and smart fobs directly at your vehicle's location.</p>
               <Link href="/services/key-replacement" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
             </div>
             <div className="card card-hover">
@@ -185,8 +185,8 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {faqs.map((faq, i) => (
               <div key={i} className="card" style={{ padding: '2rem' }}>
-                <h3 style={{ fontSize: '1.25rem', color: '#0F172A', marginBottom: '0.75rem' }}>{faq.q}</h3>
-                <p style={{ color: '#475569', lineHeight: '1.6' }}>{faq.a}</p>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>{faq.q}</h3>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>{faq.a}</p>
               </div>
             ))}
           </div>
@@ -200,8 +200,8 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Locked my keys in my Honda in Williamsburg at 2 AM. The dispatcher was super polite, and a technician showed up in exactly 12 minutes. Got my car open with zero scratches.</p>
-              <div style={{ fontWeight: 600, color: '#0F172A' }}>— Michael T., Brooklyn</div>
+              <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Locked my keys in my Honda in Williamsburg at 2 AM. The dispatcher was super polite, and a technician showed up in exactly 12 minutes. Got my car open with zero scratches.</p>
+              <div style={{ fontWeight: 600 }}>— Michael T., Brooklyn</div>
             </div>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>

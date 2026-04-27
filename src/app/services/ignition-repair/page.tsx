@@ -41,18 +41,18 @@ export default function IgnitionRepairPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card card-hover">
               <Key size={32} color="var(--safety-green)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Cylinder Re-Pinning</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>When ignition wafers wear down, the key stops turning. We don't just replace the whole unit—we can often re-pin your existing cylinder to match your original key, saving you from having two different keys.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Cylinder Re-Pinning</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>When ignition wafers wear down, the key stops turning. We don't just replace the whole unit—we can often re-pin your existing cylinder to match your original key, saving you from having two different keys.</p>
             </div>
             <div className="card card-hover">
               <Hammer size={32} color="#3B82F6" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Broken Key Extraction</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>If your key snapped off inside the ignition, don't try to fish it out. We use microscopic extraction hooks to remove the blade without damaging the delicate internal wafers.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Broken Key Extraction</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>If your key snapped off inside the ignition, don't try to fish it out. We use microscopic extraction hooks to remove the blade without damaging the delicate internal wafers.</p>
             </div>
             <div className="card card-hover">
               <Zap size={32} color="var(--action-orange)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Steering Column Lockout</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>Modern steering column locks are electronically controlled. We can diagnose and reset steering wheel lock modules and security interlocks on the spot.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Steering Column Lockout</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>Modern steering column locks are electronically controlled. We can diagnose and reset steering wheel lock modules and security interlocks on the spot.</p>
             </div>
           </div>
         </div>
@@ -64,23 +64,23 @@ export default function IgnitionRepairPage() {
           <div className="card" style={{ border: '2px solid var(--safety-green)', background: 'rgba(16, 185, 129, 0.02)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
               <Clock size={32} color="var(--safety-green)" />
-              <h2 style={{ fontSize: '1.8rem', color: '#0F172A', margin: 0 }}>Avoid The 48-Hour Mechanic Wait</h2>
+              <h2 style={{ fontSize: '1.8rem', margin: 0 }}>Avoid The 48-Hour Mechanic Wait</h2>
             </div>
-            <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
               Most mechanics will tell you that a broken ignition requires a 2-day wait for parts and a tow to the shop. We carry standard ignition assemblies for Honda, Ford, Toyota, and Chevy in our vans, meaning we can usually solve your "mechanical" problem the same day.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>Immediate Diagnosis</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Immediate Diagnosis</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>On-Site Rebuilding</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>On-Site Rebuilding</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>Key Sync Included</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Key Sync Included</span>
               </div>
             </div>
           </div>
@@ -93,18 +93,18 @@ export default function IgnitionRepairPage() {
           <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem' }}>Ignition Service Pricing</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card" style={{ textAlign: 'center' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Broken Key Extraction</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Safe removal of snapped blades.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Broken Key Extraction</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Safe removal of snapped blades.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$95+</div>
             </div>
             <div className="card" style={{ textAlign: 'center', border: '2px solid var(--safety-green)' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Ignition Cylinder Repair</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Re-pinning or cleaning the assembly.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Ignition Cylinder Repair</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Re-pinning or cleaning the assembly.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$165+</div>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Full Unit Replacement</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Brand new ignition switch + cylinder.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Full Unit Replacement</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Brand new ignition switch + cylinder.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$225+</div>
             </div>
           </div>
@@ -134,10 +134,10 @@ export default function IgnitionRepairPage() {
               { q: "Why is my steering wheel locked and the key won't budge?", a: "This is often a mechanical bind. Try turning the wheel hard to the left and right while gently jiggling the key. If that doesn't work, the steering lock pin is likely jammed, and we will need to disassemble it for you." }
             ].map((item, i) => (
               <div key={i} className="card">
-                <h4 style={{ color: '#0F172A', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h4 style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <HelpCircle size={20} color="var(--action-orange)" /> {item.q}
                 </h4>
-                <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
               </div>
             ))}
           </div>

@@ -26,24 +26,24 @@ export default function PriceEstimator() {
     <div className="card" style={{ padding: '2rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem', justifyContent: 'center' }}>
         <Calculator size={28} color="var(--action-orange)" />
-        <h3 style={{ margin: 0, fontSize: '1.5rem', color: '#0F172A' }}>Price Estimator</h3>
+        <h3 style={{ margin: 0, fontSize: '1.5rem' }}>Price Estimator</h3>
       </div>
       
       <div style={{ 
-        backgroundColor: 'rgba(249, 115, 22, 0.1)', 
+        backgroundColor: 'rgba(249, 115, 22, 0.05)', 
         borderLeft: '4px solid var(--action-orange)',
         padding: '1rem', 
         borderRadius: '0 8px 8px 0',
         marginBottom: '2rem',
         fontSize: '0.9rem',
-        color: '#475569'
+        color: 'var(--text-secondary)'
       }}>
         *Service calls start from <strong>$55</strong>. This is an estimate only. The actual price varies based on condition and will be provided on-site.
       </div>
 
       <div className="form-group">
-        <label style={{ color: '#475569' }}>Vehicle Type</label>
-        <select className="form-control" style={{ backgroundColor: '#F8FAFC', color: '#0F172A', border: '1px solid #CBD5E1' }} value={vehicleType} onChange={(e) => setVehicleType(e.target.value)}>
+        <label style={{ color: 'var(--text-secondary)' }}>Vehicle Type</label>
+        <select className="form-control" value={vehicleType} onChange={(e) => setVehicleType(e.target.value)}>
           <option value="Sedan">Sedan</option>
           <option value="SUV">SUV</option>
           <option value="Truck">Truck</option>
@@ -53,16 +53,16 @@ export default function PriceEstimator() {
       </div>
 
       <div className="form-group">
-        <label style={{ color: '#475569' }}>Tinted Windows?</label>
-        <select className="form-control" style={{ backgroundColor: '#F8FAFC', color: '#0F172A', border: '1px solid #CBD5E1' }} value={tinted} onChange={(e) => setTinted(e.target.value)}>
+        <label style={{ color: 'var(--text-secondary)' }}>Tinted Windows?</label>
+        <select className="form-control" value={tinted} onChange={(e) => setTinted(e.target.value)}>
           <option value="No">No</option>
           <option value="Yes">Yes</option>
         </select>
       </div>
 
       <div className="form-group">
-        <label style={{ color: '#475569' }}>Situation</label>
-        <select className="form-control" style={{ backgroundColor: '#F8FAFC', color: '#0F172A', border: '1px solid #CBD5E1' }} value={situation} onChange={(e) => setSituation(e.target.value)}>
+        <label style={{ color: 'var(--text-secondary)' }}>Situation</label>
+        <select className="form-control" value={situation} onChange={(e) => setSituation(e.target.value)}>
           <option value="Keys inside car">Keys inside car</option>
           <option value="Lost keys">Lost keys</option>
         </select>
@@ -76,10 +76,10 @@ export default function PriceEstimator() {
         <div style={{ 
           marginTop: '2rem', 
           paddingTop: '1.5rem', 
-          borderTop: '1px solid #E2E8F0',
+          borderTop: '1px solid var(--border-color)',
           textAlign: 'center'
         }}>
-          <p style={{ color: '#475569', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem' }}>Estimated Starting Price</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.85rem' }}>Estimated Starting Price</p>
           <h2 className="text-orange-gradient" style={{ fontSize: '3rem', margin: '0 0 0.5rem 0' }}>${estimatedPrice}+</h2>
           <p style={{ fontSize: '0.8rem', color: '#94A3B8' }}>
             Strictly an estimate. Actual price provided prior to work.

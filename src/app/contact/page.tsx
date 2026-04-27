@@ -36,39 +36,39 @@ export default function ContactPage() {
             <div>
               <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Direct Dispatch Lines</h2>
               
-              <div className="card" style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)' }}>
+              <div className="card" style={{ marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
                   <div style={{ background: 'var(--action-orange)', padding: '12px', borderRadius: '12px', color: 'var(--bg-primary)' }}>
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>24/7 Emergency Hotlines</h3>
-                    <a href="tel:3478017119" style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--text-primary)', display: 'block', marginBottom: '4px' }}>(347) 801-7119</a>
+                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>24/7 Emergency Hotlines</h3>
+                    <a href="tel:3478017119" style={{ fontSize: '1.8rem', fontWeight: 'bold', display: 'block', marginBottom: '4px' }}>(347) 801-7119</a>
                     <p style={{ color: 'var(--slate-light)', fontSize: '0.9rem' }}>Instant connection to a live NYC dispatcher.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ marginBottom: '1.5rem', background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)' }}>
+              <div className="card" style={{ marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
                   <div style={{ background: '#3B82F6', padding: '12px', borderRadius: '12px', color: 'white' }}>
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Response Readiness</h3>
+                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Response Readiness</h3>
                     <p style={{ color: 'var(--text-secondary)', marginBottom: '4px' }}><strong>Monday - Sunday:</strong> Open 24 Hours</p>
                     <p style={{ color: 'var(--text-secondary)' }}><strong>Holidays:</strong> Open 24 Hours</p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-color)' }}>
+              <div className="card" style={{ border: '1px solid var(--border-color)' }}>
                 <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
                   <div style={{ background: 'var(--safety-green)', padding: '12px', borderRadius: '12px', color: 'var(--bg-primary)' }}>
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Service Coverage</h3>
+                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Service Coverage</h3>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>We serve all 5 NYC boroughs. We are a mobile-only service; our technicians meet you at your vehicle's location.</p>
                   </div>
                 </div>

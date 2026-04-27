@@ -173,7 +173,7 @@ export default async function BoroughPage({ params }: Props) {
             </div>
 
             <div className="card">
-              <h3 style={{ fontSize: '1.5rem', color: '#0F172A', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Zap size={24} color="var(--action-orange)" /> {data.name} Price List
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -183,9 +183,9 @@ export default async function BoroughPage({ params }: Props) {
                   { service: "Ignition Repair", price: "$150+" },
                   { service: "Fob Programming", price: "$145+" }
                 ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '1px solid #f1f5f9' }}>
-                    <span style={{ color: '#475569', fontWeight: 500 }}>{item.service}</span>
-                    <span style={{ color: '#0F172A', fontWeight: 'bold' }}>{item.price}</span>
+                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)' }}>
+                    <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{item.service}</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{item.price}</span>
                   </div>
                 ))}
               </div>
@@ -207,10 +207,10 @@ export default async function BoroughPage({ params }: Props) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {data.faqs.map((f, i) => (
                   <div key={i} className="card" style={{ padding: '1.5rem' }}>
-                    <h4 style={{ color: '#0F172A', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
+                    <h4 style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
                       <HelpCircle size={18} color="var(--action-orange)" /> {f.q}
                     </h4>
-                    <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.a}</p>
+                    <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.a}</p>
                   </div>
                 ))}
               </div>
@@ -240,8 +240,8 @@ export default async function BoroughPage({ params }: Props) {
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}>
                   {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="#FFC107" color="#FFC107" />)}
                 </div>
-                <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>{rev.text}</p>
-                <div style={{ fontWeight: 600, color: '#0F172A' }}>— {rev.name}, {rev.area}</div>
+                <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>{rev.text}</p>
+                <div style={{ fontWeight: 600 }}>— {rev.name}, {rev.area}</div>
               </div>
             ))}
           </div>

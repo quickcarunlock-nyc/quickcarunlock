@@ -41,18 +41,18 @@ export default function KeyReplacementPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             <div className="card card-hover">
               <Settings size={32} color="#3B82F6" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Laser CNC Cutting</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>Our mobile units are equipped with automated, laser-guided CNC machines. We can cut high-security "sidewinder" keys to factory specifications with 0.01mm precision.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Laser CNC Cutting</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>Our mobile units are equipped with automated, laser-guided CNC machines. We can cut high-security "sidewinder" keys to factory specifications with 0.01mm precision.</p>
             </div>
             <div className="card card-hover">
               <HardDrive size={32} color="var(--safety-green)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>EEPROM & ECU Sync</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>Lost all keys? We can pull your car's security data directly from the ECU or EEPROM chip and synchronize new transponders without needing an existing copy.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>EEPROM & ECU Sync</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>Lost all keys? We can pull your car's security data directly from the ECU or EEPROM chip and synchronize new transponders without needing an existing copy.</p>
             </div>
             <div className="card card-hover">
               <Cpu size={32} color="var(--action-orange)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '1rem' }}>Smart Fob Programming</h3>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.7' }}>We program proximity "push-to-start" fobs for luxury and domestic brands. Our software handles everything from basic remotes to advanced rolling-code security systems.</p>
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Smart Fob Programming</h3>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7' }}>We program proximity "push-to-start" fobs for luxury and domestic brands. Our software handles everything from basic remotes to advanced rolling-code security systems.</p>
             </div>
           </div>
         </div>
@@ -64,23 +64,23 @@ export default function KeyReplacementPage() {
           <div className="card" style={{ border: '2px solid #3B82F6', background: 'rgba(59, 130, 246, 0.02)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.5rem' }}>
               <Zap size={32} color="#3B82F6" />
-              <h2 style={{ fontSize: '1.8rem', color: '#0F172A', margin: 0 }}>Stop The Dealership Tow</h2>
+              <h2 style={{ fontSize: '1.8rem', margin: 0 }}>Stop The Dealership Tow</h2>
             </div>
-            <p style={{ color: '#475569', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
               Losing a modern car key at the dealership usually means a 3-day wait, an expensive tow, and a $500+ invoice. We eliminate the friction by driving to you and completing the job in 45 minutes for up to 50% less cost.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>No Towing Needed</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>No Towing Needed</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>Same-Day Solution</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Same-Day Solution</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: '#475569', fontWeight: 500 }}>OEM & Aftermarket fobs</span>
+                <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>OEM & Aftermarket fobs</span>
               </div>
             </div>
           </div>
@@ -93,18 +93,18 @@ export default function KeyReplacementPage() {
           <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '3rem' }}>Key Replacement Pricing</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card" style={{ textAlign: 'center' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Standard Metal Key</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Non-chip keys for older vehicles.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Standard Metal Key</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Non-chip keys for older vehicles.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$95+</div>
             </div>
             <div className="card" style={{ textAlign: 'center', border: '2px solid var(--action-orange)' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Transponder Chip Key</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Standard keys with engine-sync security.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Transponder Chip Key</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Standard keys with engine-sync security.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$145+</div>
             </div>
             <div className="card" style={{ textAlign: 'center' }}>
-              <h3 style={{ color: '#0F172A', marginBottom: '1rem' }}>Smart Fob / Proximity</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Push-to-start & keyless entry systems.</p>
+              <h3 style={{ marginBottom: '1rem' }}>Smart Fob / Proximity</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Push-to-start & keyless entry systems.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)' }}>$185+</div>
             </div>
           </div>
@@ -134,10 +134,10 @@ export default function KeyReplacementPage() {
               { q: "How long does it take on-site?", a: "Most keys and fobs take between 30 and 45 minutes to cut and program once the technician arrives at your location." }
             ].map((item, i) => (
               <div key={i} className="card">
-                <h4 style={{ color: '#0F172A', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h4 style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <HelpCircle size={20} color="var(--action-orange)" /> {item.q}
                 </h4>
-                <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.95rem' }}>{item.a}</p>
               </div>
             ))}
           </div>
