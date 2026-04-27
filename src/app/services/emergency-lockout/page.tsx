@@ -4,6 +4,7 @@ import {
   Unlock, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Search, HelpCircle, Car
 } from 'lucide-react';
+import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
   title: 'Emergency Car Lockout Service NYC | 15-Min Response',
@@ -11,8 +12,50 @@ export const metadata: Metadata = {
 };
 
 export default function EmergencyLockoutPage() {
+  const faqs = [
+    { q: "What if my car has a dead battery? Can you still unlock it?", a: "Yes. Many modern cars use electronic locks that fail when the battery is dead. We use a combination of physical manipulation and emergency power-jumping to safely gain entry without damaging the electronics." },
+    { q: "Is it really 100% scratch-free?", a: "Correct. We never use metal-on-metal tools. Our air wedges are soft polymer and our reach tools are heat-shrunk in protective rubber to ensure your paint and trim are never touched." },
+    { q: "What proof do I need to show the technician?", a: "For your safety and ours, we require a valid ID and proof of vehicle ownership (Registration or Insurance) before we can legally open any vehicle." }
+  ];
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Emergency Car Lockout NYC",
+    "description": "24/7 professional car unlocking service in NYC with 15-minute response time. Damage-free entry for all vehicle makes and models.",
+    "provider": {
+      "@type": "Locksmith",
+      "name": "QuickCarUnlock NYC",
+      "telephone": "+13478017119"
+    },
+    "areaServed": "New York City",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Lockout Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Door Unlock" }, "price": "55.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Trunk Unlocking" }, "price": "65.00", "priceCurrency": "USD" }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="service-detail-page">
+      <Schema data={serviceSchema} />
+      <Schema data={faqSchema} />
 
       {/* Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>

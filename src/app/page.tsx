@@ -4,6 +4,7 @@ import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Clock, Navigation, Zap, Phone, Star, CheckCircle, Award, KeyRound, Wrench, CarFront, HelpCircle, MapPin } from "lucide-react";
+import Schema from "@/components/Schema";
 
 export default function Home() {
   const faqs = [
@@ -21,8 +22,60 @@ export default function Home() {
 
   const brands = ["Toyota", "Honda", "Ford", "BMW", "Mercedes-Benz", "Lexus", "Audi", "Nissan", "Chevrolet", "Jeep"];
 
+  const locksmithSchema = {
+    "@context": "https://schema.org",
+    "@type": "Locksmith",
+    "name": "QuickCarUnlock NYC",
+    "image": "https://www.quickcarunlock.com/quick-car-unlock-van.webp",
+    "@id": "https://www.quickcarunlock.com",
+    "url": "https://www.quickcarunlock.com",
+    "telephone": "+13478017119",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mobile Service",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10001",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.7128,
+      "longitude": -74.0060
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Manhattan" },
+      { "@type": "City", "name": "Brooklyn" },
+      { "@type": "City", "name": "Queens" },
+      { "@type": "City", "name": "The Bronx" },
+      { "@type": "City", "name": "Staten Island" }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="home-page">
+      <Schema data={locksmithSchema} />
+      <Schema data={faqSchema} />
       {/* Hyper-Conversion Hero Section */}
       <section style={{ minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', padding: '6rem 0 4rem 0', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: -1 }}></div>

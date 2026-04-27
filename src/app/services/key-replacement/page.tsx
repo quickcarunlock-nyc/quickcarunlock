@@ -4,6 +4,7 @@ import {
   KeyRound, ShieldCheck, Zap, Cpu, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Settings, HelpCircle, HardDrive
 } from 'lucide-react';
+import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
   title: 'Car Key Replacement NYC | Mobile Fob Programming',
@@ -11,8 +12,51 @@ export const metadata: Metadata = {
 };
 
 export default function KeyReplacementPage() {
+  const faqs = [
+    { q: "Can you make a key if I have zero copies left?", a: "Yes. Using your vehicle's VIN (Vehicle Identification Number), we can retrieve the mechanical key code and security PIN from our global database to cut and program a brand new key from scratch." },
+    { q: "Will the new key disable my old lost key?", a: "In most cases, yes. When we program the new key, we can perform a 'Reset' which wipes all previous keys from the car's memory, ensuring that if someone finds your old key, it will no longer start the car." },
+    { q: "How long does it take on-site?", a: "Most keys and fobs take between 30 and 45 minutes to cut and program once the technician arrives at your location." }
+  ];
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Car Key Replacement NYC",
+    "description": "On-site laser key cutting and transponder programming in NYC. Mobile service for lost keys, smart fobs, and remote programming at 50% less than dealership prices.",
+    "provider": {
+      "@type": "Locksmith",
+      "name": "QuickCarUnlock NYC",
+      "telephone": "+13478017119"
+    },
+    "areaServed": "New York City",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Key Replacement Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Standard Metal Key" }, "price": "95.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transponder Chip Key" }, "price": "145.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smart Fob / Proximity" }, "price": "185.00", "priceCurrency": "USD" }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="service-detail-page">
+      <Schema data={serviceSchema} />
+      <Schema data={faqSchema} />
 
       {/* Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>

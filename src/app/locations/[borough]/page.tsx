@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { MapPin, Clock, ShieldCheck, Zap, Star, Phone, CheckCircle2, AlertTriangle, Building2, HelpCircle } from 'lucide-react';
+import Schema from '@/components/Schema';
 
 // Pre-define the static routes for Cloudflare Pages
 export function generateStaticParams() {
@@ -129,8 +130,48 @@ export default async function BoroughPage({ params }: Props) {
     notFound();
   }
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data.faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.quickcarunlock.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Locations",
+        "item": "https://www.quickcarunlock.com/locations"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": data.name,
+        "item": `https://www.quickcarunlock.com/locations/${boroughId}`
+      }
+    ]
+  };
+
   return (
     <div className="location-detail-page">
+      <Schema data={faqSchema} />
+      <Schema data={breadcrumbSchema} />
       {/* Local Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>

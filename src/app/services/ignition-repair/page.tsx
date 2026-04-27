@@ -4,6 +4,7 @@ import {
   Wrench, ShieldCheck, Zap, WrenchIcon, CheckCircle2, Clock, 
   Phone, ArrowRight, Star, XCircle, Hammer, HelpCircle, Key
 } from 'lucide-react';
+import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
   title: 'Ignition Repair & Replacement NYC | Mobile Services',
@@ -11,8 +12,51 @@ export const metadata: Metadata = {
 };
 
 export default function IgnitionRepairPage() {
+  const faqs = [
+    { q: "My key turns but the car won't start. Is it the ignition?", a: "Not necessarily. If the key turns but the engine doesn't crank, it could be the electrical ignition switch or a battery/starter issue. We can test the voltage at the switch to confirm if it's the lock cylinder or an electrical failure." },
+    { q: "If you replace the ignition, will I need two separate keys?", a: "Ideally, no. Our goal is to re-pin the new ignition to match your door locks. If the system is too damaged for that, we can provide a new ignition and key, and then cut you a hybrid key that works for both." },
+    { q: "Why is my steering wheel locked and the key won't budge?", a: "This is often a mechanical bind. Try turning the wheel hard to the left and right while gently jiggling the key. If that doesn't work, the steering lock pin is likely jammed, and we will need to disassemble it for you." }
+  ];
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Ignition Repair & Replacement NYC",
+    "description": "Mobile ignition cylinder repair, broken key extraction, and full ignition unit replacement in NYC. 24/7 on-site service for all vehicle makes.",
+    "provider": {
+      "@type": "Locksmith",
+      "name": "QuickCarUnlock NYC",
+      "telephone": "+13478017119"
+    },
+    "areaServed": "New York City",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ignition Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Broken Key Extraction" }, "price": "95.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ignition Cylinder Repair" }, "price": "165.00", "priceCurrency": "USD" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Unit Replacement" }, "price": "225.00", "priceCurrency": "USD" }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="service-detail-page">
+      <Schema data={serviceSchema} />
+      <Schema data={faqSchema} />
       
       {/* Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>

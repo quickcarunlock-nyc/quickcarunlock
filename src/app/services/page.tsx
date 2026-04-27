@@ -4,6 +4,7 @@ import {
   CarFront, KeyRound, Wrench, AlertTriangle, BatteryWarning, Unlock, 
   Clock, DollarSign, Building2, Cpu, ShieldCheck, Tag, CheckCircle2, XCircle, Phone, ArrowRight
 } from 'lucide-react';
+import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
   title: 'NYC Auto Locksmith Services | QuickCarUnlock',
@@ -11,8 +12,28 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.quickcarunlock.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.quickcarunlock.com/services"
+      }
+    ]
+  };
+
   return (
     <div className="services-page">
+      <Schema data={breadcrumbSchema} />
       
       {/* Premium Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden' }}>
