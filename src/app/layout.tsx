@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.quickcarunlock.com',
     siteName: 'QuickCarUnlock',
     title: 'Car Unlock Service NYC | 24/7 Emergency Locksmith',
     description: 'Fast, damage-free car unlocking and mobile auto locksmith services across NYC. 15-minute response time.',
