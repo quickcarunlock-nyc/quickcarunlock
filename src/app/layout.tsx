@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     canonical: './',
   },
   title: "Car Unlock Service NYC | 24/7 Emergency Locksmith | QuickCarUnlock",
-  description: "QuickCarUnlock.com offers 24/7 emergency car unlock service in NYC. Fast, reliable, and affordable auto locksmiths for all vehicle types. Get a free quote!",
+  description: "Quick Car Unlock offers 24/7 emergency car unlock service in NYC. Fast, reliable, and affordable auto locksmiths for all vehicle types. Get a free quote!",
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -94,7 +94,7 @@ export default function RootLayout({
                   <Phone size={20} className="highlight" /> (347) 801-7119
                 </a>
               </div>
-              
+
               <div className="footer-col">
                 <h4>Our Services</h4>
                 <Link href="/services/emergency-lockout" className="footer-link">Emergency Car Lockout</Link>
@@ -124,7 +124,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            
+
             <div className="footer-bottom">
               <p>&copy; {new Date().getFullYear()} QuickCarUnlock NYC. All Rights Reserved.</p>
               <div style={{ display: 'flex', gap: '20px', marginTop: '10px', justifyContent: 'center' }}>

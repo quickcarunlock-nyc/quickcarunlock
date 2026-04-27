@@ -42,8 +42,8 @@ export default function Home() {
             </p>
             
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-              <a href="tel:3478017119" className="btn btn-primary btn-pulse" style={{ fontSize: '1.4rem', padding: '20px 40px', width: '100%', maxWidth: '400px', display: 'flex', justifyContent: 'center', gap: '12px' }}>
-                <Phone size={24} /> Call: (347) 801-7119
+              <a href="tel:3478017119" className="btn btn-primary btn-pulse" style={{ fontSize: 'clamp(1.1rem, 5vw, 1.4rem)', padding: 'clamp(14px, 4vw, 20px) 40px', width: '100%', maxWidth: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', whiteSpace: 'nowrap' }}>
+                <Phone size={24} />(347) 801-7119
               </a>
               <p style={{ fontSize: '0.9rem', color: 'var(--slate-light)' }}>
                 <CheckCircle size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px', color: 'var(--safety-green)' }} /> No hidden fees. Exact price quoted upon arrival.
@@ -234,8 +234,8 @@ export default function Home() {
 
       {/* Sticky Mobile CTA */}
       <div className="mobile-sticky-cta">
-        <a href="tel:3478017119" className="btn btn-primary btn-pulse" style={{ width: '100%', fontSize: '1.2rem', padding: '16px', display: 'flex', justifyContent: 'center', gap: '8px' }}>
-          <Phone size={20} />
+        <a href="tel:3478017119" className="btn btn-primary btn-pulse" style={{ width: '100%', fontSize: 'clamp(1rem, 4vw, 1.1rem)', padding: '14px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap' }}>
+          <Phone size={18} />
           Emergency: (347) 801-7119
         </a>
       </div>

@@ -80,7 +80,7 @@ export default function Header() {
             </Link>
 
             <div style={{ marginTop: '2rem', padding: '0 1rem' }}>
-              <a href="tel:3478017119" className="btn btn-primary w-100" style={{ gap: '10px' }} onClick={closeMenu}>
+              <a href="tel:3478017119" className="btn btn-primary w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', whiteSpace: 'nowrap' }} onClick={closeMenu}>
                 <Phone size={20} />(347) 801-7119
               </a>
             </div>
