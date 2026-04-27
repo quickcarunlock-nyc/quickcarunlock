@@ -20,10 +20,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Server configuration error.' }, { status: 500 });
     }
 
-    const message = `🚨 *New Service Request* 🚨\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${location}\n*Vehicle:* ${vehicle}\n*Issue:* ${issue}`;
+    const message = `🚨 *New Lead: QuickCarUnlock.com* 🚨\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${location}\n*Vehicle:* ${vehicle}\n*Issue:* ${issue}`;
 
     let url = `https://api.telegram.org/bot${botToken}`;
-    
+
     if (image && image.size > 0) {
       // Send Photo with caption
       url += '/sendPhoto';
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       });
 
       if (!response.ok) {
-         throw new Error(`Telegram API Error: ${response.statusText}`);
+        throw new Error(`Telegram API Error: ${response.statusText}`);
       }
     } else {
       // Send Text Message
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
       });
 
       if (!response.ok) {
-         throw new Error(`Telegram API Error: ${response.statusText}`);
+        throw new Error(`Telegram API Error: ${response.statusText}`);
       }
     }
 
