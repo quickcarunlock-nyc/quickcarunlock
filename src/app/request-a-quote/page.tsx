@@ -42,7 +42,7 @@ export default function RequestQuotePage() {
     <div className="request-quote-page">
       
       {/* Hero */}
-      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
+      <section style={{ padding: 'clamp(4rem, 10vw, 6rem) 1rem clamp(2rem, 5vw, 4rem) 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid #3B82F6', color: '#3B82F6', padding: '6px 16px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>
@@ -58,10 +58,10 @@ export default function RequestQuotePage() {
       </section>
 
       {/* Form Section */}
-      <section style={{ padding: '5rem 1rem' }}>
+      <section style={{ padding: 'clamp(2rem, 8vw, 5rem) 1rem' }}>
         <div className="container" style={{ maxWidth: '700px' }}>
           
-          <div className="card" style={{ padding: '3rem 2rem', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
+          <div className="card" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
             
             {submitStatus && (
               <div style={{
@@ -81,7 +81,7 @@ export default function RequestQuotePage() {
             )}
 
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.5rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
                 <div className="form-group">
                   <label htmlFor="name" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <User size={16} color="var(--action-orange)" /> Full Name
@@ -96,7 +96,7 @@ export default function RequestQuotePage() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
                 <div className="form-group">
                   <label htmlFor="location" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <MapPin size={16} color="var(--action-orange)" /> Your Current Borough
@@ -129,13 +129,13 @@ export default function RequestQuotePage() {
                 <label htmlFor="image" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                   <Camera size={16} color="var(--action-orange)" /> Upload Key/Lock Photo (Optional)
                 </label>
-                <div style={{ border: '2px dashed var(--border-color)', borderRadius: '8px', padding: '2rem', textAlign: 'center', background: 'rgba(255,255,255,0.01)' }}>
+                <div style={{ border: '2px dashed var(--border-color)', borderRadius: '8px', padding: 'clamp(1rem, 4vw, 2rem)', textAlign: 'center', background: 'rgba(255,255,255,0.01)' }}>
                   <input type="file" id="image" name="image" accept="image/*" style={{ margin: '0 auto', cursor: 'pointer' }} />
                   <p style={{ color: 'var(--slate-light)', fontSize: '0.85rem', marginTop: '1rem' }}>Uploading a photo helps us identify the exact chip type for your key.</p>
                 </div>
               </div>
 
-              <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ padding: '1.25rem', fontSize: '1.1rem', marginTop: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ padding: 'clamp(1rem, 4vw, 1.25rem)', fontSize: 'clamp(1rem, 4vw, 1.1rem)', marginTop: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
                 {isSubmitting ? 'Transmitting Request...' : (
                   <>
                     <Send size={20} /> Dispatch Quote Request
@@ -152,7 +152,7 @@ export default function RequestQuotePage() {
           <div style={{ marginTop: '4rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>In a High-Traffic Emergency?</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>If you are parked unsafely or in a rush, don't wait for the form—call us directly.</p>
-            <a href="tel:3478017119" style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--action-orange)' }}>(347) 801-7119</a>
+            <a href="tel:3478017119" style={{ fontSize: 'clamp(1.5rem, 8vw, 2.5rem)', fontWeight: 'bold', color: 'var(--action-orange)', wordBreak: 'break-word' }}>(347) 801-7119</a>
           </div>
 
         </div>
