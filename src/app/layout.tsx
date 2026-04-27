@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { Phone, MapPin, Key, ShieldCheck, Mail } from "lucide-react";
+import { Phone, MapPin, ShieldCheck, Mail } from "lucide-react";
+import Image from "next/image";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,7 +36,7 @@ export default function RootLayout({
             <div className="footer-grid">
               <div className="footer-col">
                 <Link href="/" className="logo mb-3" style={{ fontSize: '1.5rem' }}>
-                  <Key size={24} className="highlight" />
+                  <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={28} height={28} style={{ objectFit: 'contain' }} />
                   QuickCar<span className="highlight">Unlock</span>
                 </Link>
                 <p style={{ color: 'var(--slate-light)', marginBottom: '1.5rem', lineHeight: '1.8' }}>

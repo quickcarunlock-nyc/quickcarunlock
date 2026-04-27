@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, Key, Menu, X, Zap } from "lucide-react";
+import Image from "next/image";
+import { Phone, Menu, X, Zap } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ export default function Header() {
       <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container header-content">
           <Link href="/" className="logo" onClick={closeMenu}>
-            <Key size={28} className="highlight" />
+            <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={36} height={36} style={{ objectFit: 'contain' }} />
             <span className="logo-text">QuickCar<span className="highlight">Unlock</span></span>
           </Link>
           
