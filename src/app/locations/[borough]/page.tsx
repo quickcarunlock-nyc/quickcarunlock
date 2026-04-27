@@ -189,7 +189,7 @@ export default async function BoroughPage({ params }: Props) {
                   </div>
                 ))}
               </div>
-              <p style={{ fontSize: '0.8rem', color: '#94A3B8', marginTop: '1.5rem', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)', marginTop: '1.5rem', fontStyle: 'italic' }}>
                 *All prices are starting estimates for {data.name} residents. Final quote provided on-site.
               </p>
               <a href="tel:3478017119" className="btn btn-primary w-100 text-center" style={{ marginTop: '1.5rem', display: 'block' }}>Call For Exact Quote</a>

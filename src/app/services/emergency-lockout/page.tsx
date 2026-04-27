@@ -72,7 +72,7 @@ export default function EmergencyLockoutPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={20} color="var(--safety-green)" style={{ flexShrink: 0 }} />
-                <p style={{ color: '#475569', margin: 0 }}><strong>Our Policy:</strong> We have a 99% success rate in non-destructive entry. We never drill unless there is a pre-existing mechanical lock failure.</p>
+                <p style={{ color: 'var(--text-secondary)', margin: 0 }}><strong>Our Policy:</strong> We have a 99% success rate in non-destructive entry. We never drill unless there is a pre-existing mechanical lock failure.</p>
               </div>
             </div>
           </div>

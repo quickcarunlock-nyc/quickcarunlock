@@ -86,13 +86,13 @@ export default function RequestQuotePage() {
                   <label htmlFor="name" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <User size={16} color="var(--action-orange)" /> Full Name
                   </label>
-                  <input type="text" id="name" name="name" required placeholder="John Doe" />
+                  <input type="text" id="name" name="name" className="form-control" required placeholder="John Doe" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="phone" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <Phone size={16} color="var(--action-orange)" /> Phone Number
                   </label>
-                  <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000" />
+                  <input type="tel" id="phone" name="phone" className="form-control" required placeholder="(555) 000-0000" />
                 </div>
               </div>
 
@@ -101,7 +101,7 @@ export default function RequestQuotePage() {
                   <label htmlFor="location" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <MapPin size={16} color="var(--action-orange)" /> Your Current Borough
                   </label>
-                  <select id="location" name="location" required style={{ width: '100%' }}>
+                  <select id="location" name="location" className="form-control" required style={{ width: '100%' }}>
                     <option value="">Select Borough</option>
                     <option value="manhattan">Manhattan</option>
                     <option value="brooklyn">Brooklyn</option>
@@ -114,7 +114,7 @@ export default function RequestQuotePage() {
                   <label htmlFor="vehicle" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                     <Car size={16} color="var(--action-orange)" /> Vehicle Make & Year
                   </label>
-                  <input type="text" id="vehicle" name="vehicle" required placeholder="e.g. 2020 Honda Civic" />
+                  <input type="text" id="vehicle" name="vehicle" className="form-control" required placeholder="e.g. 2020 Honda Civic" />
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ export default function RequestQuotePage() {
                 <label htmlFor="issue" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
                   <MessageSquare size={16} color="var(--action-orange)" /> Describe Your Emergency
                 </label>
-                <textarea id="issue" name="issue" required rows={4} placeholder="What's the situation? Keys lost, locked in car, or ignition jammed?"></textarea>
+                <textarea id="issue" name="issue" className="form-control" required rows={4} placeholder="What's the situation? Keys lost, locked in car, or ignition jammed?"></textarea>
               </div>
 
               <div className="form-group">

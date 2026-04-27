@@ -38,23 +38,23 @@ export default function ServicesPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
             <div className="card card-hover" style={{ borderTop: '4px solid #3B82F6' }}>
               <AlertTriangle size={32} color="#3B82F6" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#0F172A' }}>I can see my keys inside, but the doors are locked.</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.95rem' }}>We use specialized air wedges and long-reach tools to bypass the lock mechanism without scratching your paint.</p>
-              <Link href="/services/emergency-lockout" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Emergency Lockout <ArrowRight size={16} /></Link>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>I can see my keys inside, but the doors are locked.</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>We use specialized air wedges and long-reach tools to bypass the lock mechanism without scratching your paint.</p>
+              <Link href="/services/emergency-lockout" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Emergency Lockout <ArrowRight size={16} /></Link>
             </div>
 
             <div className="card card-hover" style={{ borderTop: '4px solid var(--action-orange)' }}>
               <BatteryWarning size={32} color="var(--action-orange)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#0F172A' }}>I have the key, but the buttons stopped working.</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.95rem' }}>Usually a dead battery or desynchronized fob. We can replace the battery or re-sync the smart fob to your car's computer.</p>
-              <Link href="/services/key-replacement" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Fob Programming <ArrowRight size={16} /></Link>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>I have the key, but the buttons stopped working.</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>Usually a dead battery or desynchronized fob. We can replace the battery or re-sync the smart fob to your car's computer.</p>
+              <Link href="/services/key-replacement" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Fob Programming <ArrowRight size={16} /></Link>
             </div>
 
             <div className="card card-hover" style={{ borderTop: '4px solid var(--safety-green)' }}>
               <Unlock size={32} color="var(--safety-green)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: '#0F172A' }}>My key spins, but the engine won't crank.</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.95rem' }}>This indicates a broken ignition cylinder or a failed transponder chip. We diagnose and rebuild ignitions on the spot.</p>
-              <Link href="/services/ignition-repair" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Ignition Repair <ArrowRight size={16} /></Link>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>My key spins, but the engine won't crank.</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>This indicates a broken ignition cylinder or a failed transponder chip. We diagnose and rebuild ignitions on the spot.</p>
+              <Link href="/services/ignition-repair" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Ignition Repair <ArrowRight size={16} /></Link>
             </div>
           </div>
         </div>
@@ -67,24 +67,24 @@ export default function ServicesPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             <div className="card">
               <CarFront size={40} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', color: '#0F172A', marginBottom: '1rem' }}>Emergency Lockouts</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', lineHeight: '1.7' }}>
+              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Emergency Lockouts</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                 Rapid, damage-free vehicle entry. Whether your keys are left on the seat, locked in the trunk, or lost completely, our technicians can get you back inside your vehicle safely in minutes. We service all makes and models, including high-security European vehicles.
               </p>
               <Link href="/services/emergency-lockout" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Lockout Service</Link>
             </div>
             <div className="card">
               <KeyRound size={40} color="#3B82F6" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', color: '#0F172A', marginBottom: '1rem' }}>Key Replacement</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', lineHeight: '1.7' }}>
+              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Key Replacement</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                 Lost your only key? We carry hundreds of OEM and aftermarket blanks. We can laser-cut and program new transponder keys, smart proximity fobs, and remote head keys directly at your vehicle's location, saving you the cost of a dealership tow.
               </p>
               <Link href="/services/key-replacement" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Key Services</Link>
             </div>
             <div className="card">
               <Wrench size={40} color="var(--safety-green)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', color: '#0F172A', marginBottom: '1rem' }}>Ignition Repair</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', lineHeight: '1.7' }}>
+              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Ignition Repair</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
                 If your steering wheel is locked, your key won't turn, or the key broke off inside the chamber, we can help. Our techs can safely extract broken blades, rebuild jammed ignition cylinders, or replace the entire ignition assembly on site.
               </p>
               <Link href="/services/ignition-repair" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Ignition Service</Link>
@@ -168,28 +168,28 @@ export default function ServicesPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             <div className="card" style={{ textAlign: 'center' }}>
-              <Unlock size={32} color="#0F172A" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '0.5rem' }}>Car Lockout</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Fast, damage-free door unlocking.</p>
+              <Unlock size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Car Lockout</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Fast, damage-free door unlocking.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$55+</div>
-              <p style={{ fontSize: '0.8rem', color: '#94A3B8' }}>*Depends on vehicle security system</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on vehicle security system</p>
             </div>
 
             <div className="card" style={{ textAlign: 'center', transform: 'scale(1.05)', border: '2px solid var(--action-orange)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'var(--action-orange)', color: 'var(--bg-primary)', padding: '4px 16px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Most Common</div>
-              <KeyRound size={32} color="#0F172A" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '0.5rem' }}>Key Replacement</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Standard or transponder key generation.</p>
+              <KeyRound size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Key Replacement</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Standard or transponder key generation.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$120+</div>
-              <p style={{ fontSize: '0.8rem', color: '#94A3B8' }}>*Depends on key type & chip programming</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on key type & chip programming</p>
             </div>
 
             <div className="card" style={{ textAlign: 'center' }}>
-              <Cpu size={32} color="#0F172A" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', color: '#0F172A', marginBottom: '0.5rem' }}>Smart Fob / Push Start</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Proximity fobs and ECU programming.</p>
+              <Cpu size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
+              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Smart Fob / Push Start</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Proximity fobs and ECU programming.</p>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$165+</div>
-              <p style={{ fontSize: '0.8rem', color: '#94A3B8' }}>*Depends on OEM part availability</p>
+              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on OEM part availability</p>
             </div>
           </div>
         </div>

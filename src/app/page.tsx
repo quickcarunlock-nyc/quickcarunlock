@@ -76,19 +76,19 @@ export default function Home() {
               <CarFront size={40} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Emergency Lockouts</h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Keys locked in the trunk or cabin? We use non-destructive entry methods to get you back inside safely within minutes.</p>
-              <Link href="/services/emergency-lockout" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
+              <Link href="/services/emergency-lockout" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
             </div>
             <div className="card card-hover">
               <KeyRound size={40} color="#3B82F6" style={{ marginBottom: '1.5rem' }} />
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Key Replacement</h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Lost your only set? We cut and program brand new transponder keys and smart fobs directly at your vehicle's location.</p>
-              <Link href="/services/key-replacement" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
+              <Link href="/services/key-replacement" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
             </div>
             <div className="card card-hover">
               <Wrench size={40} color="var(--safety-green)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.5rem', color: '#0F172A', marginBottom: '1rem' }}>Ignition Repair</h3>
-              <p style={{ color: '#475569', marginBottom: '1.5rem' }}>Key won't turn? Steering wheel locked? We disassemble and repair or replace faulty ignition cylinders on the spot.</p>
-              <Link href="/services/ignition-repair" style={{ color: '#2C51C1', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Ignition Repair</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Key won't turn? Steering wheel locked? We disassemble and repair or replace faulty ignition cylinders on the spot.</p>
+              <Link href="/services/ignition-repair" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Learn More <Zap size={16} /></Link>
             </div>
           </div>
         </div>
@@ -205,13 +205,13 @@ export default function Home() {
             </div>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Lost my only fob while shopping in Manhattan. Dealership wanted to tow it and charge me $500. QuickCarUnlock came out, cut a new key, and programmed it right there on the street for half the price.</p>
-              <div style={{ fontWeight: 600, color: '#0F172A' }}>— Sarah J., Manhattan</div>
+              <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>Lost my only fob while shopping in Manhattan. Dealership wanted to tow it and charge me $500. QuickCarUnlock came out, cut a new key, and programmed it right there on the street for half the price.</p>
+              <div style={{ fontWeight: 600 }}>— Sarah J., Manhattan</div>
             </div>
             <div className="card">
               <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /><Star size={18} fill="#FFC107" color="#FFC107" /></div>
-              <p style={{ color: '#475569', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>My ignition cylinder jammed completely. I was stranded in Queens. They sent out a mobile unit with all the parts. He rebuilt the ignition in under an hour. Absolute lifesavers.</p>
-              <div style={{ fontWeight: 600, color: '#0F172A' }}>— David R., Queens</div>
+              <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>My ignition cylinder jammed completely. I was stranded in Queens. They sent out a mobile unit with all the parts. He rebuilt the ignition in under an hour. Absolute lifesavers.</p>
+              <div style={{ fontWeight: 600 }}>— David R., Queens</div>
             </div>
           </div>
         </div>
