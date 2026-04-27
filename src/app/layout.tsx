@@ -33,6 +33,28 @@ export const metadata: Metadata = {
       { rel: 'android-chrome-512x512', url: '/android-chrome-512x512.png' },
     ],
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.quickcarunlock.com',
+    siteName: 'QuickCarUnlock',
+    title: 'Car Unlock Service NYC | 24/7 Emergency Locksmith',
+    description: 'Fast, damage-free car unlocking and mobile auto locksmith services across NYC. 15-minute response time.',
+    images: [
+      {
+        url: '/quick-car-unlock-van.webp',
+        width: 1200,
+        height: 630,
+        alt: 'QuickCarUnlock NYC Service Van',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QuickCarUnlock NYC | 24/7 Car Unlock Service',
+    description: 'Locked out? We arrive in 15 minutes or less. Mobile car locksmith services across all 5 boroughs.',
+    images: ['/quick-car-unlock-van.webp'],
+  },
 };
 
 export default function RootLayout({
