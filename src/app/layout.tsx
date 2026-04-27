@@ -8,6 +8,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+import Header from "@/components/Header";
+
 export const metadata: Metadata = {
   title: "Car Unlock Service NYC | 24/7 Emergency Locksmith | QuickCarUnlock",
   description: "QuickCarUnlock.com offers 24/7 emergency car unlock service in NYC. Fast, reliable, and affordable auto locksmiths for all vehicle types. Get a free quote!",
@@ -21,30 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Glassmorphism Sticky Header */}
-        <header className="site-header">
-          <div className="container header-content">
-            <Link href="/" className="logo">
-              <Key size={28} className="highlight" />
-              QuickCar<span className="highlight">Unlock</span>
-            </Link>
-            
-            <nav className="nav-links">
-              <Link href="/services" className="nav-link">Services</Link>
-              <Link href="/locations" className="nav-link">Locations</Link>
-              <Link href="/request-a-quote" className="nav-link">Request a Quote</Link>
-              <Link href="/about" className="nav-link">About</Link>
-              <Link href="/contact" className="nav-link">Contact</Link>
-            </nav>
-
-            <div className="header-cta">
-              <a href="tel:3478017119" className="btn btn-primary btn-pulse" style={{ display: 'flex', gap: '8px' }}>
-                <Phone size={18} />
-                <span>(347) 801-7119</span>
-              </a>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         <main style={{ paddingTop: '80px', minHeight: '100vh' }}>
           {children}
