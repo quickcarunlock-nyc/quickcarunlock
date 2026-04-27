@@ -394,8 +394,7 @@ button {
 /* Responsive */
 @media (max-width: 768px) {
   .header-content { height: 60px; }
-  .logo { font-size: 1.4rem; }
-  .logo-text { display: none; } /* Show only icon on very small screens if needed, but let's try just shrinking first */
+  .logo { font-size: 1.2rem; }
   
   .header-phone-btn {
     padding: 8px 12px;

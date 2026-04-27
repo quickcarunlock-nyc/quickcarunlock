@@ -36,7 +36,7 @@ export default function RootLayout({
             <div className="footer-grid">
               <div className="footer-col">
                 <Link href="/" className="logo mb-3" style={{ fontSize: '1.5rem' }}>
-                  <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={28} height={28} style={{ objectFit: 'contain' }} />
+                  <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={64} height={64} style={{ objectFit: 'contain' }} />
                   QuickCar<span className="highlight">Unlock</span>
                 </Link>
                 <p style={{ color: 'var(--slate-light)', marginBottom: '1.5rem', lineHeight: '1.8' }}>

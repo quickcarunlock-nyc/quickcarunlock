@@ -36,7 +36,7 @@ export default function Header() {
       <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container header-content">
           <Link href="/" className="logo" onClick={closeMenu}>
-            <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={36} height={36} style={{ objectFit: 'contain' }} />
+            <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={64} height={64} style={{ objectFit: 'contain' }} />
             <span className="logo-text">QuickCar<span className="highlight">Unlock</span></span>
           </Link>
           
