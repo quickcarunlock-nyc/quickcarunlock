@@ -138,7 +138,7 @@ export default function Home() {
             </ul>
           </div>
           <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', aspectRatio: '16/9' }}>
-            <Image src="/locksmith-van.png" alt="QuickCarUnlock NYC Service Van" fill style={{ objectFit: 'cover' }} />
+            <Image src="/quick-car-unlock-van.webp" alt="QuickCarUnlock NYC Service Van" fill style={{ objectFit: 'cover' }} />
           </div>
         </div>
       </section>

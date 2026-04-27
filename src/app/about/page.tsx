@@ -138,7 +138,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div style={{ position: 'relative', height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-              <img src="/locksmith-van.png" alt="QuickCarUnlock NYC Van" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+              <img src="/quick-car-unlock-van.webp" alt="QuickCarUnlock NYC Van" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9), transparent)' }}></div>
               <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white', fontWeight: 'bold' }}>
