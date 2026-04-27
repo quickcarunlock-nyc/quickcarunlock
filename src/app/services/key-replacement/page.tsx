@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { 
-  KeyRound, ShieldCheck, Zap, Cpu, CheckCircle2, Clock, 
+import {
+  KeyRound, ShieldCheck, Zap, Cpu, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Settings, HelpCircle, HardDrive
 } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function KeyReplacementPage() {
   return (
     <div className="service-detail-page">
-      
+
       {/* Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
@@ -150,7 +150,7 @@ export default function KeyReplacementPage() {
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'white' }}>Need a New Key Today?</h2>
           <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', fontWeight: 500, opacity: 0.9 }}>Get dealership service at your doorstep for a fraction of the cost.</p>
           <a href="tel:3478017119" className="btn" style={{ background: 'white', color: '#1D4ED8', fontSize: '1.4rem', padding: '1.2rem 3rem', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
-            <Phone size={24} /> Call: (347) 801-7119
+            <Phone size={24} />(347) 801-7119
           </a>
         </div>
       </section>

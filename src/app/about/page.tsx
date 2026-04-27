@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { 
-  ShieldCheck, Zap, Cpu, CheckCircle2, Clock, 
+import {
+  ShieldCheck, Zap, Cpu, CheckCircle2, Clock,
   Phone, ArrowRight, Star, Heart, MapPin, Wrench, Navigation, Radio
 } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="about-page">
-      
+
       {/* Premium Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>

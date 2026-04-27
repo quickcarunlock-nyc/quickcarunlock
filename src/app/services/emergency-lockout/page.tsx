@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { 
-  Unlock, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Clock, 
+import {
+  Unlock, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Search, HelpCircle, Car
 } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function EmergencyLockoutPage() {
   return (
     <div className="service-detail-page">
-      
+
       {/* Hero Section */}
       <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'var(--glow-orange)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
@@ -101,7 +101,7 @@ export default function EmergencyLockoutPage() {
               <ShieldCheck size={18} color="var(--safety-green)" /> Fully Insured Against Damage
             </div>
           </div>
-          
+
           <div className="card" style={{ textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.3rem', marginBottom: '1.5rem' }}>Supporting All Major Brands</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>

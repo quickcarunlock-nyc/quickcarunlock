@@ -39,7 +39,7 @@ export default function Header() {
             <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={64} height={64} style={{ objectFit: 'contain' }} />
             <span className="logo-text">QuickCar<span className="highlight">Unlock</span></span>
           </Link>
-          
+
           <nav className="nav-links desktop-only">
             <Link href="/services" className="nav-link">Services</Link>
             <Link href="/locations" className="nav-link">Locations</Link>
@@ -53,7 +53,7 @@ export default function Header() {
               <Phone size={18} />
               <span className="phone-text">(347) 801-7119</span>
             </a>
-            
+
             <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -78,10 +78,10 @@ export default function Header() {
             <Link href="/contact" className="mobile-nav-link" onClick={closeMenu}>
               Contact
             </Link>
-            
+
             <div style={{ marginTop: '2rem', padding: '0 1rem' }}>
-               <a href="tel:3478017119" className="btn btn-primary w-100" style={{ gap: '10px' }} onClick={closeMenu}>
-                <Phone size={20} /> Call Now: (347) 801-7119
+              <a href="tel:3478017119" className="btn btn-primary w-100" style={{ gap: '10px' }} onClick={closeMenu}>
+                <Phone size={20} />(347) 801-7119
               </a>
             </div>
           </nav>
