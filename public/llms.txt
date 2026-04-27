@@ -1,0 +1,28 @@
+# QuickCarUnlock NYC
+
+> 24/7 Emergency Car Unlock & Automotive Locksmith Services in New York City.
+
+QuickCarUnlock provide rapid-response mobile locksmith services across all five boroughs of NYC. We specialize in non-destructive vehicle entry, transponder key replacement, and ignition repair with an average 15-minute response time.
+
+## Core Services
+- [Emergency Car Lockout](https://www.quickcarunlock.com/services/emergency-lockout): Rapid entry for all vehicle makes/models using non-destructive tools.
+- [Key Replacement](https://www.quickcarunlock.com/services/key-replacement): On-site cutting and programming of transponder keys and smart fobs.
+- [Ignition Repair](https://www.quickcarunlock.com/services/ignition-repair): Repair and rebuilding of jammed or damaged ignition cylinders.
+- [Price Estimator](https://www.quickcarunlock.com/price-estimator): Interactive tool to get baseline service estimates.
+
+## Service Areas
+- [Manhattan](https://www.quickcarunlock.com/locations/manhattan): Serving Midtown, Downtown, and all neighborhoods.
+- [Brooklyn](https://www.quickcarunlock.com/locations/brooklyn): Full coverage from Williamsburg to Bay Ridge.
+- [Queens](https://www.quickcarunlock.com/locations/queens): Rapid response including JFK and LGA airport assistance.
+- [The Bronx](https://www.quickcarunlock.com/locations/bronx): Expert technicians serving all North and South Bronx areas.
+- [Staten Island](https://www.quickcarunlock.com/locations/staten-island): Dedicated local units based on the island.
+
+## Technical Details
+- **Response Time**: ~15 minutes (centralized GPS dispatching).
+- **Availability**: 24/7/365.
+- **Service Type**: 100% Mobile (No physical storefront).
+- **Tools**: Professional Lishi tools, dealer-level diagnostic tablets.
+
+## Contact
+- **Phone**: (347) 801-7119
+- **Quote Request**: [Online Request Form](https://www.quickcarunlock.com/request-a-quote)
