@@ -169,100 +169,107 @@ export default async function BoroughPage({ params }: Props) {
   };
 
   return (
-    <div className="location-detail-page">
+    <div className="location-detail-page min-h-screen">
       <Schema data={faqSchema} />
       <Schema data={breadcrumbSchema} />
+      
       {/* Local Hero Section */}
-      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid var(--safety-green)', color: 'var(--safety-green)', padding: '6px 16px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>
+      <section className="pt-32 pb-16 bg-[var(--bg-primary)] relative overflow-hidden border-b border-[var(--border-color)]">
+        <div className="absolute top-[-10%] right-[-10%] w-1/2 h-1/2 bg-[var(--glow-blue)] blur-[100px] rounded-full z-0 opacity-40"></div>
+        <div className="container relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-[var(--safety-green)] px-5 py-2 rounded-full text-sm font-semibold mb-8">
             <MapPin size={16} /> Local {data.name} Dispatch Active
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             24/7 Car Unlocking in <span className="text-orange-gradient">{data.name}</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
             New York City's fastest mobile locksmith response for {data.name} residents and commuters.
+          </p>
+          <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
+            Quick Car Unlock NYC provides rapid, reliable, and expert mobile auto locksmith services specifically tailored for {data.name}. We can reach you anywhere in {data.name} in <strong>15 minutes or less</strong>.
           </p>
         </div>
       </section>
 
       {/* Local Advantage & Landmarks */}
-      <section style={{ padding: '5rem 1rem' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+      <section className="py-24">
+        <div className="container max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>The {data.name} Advantage</h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+              <h2 className="text-4xl font-bold mb-8">The {data.name} Advantage</h2>
+              <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-6">
                 {data.advantage}
               </p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8' }}>
+              <p className="text-[var(--slate-light)] text-lg leading-relaxed mb-10">
                 {data.scenarios}
               </p>
               
-              <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--bg-secondary)', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-                <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Building2 size={20} color="var(--action-orange)" /> Serving Near Landmarks:
+              <div className="p-8 bg-white/5 rounded-2xl border border-white/10 shadow-xl">
+                <h4 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                  <Building2 size={28} className="text-[var(--action-orange)]" /> Serving Near Landmarks:
                 </h4>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <div className="flex flex-wrap gap-3">
                   {data.landmarks.map((mark, i) => (
-                    <span key={i} style={{ background: 'rgba(255,255,255,0.05)', color: 'var(--slate-light)', padding: '4px 12px', borderRadius: '4px', fontSize: '0.9rem' }}>{mark}</span>
+                    <span key={i} className="bg-black/30 border border-white/10 text-[var(--slate-light)] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[var(--action-orange)] hover:text-white hover:border-[var(--action-orange)] transition-all cursor-default">
+                      {mark}
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="card">
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Zap size={24} color="var(--action-orange)" /> {data.name} Price List
+            <div className="card p-10 bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-2xl rounded-3xl transform hover:scale-[1.02] transition-transform duration-300">
+              <h3 className="text-3xl font-bold mb-8 flex items-center gap-4 border-b border-[var(--border-color)] pb-6">
+                <Zap size={32} className="text-[var(--action-orange)]" /> {data.name} Price List
               </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div className="space-y-6">
                 {[
                   { service: "Emergency Car Unlock", price: "$55+" },
                   { service: "Key Replacement", price: "$120+" },
                   { service: "Ignition Repair", price: "$150+" },
                   { service: "Fob Programming", price: "$145+" }
                 ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)' }}>
-                    <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{item.service}</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 'bold' }}>{item.price}</span>
+                  <div key={i} className="flex justify-between items-center pb-4 border-b border-[var(--border-color)] last:border-0">
+                    <span className="text-[var(--text-secondary)] text-lg font-medium">{item.service}</span>
+                    <span className="text-2xl font-bold text-[var(--action-orange)]">{item.price}</span>
                   </div>
                 ))}
               </div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)', marginTop: '1.5rem', fontStyle: 'italic' }}>
-                *All prices are starting estimates for {data.name} residents. Final quote provided on-site.
+              <p className="text-sm text-[var(--slate-light)] mt-8 font-style: italic opacity-80">
+                *All prices are starting estimates for {data.name} residents. Final quote provided on-site before any work begins.
               </p>
-              <a href="tel:3478017119" className="btn btn-primary w-100 text-center" style={{ marginTop: '1.5rem', display: 'block' }}>Call For Exact Quote</a>
+              <a href="tel:3478017119" className="btn btn-pulse w-full text-center mt-8 text-xl py-5 rounded-xl font-bold">Call For Exact Quote</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Localized FAQ & Neighborhood Grid */}
-      <section style={{ padding: '5rem 1rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+      <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)]">
+        <div className="container max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{data.name} Local FAQ</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <h2 className="text-4xl font-bold mb-10">{data.name} Local FAQ</h2>
+              <div className="space-y-6">
                 {data.faqs.map((f, i) => (
-                  <div key={i} className="card" style={{ padding: '1.5rem' }}>
-                    <h4 style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
-                      <HelpCircle size={18} color="var(--action-orange)" /> {f.q}
+                  <div key={i} className="card p-8 bg-[var(--bg-primary)] border border-[var(--border-color)] shadow-lg hover:bg-white/5 transition-colors rounded-2xl">
+                    <h4 className="text-xl font-bold mb-4 flex items-start gap-4">
+                      <HelpCircle size={24} className="text-[var(--action-orange)] shrink-0 mt-1" /> 
+                      <span className="leading-snug">{f.q}</span>
                     </h4>
-                    <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '0.9rem' }}>{f.a}</p>
+                    <p className="text-[var(--slate-light)] leading-relaxed ml-10 m-0">{f.a}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Neighborhoods We Serve</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+              <h2 className="text-4xl font-bold mb-10">Neighborhoods We Serve</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {data.neighborhoods.map((hood, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-secondary)' }}>
-                    <CheckCircle2 size={16} color="var(--safety-green)" /> {hood}
+                  <div key={i} className="flex items-center gap-4 text-[var(--text-secondary)] text-lg p-4 bg-white/5 rounded-xl border border-white/5 hover:border-[var(--safety-green)] transition-colors group cursor-default">
+                    <CheckCircle2 size={24} className="text-[var(--safety-green)] group-hover:scale-110 transition-transform" /> {hood}
                   </div>
                 ))}
               </div>
@@ -272,17 +279,18 @@ export default async function BoroughPage({ params }: Props) {
       </section>
 
       {/* Local Social Proof */}
-      <section style={{ padding: '5rem 1rem' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.3rem', textAlign: 'center', marginBottom: '3.5rem' }}>Real {data.name} Customer Reviews</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+      <section className="py-24 bg-[#0B1120] border-b border-[var(--border-color)]">
+        <div className="container max-w-6xl">
+          <h2 className="text-4xl font-bold text-center mb-16">Real {data.name} Customer Reviews</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {data.reviews.map((rev, i) => (
-              <div key={i} className="card">
-                <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}>
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="#FFC107" color="#FFC107" />)}
+              <div key={i} className="card p-10 bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-xl rounded-3xl relative">
+                <div className="absolute -top-5 -left-5 text-6xl text-[var(--action-orange)] opacity-20 font-serif">"</div>
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-[#FFC107] text-[#FFC107]" />)}
                 </div>
-                <p style={{ color: 'var(--text-secondary)', fontStyle: 'italic', marginBottom: '1.5rem', lineHeight: '1.7' }}>{rev.text}</p>
-                <div style={{ fontWeight: 600 }}>— {rev.name}, {rev.area}</div>
+                <p className="text-[var(--text-secondary)] text-xl font-style: italic mb-8 leading-relaxed">"{rev.text}"</p>
+                <div className="font-bold text-lg text-white">— {rev.name}, <span className="text-[var(--safety-green)]">{rev.area}</span></div>
               </div>
             ))}
           </div>
@@ -290,15 +298,17 @@ export default async function BoroughPage({ params }: Props) {
       </section>
 
       {/* Local Final CTA */}
-      <section style={{ padding: '5rem 1rem', background: 'linear-gradient(135deg, var(--action-orange), #FF8C00)', color: '#0F172A', textAlign: 'center' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0F172A' }}>Stranded in {data.name}?</h2>
-          <p style={{ marginBottom: '2.5rem', fontSize: '1.2rem', fontWeight: 500, opacity: 0.9 }}>Our closest {data.name} unit is available for immediate dispatch.</p>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:3478017119" className="btn btn-pulse" style={{ background: '#0F172A', color: 'var(--text-primary)', fontSize: '1.4rem', padding: '1.2rem 3rem', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
-              <Phone size={24} /> Dispatch: (347) 801-7119
+      <section className="py-24 bg-gradient-to-br from-[var(--action-orange)] to-orange-600 text-[#0F172A] text-center">
+        <div className="container max-w-5xl">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-[#0F172A]">Stranded in {data.name}?</h2>
+          <p className="mb-14 text-2xl font-medium opacity-90 leading-relaxed max-w-4xl mx-auto">
+            Our closest {data.name} unit is available for immediate dispatch. Don't wait hours for a tow truck.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="tel:3478017119" className="btn btn-pulse bg-[#0F172A] text-white hover:bg-black text-2xl py-5 px-12 inline-flex items-center justify-center gap-4 shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full font-bold">
+              <Phone size={28} /> Dispatch: (347) 801-7119
             </a>
-            <Link href="/price-estimator" className="btn" style={{ background: 'transparent', border: '2px solid #0F172A', color: '#0F172A', fontSize: '1.4rem', padding: '1.2rem 3rem' }}>
+            <Link href="/price-estimator" className="btn bg-transparent border-4 border-[#0F172A] text-[#0F172A] hover:bg-[#0F172A] hover:text-white text-2xl py-5 px-12 inline-flex items-center justify-center shadow-xl transform hover:scale-105 transition-all duration-300 rounded-full font-bold">
               Free Estimate
             </Link>
           </div>

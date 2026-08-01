@@ -6,103 +6,119 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact QuickCarUnlock NYC | 24/7 Mobile Dispatch',
-  description: 'Need assistance? Contact QuickCarUnlock NYC for 24/7 mobile auto locksmith services across Manhattan, Brooklyn, Queens, Bronx, and Staten Island.',
+  title: 'Contact Quick Car Unlock NYC | 24/7 Emergency Auto Locksmith Support',
+  description: 'Need immediate assistance? Contact Quick Car Unlock NYC for 24/7 mobile auto locksmith services across all five boroughs. We arrive in 15 minutes or less.',
 };
 
 export default function ContactPage() {
   return (
-    <div className="contact-page">
+    <div className="contact-page min-h-screen">
       
       {/* Hero Section */}
-      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '50%', height: '50%', background: 'var(--glow-orange)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '850px' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-            How Can We <span className="text-orange-gradient">Help You</span> Today?
+      <section className="pt-32 pb-16 bg-[var(--bg-primary)] relative overflow-hidden border-b border-[var(--border-color)]">
+        <div className="absolute top-[-10%] right-[-10%] w-1/2 h-1/2 bg-[var(--glow-orange)] blur-[100px] rounded-full z-0"></div>
+        <div className="container relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Need Immediate Assistance? <br />
+            <span className="text-orange-gradient">Call Us Now!</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '2rem' }}>
-            We operate a 100% mobile dispatch network. We don't have a storefront because we are always on the road, stationed in your neighborhood to reach you faster.
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-6">
+            When you're facing a car lockout, lost keys, or ignition problems in New York City, every second counts. Quick Car Unlock NYC is here to provide rapid, reliable, and professional assistance 24 hours a day, 7 days a week.
+          </p>
+          <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            Our local dispatch team is always ready to route the closest certified technician to your location across Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.
           </p>
         </div>
       </section>
 
       {/* Contact Grid */}
-      <section style={{ padding: '5rem 1rem' }}>
+      <section className="py-24">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* Direct Contact Info */}
             <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>Direct Dispatch Lines</h2>
+              <h2 className="text-3xl font-bold mb-8">Direct Dispatch Lines</h2>
               
-              <div className="card" style={{ marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'var(--action-orange)', padding: '12px', borderRadius: '12px', color: 'var(--bg-primary)' }}>
-                    <Phone size={24} />
+              <div className="card p-6 mb-6 border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[rgba(30,41,59,0.9)] transition-colors">
+                <div className="flex gap-6 items-start">
+                  <div className="bg-[var(--action-orange)] p-4 rounded-xl text-[var(--bg-primary)] shrink-0 shadow-lg shadow-orange-500/20">
+                    <Phone size={32} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>24/7 Emergency Hotlines</h3>
-                    <a href="tel:3478017119" style={{ fontSize: '1.8rem', fontWeight: 'bold', display: 'block', marginBottom: '4px' }}>(347) 801-7119</a>
-                    <p style={{ color: 'var(--slate-light)', fontSize: '0.9rem' }}>Instant connection to a live NYC dispatcher.</p>
+                    <h3 className="text-xl font-bold mb-2">Emergency Dispatch Hotline</h3>
+                    <a href="tel:3478017119" className="text-3xl font-bold block mb-2 hover:text-[var(--action-orange)] transition-colors">(347) 801-7119</a>
+                    <p className="text-[var(--slate-light)]">For immediate emergency service, the fastest way to reach us is by phone.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div style={{ background: '#3B82F6', padding: '12px', borderRadius: '12px', color: 'white' }}>
-                    <Clock size={24} />
+              <div className="card p-6 mb-6 border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[rgba(30,41,59,0.9)] transition-colors">
+                <div className="flex gap-6 items-start">
+                  <div className="bg-[#3B82F6] p-4 rounded-xl text-white shrink-0 shadow-lg shadow-blue-500/20">
+                    <Mail size={32} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Response Readiness</h3>
-                    <p style={{ color: 'var(--text-secondary)', marginBottom: '4px' }}><strong>Monday - Sunday:</strong> Open 24 Hours</p>
-                    <p style={{ color: 'var(--text-secondary)' }}><strong>Holidays:</strong> Open 24 Hours</p>
+                    <h3 className="text-xl font-bold mb-2">General Inquiries</h3>
+                    <a href="mailto:info@quickcarunlock.com" className="text-xl font-semibold block mb-2 hover:text-[#3B82F6] transition-colors">info@quickcarunlock.com</a>
+                    <p className="text-[var(--slate-light)]">For non-urgent questions. We aim to respond within 24 hours.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="card" style={{ border: '1px solid var(--border-color)' }}>
-                <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                  <div style={{ background: 'var(--safety-green)', padding: '12px', borderRadius: '12px', color: 'var(--bg-primary)' }}>
-                    <MapPin size={24} />
+              <div className="card p-6 border border-[var(--border-color)] bg-[var(--bg-secondary)] hover:bg-[rgba(30,41,59,0.9)] transition-colors">
+                <div className="flex gap-6 items-start">
+                  <div className="bg-[var(--safety-green)] p-4 rounded-xl text-[var(--bg-primary)] shrink-0 shadow-lg shadow-green-500/20">
+                    <MapPin size={32} />
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Service Coverage</h3>
-                    <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>We serve all 5 NYC boroughs. We are a mobile-only service; our technicians meet you at your vehicle's location.</p>
+                    <h3 className="text-xl font-bold mb-2">Our Service Areas</h3>
+                    <p className="text-[var(--text-secondary)] leading-relaxed">
+                      Our mobile units proudly serve all five boroughs: <strong>Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.</strong> No matter where you are in NYC, we're just a call away.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Quick Actions */}
-            <div className="card" style={{ padding: '3rem 2rem', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '40%', height: '40%', background: 'var(--glow-blue)', filter: 'blur(80px)', opacity: 0.3 }}></div>
+            <div className="card p-10 bg-[var(--bg-secondary)] border border-[var(--border-color)] relative overflow-hidden shadow-2xl">
+              <div className="absolute top-[-10%] right-[-10%] w-2/5 h-2/5 bg-[var(--glow-blue)] blur-[80px] opacity-30 pointer-events-none"></div>
               
-              <h2 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Need a Fast Solution?</h2>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem', lineHeight: '1.7' }}>
-                Whether it's an emergency lockout or a scheduled key replacement, use the options below for the fastest assistance.
+              <h2 className="text-3xl font-bold mb-6 relative z-10">Other Ways to Connect</h2>
+              <p className="text-[var(--text-secondary)] mb-10 leading-relaxed text-lg relative z-10">
+                While phone calls are best for urgent situations, we offer several ways to get in touch for inquiries, custom quotes, or general information.
               </p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <Link href="/request-a-quote" className="btn btn-primary" style={{ textAlign: 'center', padding: '1.2rem' }}>
-                  Request a Binding Quote
+              <div className="flex flex-col gap-5 mb-12 relative z-10">
+                <Link href="/request-a-quote" className="btn btn-primary w-full flex justify-center py-4 text-lg font-semibold shadow-lg shadow-orange-500/20">
+                  Request a Custom Quote Online
                 </Link>
-                <Link href="/locations" className="btn btn-secondary" style={{ textAlign: 'center', padding: '1.2rem' }}>
-                  Find a Tech Near You
-                </Link>
-                <Link href="/services" className="btn btn-secondary" style={{ textAlign: 'center', padding: '1.2rem' }}>
+                <Link href="/services" className="btn btn-secondary w-full flex justify-center py-4 text-lg font-semibold">
                   Browse All Services
                 </Link>
               </div>
 
-              <div style={{ marginTop: '3rem', borderTop: '1px solid var(--border-color)', paddingTop: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem', color: 'var(--safety-green)' }}>
-                  <ShieldCheck size={20} /> <span style={{ fontWeight: 600 }}>Verified Local Business</span>
-                </div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--slate-light)', lineHeight: '1.6' }}>
-                  QuickCarUnlock NYC is a certified, insured automotive locksmith network. Your security is our absolute priority.
-                </p>
+              <div className="pt-8 border-t border-[var(--border-color)] relative z-10">
+                <h3 className="text-xl font-bold mb-6">Why Quick Car Unlock NYC is Your Trusted Partner</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
+                    <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
+                    <span><strong>24/7 Availability:</strong> We're always open, ready to assist you day or night.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
+                    <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
+                    <span><strong>Rapid Response:</strong> Our goal is to reach you in 15 minutes or less.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
+                    <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
+                    <span><strong>Transparent Pricing:</strong> No hidden fees, exact quote provided on-site.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
+                    <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
+                    <span><strong>Damage-Free Service:</strong> We prioritize the safety and integrity of your vehicle.</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -111,13 +127,13 @@ export default function ContactPage() {
       </section>
 
       {/* Trust Banner */}
-      <section style={{ padding: '4rem 1rem', background: '#0B1120', textAlign: 'center', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+      <section className="py-12 bg-[#0B1120] border-y border-[var(--border-color)]">
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', opacity: 0.6 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white' }}><CheckCircle2 size={18} /> Licensed</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white' }}><CheckCircle2 size={18} /> Insured</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white' }}><CheckCircle2 size={18} /> Background Checked</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white' }}><CheckCircle2 size={18} /> 24/7 Available</div>
+          <div className="flex justify-center gap-8 md:gap-16 flex-wrap opacity-70">
+            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Licensed</div>
+            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Insured</div>
+            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Background Checked</div>
+            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> 24/7 Available</div>
           </div>
         </div>
       </section>

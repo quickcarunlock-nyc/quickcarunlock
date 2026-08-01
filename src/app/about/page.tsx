@@ -6,67 +6,80 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About QuickCarUnlock NYC | Trusted Auto Locksmith Experts',
+  title: 'About Quick Car Unlock NYC | Your Trusted Automotive Security Specialists',
   description: 'NYC\'s most reliable mobile auto locksmith network. We combine advanced logistics with dealership-level technology to provide the fastest vehicle rescue in the five boroughs.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="about-page">
+    <div className="about-page min-h-screen">
 
       {/* Premium Hero Section */}
-      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '900px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid #3B82F6', color: '#3B82F6', padding: '6px 16px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>
+      <section className="pt-32 pb-16 bg-[var(--bg-primary)] relative overflow-hidden border-b border-[var(--border-color)]">
+        <div className="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-[var(--glow-blue)] blur-[100px] rounded-full z-0"></div>
+        <div className="container relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-5 py-2 rounded-full text-sm font-semibold mb-8">
             <Heart size={16} /> Our Mission
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-            To Eliminate the Anxiety of being <span className="text-orange-gradient">Stranded in NYC</span>.
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Eliminating the Anxiety of Being <br className="hidden md:block" />
+            <span className="text-orange-gradient">Stranded in NYC</span>
           </h1>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '2rem' }}>
-            QuickCarUnlock was founded on a simple realization: New York City doesn't need more "general" locksmiths—it needs a specialized, technology-driven rescue network designed specifically for the modern vehicle.
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-6">
+            Quick Car Unlock NYC was founded on a singular, critical realization: New York City needed more than just general locksmiths. It demanded a specialized, technology-driven rescue network designed specifically for the complexities of modern vehicles and the urgency of urban emergencies.
+          </p>
+          <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            Our mission is simple yet profound: to eliminate the anxiety and frustration of being stranded due to car lock issues, providing swift, reliable, and damage-free solutions across all five boroughs.
           </p>
         </div>
       </section>
 
       {/* Technical DNA Section */}
-      <section style={{ padding: '5rem 1rem' }}>
+      <section className="py-24">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 style={{ fontSize: '2.3rem', marginBottom: '1.5rem' }}>Our Technical DNA</h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                We are not general locksmiths who also do cars. We are Automotive Security Specialists. While a traditional locksmith might struggle with high-security door locks or complex transponder frequencies, our team lives and breathes vehicle electronics.
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Technical DNA: Mobile Dealership-Level Expertise</h2>
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-6">
+                We are a team of dedicated automotive security specialists, not just locksmiths. This distinction is crucial. While a traditional locksmith might encounter challenges with advanced vehicle security systems, high-security door locks, or complex transponder frequencies, our team lives and breathes vehicle electronics.
               </p>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2.5rem' }}>
-                From Mercedes-Benz EIS modules to Ford proximity fobs and Tesla emergency entry, we maintain the software and hardware required to service 99% of vehicles on the road today.
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-10">
+                At Quick Car Unlock NYC, our expertise is rooted in a deep understanding of automotive security systems. We pride ourselves on a technical DNA that mirrors a manufacturer's service center, brought directly to your location.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
-                  <CheckCircle2 size={18} color="var(--safety-green)" /> EEPROM Mastering
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex items-center gap-3 text-[var(--text-primary)] font-medium bg-[var(--bg-secondary)] p-4 rounded-lg border border-[var(--border-color)]">
+                  <CheckCircle2 size={24} className="text-[var(--safety-green)]" /> EEPROM Mastering
                 </div>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
-                  <CheckCircle2 size={18} color="var(--safety-green)" /> ECU Synchronization
+                <div className="flex items-center gap-3 text-[var(--text-primary)] font-medium bg-[var(--bg-secondary)] p-4 rounded-lg border border-[var(--border-color)]">
+                  <CheckCircle2 size={24} className="text-[var(--safety-green)]" /> ECU Synchronization
                 </div>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
-                  <CheckCircle2 size={18} color="var(--safety-green)" /> Lishi Decoding
+                <div className="flex items-center gap-3 text-[var(--text-primary)] font-medium bg-[var(--bg-secondary)] p-4 rounded-lg border border-[var(--border-color)]">
+                  <CheckCircle2 size={24} className="text-[var(--safety-green)]" /> Lishi Decoding
                 </div>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', color: 'var(--text-primary)', fontWeight: 500 }}>
-                  <CheckCircle2 size={18} color="var(--safety-green)" /> OBD2 Protocols
+                <div className="flex items-center gap-3 text-[var(--text-primary)] font-medium bg-[var(--bg-secondary)] p-4 rounded-lg border border-[var(--border-color)]">
+                  <CheckCircle2 size={24} className="text-[var(--safety-green)]" /> OBD2 Protocols
                 </div>
               </div>
             </div>
-            <div className="card" style={{ background: 'var(--bg-secondary)', padding: '2.5rem' }}>
-              <Cpu size={48} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Mobile Dealership Stack</h3>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                Every mobile unit in our fleet carries a technical stack identical to a manufacturer's service center. We bring the diagnostic power directly to your parking spot.
+            <div className="card bg-[var(--bg-secondary)] p-10 rounded-2xl border border-[var(--border-color)] shadow-2xl">
+              <Cpu size={56} className="text-[var(--action-orange)] mb-6" />
+              <h3 className="text-2xl font-bold mb-4">Mobile Dealership Stack</h3>
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
+                Every mobile unit in our fleet is a fully-equipped workshop, carrying a technical stack identical to what you'd find at a dealership. This includes:
               </p>
-              <ul style={{ listStyle: 'none', padding: 0, color: 'var(--slate-light)', fontSize: '0.9rem' }}>
-                <li style={{ marginBottom: '0.5rem' }}>• Automated CNC Laser Key Cutting</li>
-                <li style={{ marginBottom: '0.5rem' }}>• High-Frequency RF Spectrum Analyzers</li>
-                <li style={{ marginBottom: '0.5rem' }}>• Real-Time OEM Security Database Access</li>
+              <ul className="space-y-4 text-[var(--slate-light)]">
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--action-orange)] mt-1 shrink-0">•</span> 
+                  <span><strong>Automated CNC Laser Key Cutting:</strong> For precise duplication and creation of high-security keys.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--action-orange)] mt-1 shrink-0">•</span> 
+                  <span><strong>High-Frequency RF Spectrum Analyzers:</strong> To diagnose and program remote key fobs accurately.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--action-orange)] mt-1 shrink-0">•</span> 
+                  <span><strong>Real-Time OEM Security Database Access:</strong> Immediate access to manufacturer-specific codes and procedures.</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -74,95 +87,94 @@ export default function AboutPage() {
       </section>
 
       {/* The Dispatch Advantage */}
-      <section style={{ padding: '5rem 1rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+      <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)]">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>The Dispatch Advantage</h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Why we arrive while others are still "checking the map."</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">The Quick Car Unlock Advantage</h2>
+            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">Speed, Ethics, and Local Expertise combined to give you peace of mind.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div style={{ textAlign: 'center' }}>
-              <Navigation size={40} color="#3B82F6" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Active Borough Patrolling</h4>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>We don't sit in a shop waiting for your call. Our units are strategically patrolling NYC's busiest neighborhoods 24/7.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Radio size={40} color="var(--action-orange)" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Centralized Logic</h4>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Our dispatcher uses live GPS data to route the closest possible technician, bypassing traffic using local knowledge.</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Clock size={40} color="var(--safety-green)" style={{ margin: '0 auto 1.5rem auto' }} />
-              <h4 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>15-Min Response Goal</h4>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>Our entire operational model is optimized for speed. If we can't get to you fast, we'll tell you upfront.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ethics & Transparency */}
-      <section style={{ padding: '6rem 1rem' }}>
-        <div className="container" style={{ maxWidth: '900px' }}>
-          <div className="card" style={{ padding: '4rem 2rem', textAlign: 'center', border: '1px solid var(--border-color)' }}>
-            <ShieldCheck size={50} color="var(--safety-green)" style={{ margin: '0 auto 1.5rem auto' }} />
-            <h2 style={{ fontSize: '2.3rem', marginBottom: '1.5rem' }}>Our Commitment to Ethics</h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-              The NYC locksmith industry is unfortunately plagued by bait-and-switch pricing and destructive entry techniques. QuickCarUnlock was built as an ethical alternative.
-            </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
-              <div style={{ textAlign: 'left', maxWidth: '250px' }}>
-                <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>No Bait-and-Switch</h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--slate-light)' }}>The price we quote on-site is the price you pay. No hidden "service fees."</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-8 card card-hover">
+              <div className="w-20 h-20 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                <Navigation size={40} className="text-[#3B82F6]" />
               </div>
-              <div style={{ textAlign: 'left', maxWidth: '250px' }}>
-                <h4 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Damage-Free First</h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--slate-light)' }}>We exhaust all professional non-destructive entry methods before even discussing alternatives.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Local Knowledge */}
-      <section style={{ padding: '5rem 1rem', background: '#0B1120' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
-            <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>NYC Through and Through</h2>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-                Our dispatchers aren't in a call center halfway across the country. They are New Yorkers. When you tell us you're stranded near the "Vannie" or stuck on the "FDR," we know exactly what that means.
+              <h4 className="text-2xl font-bold mb-4">Rapid Dispatch & Response</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                We don't operate from a single storefront; our certified technicians are strategically stationed and actively patrolling NYC's busiest neighborhoods 24/7. Our goal is to arrive in <strong>15 minutes or less</strong>.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--action-orange)', fontWeight: 600 }}>
-                <MapPin size={20} /> Serving Manhattan, Brooklyn, Queens, Bronx, & SI.
-              </div>
             </div>
-            <div style={{ position: 'relative', height: '300px', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-              <img src="/quick-car-unlock-van.webp" alt="QuickCarUnlock NYC Van" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9), transparent)' }}></div>
-              <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'white', fontWeight: 'bold' }}>
-                  <CheckCircle2 size={18} color="var(--safety-green)" /> 24/7 Local Presence
-                </span>
+            
+            <div className="text-center p-8 card card-hover">
+              <div className="w-20 h-20 mx-auto bg-green-500/10 rounded-full flex items-center justify-center mb-6">
+                <ShieldCheck size={40} className="text-[var(--safety-green)]" />
               </div>
+              <h4 className="text-2xl font-bold mb-4">Unwavering Ethics</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                <strong>No Bait-and-Switch:</strong> The price we quote on-site is the final price. <strong>Damage-Free First:</strong> We exhaust all non-destructive methods to unlock your vehicle safely before any alternative.
+              </p>
+            </div>
+            
+            <div className="text-center p-8 card card-hover">
+              <div className="w-20 h-20 mx-auto bg-orange-500/10 rounded-full flex items-center justify-center mb-6">
+                <MapPin size={40} className="text-[var(--action-orange)]" />
+              </div>
+              <h4 className="text-2xl font-bold mb-4">NYC Through and Through</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                Our dispatchers and technicians are New Yorkers. When you tell us you're near the "Vannie" or stuck on the "FDR," we know exactly what that means. Local knowledge ensures absolute efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Promise Section */}
+      <section className="py-24 bg-[#0B1120]">
+        <div className="container max-w-5xl text-center">
+          <h2 className="text-4xl font-bold mb-8">Our Promise to You</h2>
+          <p className="text-xl text-[var(--text-secondary)] leading-relaxed mb-16 max-w-3xl mx-auto">
+            At Quick Car Unlock NYC, we are more than just a service; we are your reliable partner in automotive emergencies. We are committed to providing:
+          </p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+            <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
+              <Star className="text-[var(--action-orange)] mb-4" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Professionalism</h4>
+              <p className="text-[var(--text-secondary)] text-lg">Highly trained, certified, and courteous technicians.</p>
+            </div>
+            <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
+              <Clock className="text-[#3B82F6] mb-4" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Efficiency</h4>
+              <p className="text-[var(--text-secondary)] text-lg">Rapid response times and quick, effective solutions.</p>
+            </div>
+            <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
+              <ShieldCheck className="text-[var(--safety-green)] mb-4" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Integrity</h4>
+              <p className="text-[var(--text-secondary)] text-lg">Transparent pricing and completely damage-free service.</p>
+            </div>
+            <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
+              <Navigation className="text-[#A855F7] mb-4" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Accessibility</h4>
+              <p className="text-[var(--text-secondary)] text-lg">24/7 availability across all five New York City boroughs.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section style={{ padding: '6rem 1rem', textAlign: 'center' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Experience the Difference.</h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-            NYC's highest-rated mobile auto locksmith network is ready to assist you.
+      <section className="py-24 text-center relative overflow-hidden border-t border-[var(--border-color)]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[var(--glow-orange)] blur-[150px] rounded-full -z-10 opacity-30"></div>
+        <div className="container relative z-10 max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Experience the Difference.</h2>
+          <p className="text-xl text-[var(--text-secondary)] mb-12 leading-relaxed">
+            Experience the difference of a truly specialized and locally-focused auto locksmith service. When you need us, we're here.
           </p>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="tel:3478017119" className="btn btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1.3rem', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a href="tel:3478017119" className="btn btn-primary btn-pulse flex items-center gap-3 py-4 px-10 text-xl">
               <Phone size={24} /> (347) 801-7119
             </a>
-            <Link href="/services" className="btn btn-secondary" style={{ padding: '1.2rem 3rem', fontSize: '1.3rem' }}>
-              Our Services
+            <Link href="/services" className="btn btn-secondary flex items-center gap-2 py-4 px-10 text-lg">
+              View Our Services
             </Link>
           </div>
         </div>

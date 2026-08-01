@@ -2,13 +2,13 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
   CarFront, KeyRound, Wrench, AlertTriangle, BatteryWarning, Unlock, 
-  Clock, DollarSign, Building2, Cpu, ShieldCheck, Tag, CheckCircle2, XCircle, Phone, ArrowRight
+  Clock, DollarSign, Building2, Cpu, ShieldCheck, Tag, CheckCircle2, XCircle, Phone, ArrowRight, Settings, MapPin
 } from 'lucide-react';
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
-  title: 'NYC Auto Locksmith Services | QuickCarUnlock',
-  description: 'Complete mobile automotive locksmith services in NYC. Expert car unlocking, transponder key replacement, fob programming, and ignition repair.',
+  title: 'NYC Auto Locksmith Services | Quick Car Unlock NYC',
+  description: 'Comprehensive mobile automotive locksmith services in NYC. Expert car unlocking, transponder key replacement, fob programming, and ignition repair across all 5 boroughs.',
 };
 
 export default function ServicesPage() {
@@ -32,207 +32,187 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="services-page">
+    <div className="services-page min-h-screen">
       <Schema data={breadcrumbSchema} />
       
       {/* Premium Hero Section */}
-      <section style={{ padding: '6rem 1rem 4rem 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: '0', right: '0', width: '50%', height: '100%', background: 'radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, transparent 70%)', zIndex: 0 }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-            Complete <span className="text-orange-gradient">Automotive Security</span> Solutions.
+      <section className="pt-32 pb-16 bg-[var(--bg-primary)] relative overflow-hidden border-b border-[var(--border-color)]">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle,rgba(249,115,22,0.1)_0%,transparent_70%)] z-0"></div>
+        <div className="absolute top-[-20%] left-[-10%] w-1/2 h-1/2 bg-[var(--glow-blue)] blur-[120px] rounded-full z-0 opacity-40"></div>
+        
+        <div className="container relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 text-[var(--action-orange)] px-5 py-2 rounded-full text-sm font-semibold mb-8">
+            <Settings size={16} /> Comprehensive Solutions
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Your Trusted Partner for All <br className="hidden md:block" />
+            <span className="text-orange-gradient">Vehicle Lock and Key Needs</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '2rem', lineHeight: '1.6' }}>
-            From simple lockouts to complex dealership-level key programming, our mobile units bring the entire locksmith shop directly to your location anywhere in New York City.
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
+            At Quick Car Unlock NYC, we specialize in providing a full spectrum of professional automotive locksmith services across Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.
+          </p>
+          <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
+            Whether you're locked out of your car, need a new key programmed, or are experiencing ignition problems, our mobile units bring dealership-level service directly to your location 24/7.
           </p>
         </div>
       </section>
 
-      {/* 1. What's Your Emergency? (Symptom-based diagnostic) */}
-      <section style={{ padding: '4rem 1rem', background: 'var(--bg-secondary)' }}>
+      {/* Core Services Section */}
+      <section className="py-24">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>What's Your Emergency?</h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Identify your symptom below to see how we fix it.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Our Core Auto Locksmith Services</h2>
+            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">Rapid, reliable, and damage-free solutions.</p>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            <div className="card card-hover" style={{ borderTop: '4px solid #3B82F6' }}>
-              <AlertTriangle size={32} color="#3B82F6" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>I can see my keys inside, but the doors are locked.</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>We use specialized air wedges and long-reach tools to bypass the lock mechanism without scratching your paint.</p>
-              <Link href="/services/emergency-lockout" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Emergency Lockout <ArrowRight size={16} /></Link>
-            </div>
-
-            <div className="card card-hover" style={{ borderTop: '4px solid var(--action-orange)' }}>
-              <BatteryWarning size={32} color="var(--action-orange)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>I have the key, but the buttons stopped working.</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>Usually a dead battery or desynchronized fob. We can replace the battery or re-sync the smart fob to your car's computer.</p>
-              <Link href="/services/key-replacement" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Fob Programming <ArrowRight size={16} /></Link>
-            </div>
-
-            <div className="card card-hover" style={{ borderTop: '4px solid var(--safety-green)' }}>
-              <Unlock size={32} color="var(--safety-green)" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>My key spins, but the engine won't crank.</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>This indicates a broken ignition cylinder or a failed transponder chip. We diagnose and rebuild ignitions on the spot.</p>
-              <Link href="/services/ignition-repair" style={{ color: '#60A5FA', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>Ignition Repair <ArrowRight size={16} /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Core Services Overview */}
-      <section style={{ padding: '6rem 1rem' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>Our Core Services</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
-            <div className="card">
-              <CarFront size={40} color="var(--action-orange)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Emergency Lockouts</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                Rapid, damage-free vehicle entry. Whether your keys are left on the seat, locked in the trunk, or lost completely, our technicians can get you back inside your vehicle safely in minutes. We service all makes and models, including high-security European vehicles.
-              </p>
-              <Link href="/services/emergency-lockout" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Lockout Service</Link>
-            </div>
-            <div className="card">
-              <KeyRound size={40} color="#3B82F6" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Key Replacement</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                Lost your only key? We carry hundreds of OEM and aftermarket blanks. We can laser-cut and program new transponder keys, smart proximity fobs, and remote head keys directly at your vehicle's location, saving you the cost of a dealership tow.
-              </p>
-              <Link href="/services/key-replacement" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Key Services</Link>
-            </div>
-            <div className="card">
-              <Wrench size={40} color="var(--safety-green)" style={{ marginBottom: '1.5rem' }} />
-              <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>Ignition Repair</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: '1.7' }}>
-                If your steering wheel is locked, your key won't turn, or the key broke off inside the chamber, we can help. Our techs can safely extract broken blades, rebuild jammed ignition cylinders, or replace the entire ignition assembly on site.
-              </p>
-              <Link href="/services/ignition-repair" className="btn btn-primary w-100 text-center" style={{ display: 'block' }}>View Ignition Service</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. The Long-Tail Minor Services */}
-      <section style={{ padding: '4rem 1rem', background: '#0B1120', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>Specialized Capabilities</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-            {[
-              "Broken Key Extraction", 
-              "Trunk Lockout Specialization", 
-              "High-Security Laser Key Cutting", 
-              "Push-to-Start Fob Reprogramming", 
-              "Door Lock Cylinder Rekeying", 
-              "Motorcycle Key Generation",
-              "Commercial Fleet Servicing",
-              "ECU & Immobilizer Reset"
-            ].map((service, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderRadius: '8px', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <CheckCircle2 size={18} color="var(--safety-green)" />
-                <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{service}</span>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] hover:-translate-y-2 transition-transform duration-300 shadow-xl group">
+              <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CarFront size={32} className="text-[#3B82F6]" />
               </div>
-            ))}
+              <h3 className="text-2xl font-bold mb-4">Emergency Car Lockout Service</h3>
+              <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                Locked your keys in the car or trunk? Lost them entirely? We use advanced, non-destructive entry techniques to unlock your vehicle quickly and safely.
+              </p>
+              <ul className="space-y-3 mb-8 text-[var(--slate-light)]">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Fast 15-minute response</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Damage-free entry</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> 24/7 availability</li>
+              </ul>
+              <Link href="/services/emergency-lockout" className="btn btn-primary w-full text-center py-4 text-lg font-bold flex justify-center shadow-lg shadow-orange-500/20">
+                Learn More
+              </Link>
+            </div>
+
+            <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--action-orange)] hover:-translate-y-2 transition-transform duration-300 shadow-2xl shadow-orange-500/10 group relative">
+              <div className="absolute top-0 inset-x-0 h-1 bg-[var(--action-orange)]"></div>
+              <div className="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <KeyRound size={32} className="text-[var(--action-orange)]" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Transponder Key Replacement & Programming</h3>
+              <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                Our mobile units are equipped to cut, program, and synchronize new transponder keys and smart fobs for a vast range of vehicle makes and models.
+              </p>
+              <ul className="space-y-3 mb-8 text-[var(--slate-light)]">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--action-orange)]" /> On-site cutting & programming</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--action-orange)]" /> All vehicle types & smart fobs</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--action-orange)]" /> Fraction of dealership cost</li>
+              </ul>
+              <Link href="/services/key-replacement" className="btn w-full text-center py-4 text-lg font-bold flex justify-center bg-[var(--action-orange)] hover:bg-orange-600 text-white shadow-lg shadow-orange-500/30">
+                Learn More
+              </Link>
+            </div>
+
+            <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] hover:-translate-y-2 transition-transform duration-300 shadow-xl group">
+              <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Wrench size={32} className="text-[var(--safety-green)]" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Ignition Cylinder Repair & Replacement</h3>
+              <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                If your key won't turn, is stuck, or your steering wheel is locked, our specialists can diagnose and repair or replace faulty ignition cylinders on the spot.
+              </p>
+              <ul className="space-y-3 mb-8 text-[var(--slate-light)]">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Diagnostic & repair</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Avoid costly tows</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Comprehensive solutions</li>
+              </ul>
+              <Link href="/services/ignition-repair" className="btn btn-primary w-full text-center py-4 text-lg font-bold flex justify-center shadow-lg shadow-orange-500/20">
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Dealership vs Mobile Locksmith Comparison */}
-      <section style={{ padding: '6rem 1rem' }}>
-        <div className="container" style={{ maxWidth: '900px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Why Choose Us Over The Dealership?</h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>Losing a modern car key usually means a massive headache at the dealership. We offer a better way.</p>
+      {/* Why Quick Car Unlock NYC Stands Out */}
+      <section className="py-24 bg-[#0B1120] border-y border-[var(--border-color)]">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Quick Car Unlock NYC Stands Out</h2>
+            <p className="text-xl text-[var(--text-secondary)]">The E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) difference.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg">
+              <MapPin className="text-[var(--action-orange)] mb-6" size={40} />
+              <h4 className="text-2xl font-bold mb-3">NYC-Focused Expertise</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">Our team understands the unique demands and traffic patterns of serving New York City drivers.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg">
+              <Cpu className="text-[#3B82F6] mb-6" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Advanced Technology</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">Mobile units fully equipped with dealership-level diagnostic tools and laser cutters.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg">
+              <ShieldCheck className="text-[var(--safety-green)] mb-6" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Certified Professionals</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">Highly trained and experienced automotive locksmiths dedicated to security.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg md:col-span-2 lg:col-span-1">
+              <DollarSign className="text-green-400 mb-6" size={40} />
+              <h4 className="text-2xl font-bold mb-3">Transparent Pricing</h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">Clear, upfront quotes provided on-site with absolutely no hidden fees.</p>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg lg:col-span-2 flex flex-col justify-center items-center text-center">
+              <CheckCircle2 className="text-[#A855F7] mb-6" size={48} />
+              <h4 className="text-2xl font-bold mb-3">Customer Satisfaction</h4>
+              <p className="text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed text-lg">Dedicated to providing a stress-free and effective service experience to get you back on the road safely and efficiently.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dealership vs Mobile Locksmith Comparison */}
+      <section className="py-24 bg-[var(--bg-primary)]">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Choose Us Over The Dealership?</h2>
+            <p className="text-xl text-[var(--text-secondary)]">Losing a modern car key usually means a massive headache. We offer a better way.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden border border-[var(--border-color)] shadow-2xl">
             {/* Dealership Side */}
-            <div style={{ background: 'var(--bg-secondary)', padding: '3rem 2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
-                <Building2 size={28} color="#94A3B8" />
-                <h3 style={{ fontSize: '1.5rem', margin: 0, color: '#94A3B8' }}>The Dealership</h3>
+            <div className="bg-[var(--bg-secondary)] p-12">
+              <div className="flex items-center gap-4 mb-10">
+                <Building2 size={40} className="text-[#94A3B8]" />
+                <h3 className="text-3xl font-bold text-[#94A3B8]">The Dealership</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, color: 'var(--text-secondary)' }}>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><XCircle size={20} color="#EF4444" style={{ flexShrink: 0 }} /> Requires you to pay for a tow truck to bring your car to them.</li>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><XCircle size={20} color="#EF4444" style={{ flexShrink: 0 }} /> Often requires a 2 to 5 day wait for parts to be ordered.</li>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><XCircle size={20} color="#EF4444" style={{ flexShrink: 0 }} /> You pay highly inflated OEM markup prices on hardware.</li>
-                <li style={{ display: 'flex', gap: '12px' }}><XCircle size={20} color="#EF4444" style={{ flexShrink: 0 }} /> Closed on weekends, nights, and holidays.</li>
+              <ul className="space-y-8 text-[var(--text-secondary)] text-lg">
+                <li className="flex gap-4 items-start"><XCircle size={28} className="text-red-500 shrink-0 mt-1" /> <span className="leading-relaxed">Requires you to pay for a tow truck to bring your car to them.</span></li>
+                <li className="flex gap-4 items-start"><XCircle size={28} className="text-red-500 shrink-0 mt-1" /> <span className="leading-relaxed">Often requires a 2 to 5 day wait for parts to be ordered.</span></li>
+                <li className="flex gap-4 items-start"><XCircle size={28} className="text-red-500 shrink-0 mt-1" /> <span className="leading-relaxed">You pay highly inflated OEM markup prices on hardware.</span></li>
+                <li className="flex gap-4 items-start"><XCircle size={28} className="text-red-500 shrink-0 mt-1" /> <span className="leading-relaxed">Closed on weekends, nights, and holidays.</span></li>
               </ul>
             </div>
 
             {/* QuickCarUnlock Side */}
-            <div style={{ background: 'linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(15, 23, 42, 0.9))', padding: '3rem 2rem', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '4px', height: '100%', background: 'var(--action-orange)' }}></div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
-                <ShieldCheck size={28} color="var(--action-orange)" />
-                <h3 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--text-primary)' }}>QuickCarUnlock NYC</h3>
+            <div className="bg-gradient-to-br from-orange-500/10 to-[rgba(15,23,42,0.9)] p-12 relative border-l md:border-t-0 border-t border-[var(--border-color)]">
+              <div className="absolute top-0 left-0 w-1 h-full bg-[var(--action-orange)] hidden md:block"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-[var(--action-orange)] block md:hidden"></div>
+              <div className="flex items-center gap-4 mb-10">
+                <ShieldCheck size={40} className="text-[var(--action-orange)]" />
+                <h3 className="text-3xl font-bold text-white">Quick Car Unlock NYC</h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, color: 'var(--text-primary)' }}>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><CheckCircle2 size={20} color="var(--safety-green)" style={{ flexShrink: 0 }} /> We dispatch a mobile workshop directly to your vehicle's location.</li>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><CheckCircle2 size={20} color="var(--safety-green)" style={{ flexShrink: 0 }} /> Keys cut and programmed on the spot in under 45 minutes.</li>
-                <li style={{ marginBottom: '1.5rem', display: 'flex', gap: '12px' }}><CheckCircle2 size={20} color="var(--safety-green)" style={{ flexShrink: 0 }} /> Up to 50% cheaper than dealership pricing.</li>
-                <li style={{ display: 'flex', gap: '12px' }}><CheckCircle2 size={20} color="var(--safety-green)" style={{ flexShrink: 0 }} /> Available 24 hours a day, 7 days a week, 365 days a year.</li>
+              <ul className="space-y-8 text-white text-lg">
+                <li className="flex gap-4 items-start"><CheckCircle2 size={28} className="text-[var(--safety-green)] shrink-0 mt-1" /> <span className="leading-relaxed">We dispatch a mobile workshop directly to your vehicle's location.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={28} className="text-[var(--safety-green)] shrink-0 mt-1" /> <span className="leading-relaxed">Keys cut and programmed on the spot in under 45 minutes.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={28} className="text-[var(--safety-green)] shrink-0 mt-1" /> <span className="leading-relaxed">Up to 50% cheaper than dealership pricing.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={28} className="text-[var(--safety-green)] shrink-0 mt-1" /> <span className="leading-relaxed">Available 24 hours a day, 7 days a week, 365 days a year.</span></li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Transparent Pricing */}
-      <section style={{ padding: '6rem 1rem', background: 'var(--bg-secondary)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Transparent Starting Prices</h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>No hidden fees. We provide an exact, binding quote upon arrival before any work begins.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            <div className="card" style={{ textAlign: 'center' }}>
-              <Unlock size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Car Lockout</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Fast, damage-free door unlocking.</p>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$55+</div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on vehicle security system</p>
-            </div>
-
-            <div className="card" style={{ textAlign: 'center', transform: 'scale(1.05)', border: '2px solid var(--action-orange)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: 'var(--action-orange)', color: 'var(--bg-primary)', padding: '4px 16px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>Most Common</div>
-              <KeyRound size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Key Replacement</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Standard or transponder key generation.</p>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$120+</div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on key type & chip programming</p>
-            </div>
-
-            <div className="card" style={{ textAlign: 'center' }}>
-              <Cpu size={32} color="var(--text-primary)" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>Smart Fob / Push Start</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>Proximity fobs and ECU programming.</p>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--action-orange)', marginBottom: '1rem' }}>$165+</div>
-              <p style={{ fontSize: '0.8rem', color: 'var(--slate-light)' }}>*Depends on OEM part availability</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Technology Stack (E-E-A-T) */}
-      <section style={{ padding: '5rem 1rem' }}>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Equipped With Dealership-Level Technology</h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '3rem' }}>
-            We heavily invest in our mobile capabilities. Our vans are fully equipped with automated, laser-guided CNC key cutting machines, meaning we can cut high-security sidewinder keys with microscopic precision. We also utilize advanced OBD2 programmers to securely sync new transponder chips directly to your vehicle's engine control unit.
-          </p>
-        </div>
-      </section>
-
       {/* Final CTA */}
-      <section style={{ padding: '4rem 1rem', background: 'linear-gradient(135deg, var(--action-orange), #FF8C00)', color: '#0F172A', textAlign: 'center' }}>
-        <div className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0F172A' }}>Ready for Immediate Assistance?</h2>
-          <p style={{ marginBottom: '2rem', fontSize: '1.2rem', fontWeight: 500, opacity: 0.9 }}>Our NYC dispatchers will route the nearest technician to your location.</p>
-          <a href="tel:3478017119" className="btn" style={{ background: '#0F172A', color: 'var(--text-primary)', fontSize: '1.4rem', padding: '1.2rem 3rem', display: 'inline-flex', alignItems: 'center', gap: '12px' }}>
-            <Phone size={24} /> Call Now: (347) 801-7119
+      <section className="py-24 bg-gradient-to-br from-[var(--action-orange)] to-orange-600 text-[#0F172A] text-center border-t border-orange-500/50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-[#0F172A]">Ready for Immediate Assistance?</h2>
+          <p className="mb-12 text-xl font-medium opacity-90 leading-relaxed max-w-3xl mx-auto">
+            For reliable, fast, and professional auto locksmith services in New York City, trust Quick Car Unlock NYC. Our NYC dispatchers will route the nearest technician to your location.
+          </p>
+          <a href="tel:3478017119" className="btn bg-[#0F172A] text-white hover:bg-black text-2xl py-6 px-16 inline-flex items-center gap-4 shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-full font-bold">
+            <Phone size={32} /> Call Now: (347) 801-7119
           </a>
         </div>
       </section>

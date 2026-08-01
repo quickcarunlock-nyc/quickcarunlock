@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { 
   Send, Car, MapPin, Phone, User, 
-  MessageSquare, Camera, CheckCircle2, Zap 
+  MessageSquare, Camera, CheckCircle2, Zap, FileText
 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function RequestQuotePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,10 +27,10 @@ export default function RequestQuotePage() {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setSubmitStatus({ success: true, message: "Request received! Check your phone—we'll text you a binding quote within 5 minutes." });
+        setSubmitStatus({ success: true, message: "Request received! We'll review your details and get back to you promptly." });
         (e.target as HTMLFormElement).reset();
       } else {
-        setSubmitStatus({ success: false, message: result.message || "Submission failed. Please call our 24/7 dispatch line directly." });
+        setSubmitStatus({ success: false, message: result.message || "Submission failed. Please call our dispatch line directly." });
       }
     } catch (error) {
       setSubmitStatus({ success: false, message: "Connection error. Please call us for an immediate quote." });
@@ -39,122 +40,157 @@ export default function RequestQuotePage() {
   };
 
   return (
-    <div className="request-quote-page">
+    <div className="request-quote-page min-h-screen">
       
-      {/* Hero */}
-      <section style={{ padding: 'clamp(4rem, 10vw, 6rem) 1rem clamp(2rem, 5vw, 4rem) 1rem', background: 'var(--bg-primary)', position: 'relative', overflow: 'hidden', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'var(--glow-blue)', filter: 'blur(100px)', borderRadius: '50%', zIndex: 0 }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(59, 130, 246, 0.1)', border: '1px solid #3B82F6', color: '#3B82F6', padding: '6px 16px', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 600, marginBottom: '1.5rem' }}>
-            <Zap size={16} /> Instant Pricing Response
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-[var(--bg-primary)] relative overflow-hidden border-b border-[var(--border-color)]">
+        <div className="absolute top-[-10%] left-[-10%] w-1/2 h-1/2 bg-[var(--glow-blue)] blur-[100px] rounded-full z-0 opacity-40"></div>
+        <div className="container relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-[#3B82F6] px-5 py-2 rounded-full text-sm font-semibold mb-8">
+            <FileText size={16} /> Personalized Estimate
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', marginBottom: '1.5rem', lineHeight: 1.1 }}>
-            Get a <span className="text-orange-gradient">Binding Quote</span> in Minutes
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Request a <span className="text-orange-gradient">Custom Quote</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-            Fill out the form below. For the most accurate pricing on key replacements, please upload a photo of your current key or VIN.
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-6">
+            Get a personalized estimate for your auto locksmith needs in New York City.
+          </p>
+          <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
+            While our Price Estimator provides a general idea, a custom quote ensures accurate pricing for complex services like specific key replacements or advanced ignition repairs.
           </p>
         </div>
       </section>
 
-      {/* Form Section */}
-      <section style={{ padding: 'clamp(2rem, 8vw, 5rem) 1rem' }}>
-        <div className="container" style={{ maxWidth: '700px' }}>
-          
-          <div className="card" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
+      {/* Main Content */}
+      <section className="py-24">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start max-w-7xl mx-auto">
             
-            {submitStatus && (
-              <div style={{
-                padding: '1.25rem',
-                marginBottom: '2rem',
-                borderRadius: '12px',
-                backgroundColor: submitStatus.success ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)',
-                color: submitStatus.success ? 'var(--safety-green)' : '#EF4444',
-                border: `1px solid ${submitStatus.success ? 'var(--safety-green)' : '#EF4444'}`,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                {submitStatus.success ? <CheckCircle2 size={24} /> : <Zap size={24} />}
-                <p style={{ margin: 0, fontWeight: 500 }}>{submitStatus.message}</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.5rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-                <div className="form-group">
-                  <label htmlFor="name" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                    <User size={16} color="var(--action-orange)" /> Full Name
-                  </label>
-                  <input type="text" id="name" name="name" className="form-control" required placeholder="John Doe" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="phone" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                    <Phone size={16} color="var(--action-orange)" /> Phone Number
-                  </label>
-                  <input type="tel" id="phone" name="phone" className="form-control" required placeholder="(555) 000-0000" />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-                <div className="form-group">
-                  <label htmlFor="location" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                    <MapPin size={16} color="var(--action-orange)" /> Your Current Borough
-                  </label>
-                  <select id="location" name="location" className="form-control" required style={{ width: '100%' }}>
-                    <option value="">Select Borough</option>
-                    <option value="manhattan">Manhattan</option>
-                    <option value="brooklyn">Brooklyn</option>
-                    <option value="queens">Queens</option>
-                    <option value="bronx">The Bronx</option>
-                    <option value="staten-island">Staten Island</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="vehicle" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                    <Car size={16} color="var(--action-orange)" /> Vehicle Make & Year
-                  </label>
-                  <input type="text" id="vehicle" name="vehicle" className="form-control" required placeholder="e.g. 2020 Honda Civic" />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="issue" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                  <MessageSquare size={16} color="var(--action-orange)" /> Describe Your Emergency
-                </label>
-                <textarea id="issue" name="issue" className="form-control" required rows={4} placeholder="What's the situation? Keys lost, locked in car, or ignition jammed?"></textarea>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="image" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', marginBottom: '8px' }}>
-                  <Camera size={16} color="var(--action-orange)" /> Upload Key/Lock Photo (Optional)
-                </label>
-                <div style={{ border: '2px dashed var(--border-color)', borderRadius: '8px', padding: 'clamp(1rem, 4vw, 2rem)', textAlign: 'center', background: 'rgba(255,255,255,0.01)' }}>
-                  <input type="file" id="image" name="image" accept="image/*" style={{ margin: '0 auto', cursor: 'pointer' }} />
-                  <p style={{ color: 'var(--slate-light)', fontSize: '0.85rem', marginTop: '1rem' }}>Uploading a photo helps us identify the exact chip type for your key.</p>
-                </div>
-              </div>
-
-              <button type="submit" className="btn btn-primary" disabled={isSubmitting} style={{ padding: 'clamp(1rem, 4vw, 1.25rem)', fontSize: 'clamp(1rem, 4vw, 1.1rem)', marginTop: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-                {isSubmitting ? 'Transmitting Request...' : (
-                  <>
-                    <Send size={20} /> Dispatch Quote Request
-                  </>
-                )}
-              </button>
-
-              <p style={{ textAlign: 'center', color: 'var(--slate-light)', fontSize: '0.85rem', marginTop: '1rem' }}>
-                By submitting, you agree to receive a text message quote from our dispatch team.
+            {/* Left Info Column */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-bold mb-6">How It Works</h2>
+              <p className="text-[var(--text-secondary)] text-lg mb-8 leading-relaxed">
+                Please fill out the form with as much detail as possible. The more information you provide, the better we can assess your situation and offer a precise estimate.
               </p>
-            </form>
-          </div>
+              
+              <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] mb-8 shadow-xl">
+                <h3 className="text-xl font-bold mb-6">What Happens After You Submit?</h3>
+                <ul className="space-y-6 text-[var(--slate-light)]">
+                  <li className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--action-orange)] text-white flex items-center justify-center text-sm font-bold mt-1">1</span>
+                    <div>
+                      <strong className="text-[var(--text-primary)] block text-lg mb-1">Review Your Details</strong>
+                      An automotive security specialist will carefully examine the info.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--action-orange)] text-white flex items-center justify-center text-sm font-bold mt-1">2</span>
+                    <div>
+                      <strong className="text-[var(--text-primary)] block text-lg mb-1">Prepare Your Quote</strong>
+                      We will formulate a personalized estimate.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--action-orange)] text-white flex items-center justify-center text-sm font-bold mt-1">3</span>
+                    <div>
+                      <strong className="text-[var(--text-primary)] block text-lg mb-1">Contact You</strong>
+                      We reach out via your preferred contact method.
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-          <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>In a High-Traffic Emergency?</h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>If you are parked unsafely or in a rush, don't wait for the form—call us directly.</p>
-            <a href="tel:3478017119" style={{ fontSize: 'clamp(1.5rem, 8vw, 2.5rem)', fontWeight: 'bold', color: 'var(--action-orange)', wordBreak: 'break-word' }}>(347) 801-7119</a>
-          </div>
+              <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] text-center shadow-xl">
+                <Zap size={48} className="text-[var(--action-orange)] mx-auto mb-6" />
+                <h3 className="text-2xl font-bold mb-3">In an Emergency?</h3>
+                <p className="text-[var(--text-secondary)] mb-6 text-lg">Don't wait for a quote. Call us immediately for the fastest dispatch.</p>
+                <a href="tel:3478017119" className="text-3xl font-bold text-[var(--action-orange)] hover:text-orange-400 transition-colors block">(347) 801-7119</a>
+              </div>
+            </div>
 
+            {/* Form Column */}
+            <div className="lg:col-span-3 card p-8 md:p-12 bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--glow-blue)] blur-[80px] opacity-20 pointer-events-none"></div>
+
+              <h2 className="text-3xl font-bold mb-8 relative z-10">Custom Quote Form</h2>
+              
+              {submitStatus && (
+                <div className={`p-5 mb-8 rounded-xl border flex items-center gap-3 relative z-10 ${
+                  submitStatus.success 
+                    ? 'bg-green-500/10 border-green-500/30 text-[var(--safety-green)]' 
+                    : 'bg-red-500/10 border-red-500/30 text-red-500'
+                }`}>
+                  {submitStatus.success ? <CheckCircle2 size={24} className="shrink-0" /> : <Zap size={24} className="shrink-0" />}
+                  <p className="font-medium m-0">{submitStatus.message}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                      <User size={16} className="text-[var(--action-orange)]" /> Full Name
+                    </label>
+                    <input type="text" id="name" name="name" className="w-full p-4 bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] rounded-xl focus:border-[var(--action-orange)] focus:ring-1 focus:ring-[var(--action-orange)] outline-none transition-all text-white" required placeholder="John Doe" />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                      <Phone size={16} className="text-[var(--action-orange)]" /> Phone Number / Email
+                    </label>
+                    <input type="text" id="phone" name="phone" className="w-full p-4 bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] rounded-xl focus:border-[var(--action-orange)] focus:ring-1 focus:ring-[var(--action-orange)] outline-none transition-all text-white" required placeholder="(555) 000-0000 or email" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="location" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                      <MapPin size={16} className="text-[var(--action-orange)]" /> Location (Borough)
+                    </label>
+                    <select id="location" name="location" className="w-full p-4 bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] rounded-xl focus:border-[var(--action-orange)] focus:ring-1 focus:ring-[var(--action-orange)] outline-none transition-all text-[var(--text-primary)]" required>
+                      <option value="">Select Borough</option>
+                      <option value="manhattan">Manhattan</option>
+                      <option value="brooklyn">Brooklyn</option>
+                      <option value="queens">Queens</option>
+                      <option value="bronx">The Bronx</option>
+                      <option value="staten-island">Staten Island</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="vehicle" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                      <Car size={16} className="text-[var(--action-orange)]" /> Vehicle Make & Year
+                    </label>
+                    <input type="text" id="vehicle" name="vehicle" className="w-full p-4 bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] rounded-xl focus:border-[var(--action-orange)] focus:ring-1 focus:ring-[var(--action-orange)] outline-none transition-all text-white" required placeholder="e.g. 2020 Honda Civic" />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="issue" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                    <MessageSquare size={16} className="text-[var(--action-orange)]" /> Service Needed / Details
+                  </label>
+                  <textarea id="issue" name="issue" rows={4} className="w-full p-4 bg-[rgba(15,23,42,0.5)] border border-[var(--border-color)] rounded-xl focus:border-[var(--action-orange)] focus:ring-1 focus:ring-[var(--action-orange)] outline-none transition-all text-white" required placeholder="Describe the issue (e.g., need new smart key, ignition won't turn, emergency or scheduled)"></textarea>
+                </div>
+
+                <div>
+                  <label htmlFor="image" className="flex items-center gap-2 text-[var(--text-primary)] mb-2 text-sm font-medium">
+                    <Camera size={16} className="text-[var(--action-orange)]" /> Upload Key/Lock Photo (Optional)
+                  </label>
+                  <div className="border-2 border-dashed border-[var(--border-color)] rounded-xl p-8 text-center bg-white/5 hover:bg-white/10 transition-colors">
+                    <input type="file" id="image" name="image" accept="image/*" className="mx-auto cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[var(--action-orange)] file:text-white hover:file:bg-orange-600 transition-colors" />
+                    <p className="text-[var(--slate-light)] text-sm mt-4">Uploading a photo helps us identify the exact chip type for your key.</p>
+                  </div>
+                </div>
+
+                <button type="submit" className="btn btn-primary w-full py-4 text-lg font-bold flex justify-center items-center gap-3 shadow-lg shadow-orange-500/20 mt-4" disabled={isSubmitting}>
+                  {isSubmitting ? 'Transmitting Request...' : (
+                    <>
+                      <Send size={20} /> Request Custom Quote
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+            
+          </div>
         </div>
       </section>
 
