@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import RelatedLinks from '@/components/RelatedLinks';
@@ -9,6 +10,7 @@ import {
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/services/key-replacement', 'en'),
   title: 'Car Key Replacement NYC | Mobile Key Fob Programming',
   description: 'Lost your car keys? Quick Car Unlock NYC provides on-site key cutting and transponder programming across all 5 boroughs. Skip the dealership.',
 };

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import Link from 'next/link';
 import { Phone, BookOpen } from 'lucide-react';
 import Schema from '@/components/Schema';
@@ -7,6 +8,7 @@ import RelatedLinks from '@/components/RelatedLinks';
 import { guides } from '@/lib/guides';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/guides', 'en'),
   title: 'Car Lockout & Key Guides for NYC Drivers | Quick Car Unlock',
   description:
     'Practical guides for NYC drivers: what to do when locked out, whether police or fire will help, what a car unlock costs, and your options after losing a key.',

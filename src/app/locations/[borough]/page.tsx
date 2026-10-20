@@ -5,6 +5,7 @@ import { MapPin, Phone, CheckCircle2, HelpCircle, Zap, Clock, ListChecks, Users,
 import Schema from '@/components/Schema';
 import RelatedLinks from '@/components/RelatedLinks';
 import { boroughs, boroughById } from '@/lib/boroughs';
+import { alternatesFor } from '@/lib/i18n';
 import RichText, { plain } from '@/components/RichText';
 import { business, trustLine } from '@/lib/business';
 
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: data.metaDescription,
+    alternates: alternatesFor(`/locations/${data.id}`, 'en'),
     openGraph: {
       type: 'website',
       title,

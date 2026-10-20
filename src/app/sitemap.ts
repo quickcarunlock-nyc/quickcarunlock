@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { enToEs } from '@/lib/i18n'
 
 const baseUrl = 'https://www.quickcarunlock.com'
 
@@ -22,7 +23,6 @@ const pages: { path: string; lastModified: string; priority: number; changeFrequ
   { path: '/guides/locked-keys-in-car-what-to-do', lastModified: '2026-10-20', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/guides/keys-locked-in-trunk', lastModified: '2026-10-20', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/guides/lost-car-key-no-spare', lastModified: '2026-10-20', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/es/abrir-carro-nyc', lastModified: '2026-10-20', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/price-estimator', lastModified: '2026-08-01', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/request-a-quote', lastModified: '2026-08-01', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/about', lastModified: '2026-10-20', priority: 0.5, changeFrequency: 'yearly' },
@@ -32,10 +32,20 @@ const pages: { path: string; lastModified: string; priority: number; changeFrequ
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return pages.map(p => ({
-    url: `${baseUrl}${p.path}`,
-    lastModified: new Date(p.lastModified),
-    changeFrequency: p.changeFrequency,
-    priority: p.priority,
-  }))
+  const out: MetadataRoute.Sitemap = []
+  for (const p of pages) {
+    const en = p.path === '' ? '/' : p.path
+    const es = enToEs[en]
+    const enUrl = `${baseUrl}${p.path}`
+    const base = { lastModified: new Date(p.lastModified), changeFrequency: p.changeFrequency }
+    if (!es) {
+      out.push({ url: enUrl, ...base, priority: p.priority })
+      continue
+    }
+    const esUrl = `${baseUrl}${es}`
+    const languages = { 'en-US': enUrl, 'es-US': esUrl, 'x-default': enUrl }
+    out.push({ url: enUrl, ...base, priority: p.priority, alternates: { languages } })
+    out.push({ url: esUrl, ...base, priority: Math.max(0.3, +(p.priority - 0.1).toFixed(1)), alternates: { languages } })
+  }
+  return out
 }

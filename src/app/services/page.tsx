@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import RelatedLinks from '@/components/RelatedLinks';
@@ -9,6 +10,7 @@ import {
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/services', 'en'),
   title: 'NYC Auto Locksmith Services | Quick Car Unlock NYC',
   description: 'Comprehensive mobile automotive locksmith services in NYC. Expert car unlocking, transponder key replacement, fob programming, and ignition repair across all 5 boroughs.',
 };

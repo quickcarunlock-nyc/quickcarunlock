@@ -1,4 +1,6 @@
 import PriceEstimator from "@/components/PriceEstimator";
+import type { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import LiveDispatch from "@/components/LiveDispatch";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
@@ -8,6 +10,10 @@ import Schema from "@/components/Schema";
 import RelatedLinks from "@/components/RelatedLinks";
 import RichText, { plain } from "@/components/RichText";
 import ContextNote from "@/components/ContextNote";
+
+export const metadata: Metadata = {
+  alternates: alternatesFor('/', 'en'),
+};
 
 export default function Home() {
   const faqs = [

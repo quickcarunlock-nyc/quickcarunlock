@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import {
@@ -7,6 +8,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/about', 'en'),
   title: 'About Quick Car Unlock NYC | Your Trusted Automotive Security Specialists',
   description: 'Quick Car Unlock is a mobile auto locksmith service for New York City: car lockouts, key replacement and ignition repair, dispatched 24/7 to wherever your vehicle is.',
 };

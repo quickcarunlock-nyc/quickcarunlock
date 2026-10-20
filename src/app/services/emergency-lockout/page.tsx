@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import RelatedLinks from '@/components/RelatedLinks';
@@ -9,6 +10,7 @@ import {
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/services/emergency-lockout', 'en'),
   title: 'Car Lockout Service NYC | Mobile Car Unlock, 24/7 | Quick Car Unlock',
   description: 'Locked out of your car in NYC? Mobile car lockout service in all five boroughs, 24/7. Non-destructive entry, price quoted before work starts. Call for a live ETA.',
   openGraph: {

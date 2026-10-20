@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import RelatedLinks from '@/components/RelatedLinks';
@@ -9,6 +10,7 @@ import {
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/services/ignition-repair', 'en'),
   title: 'Ignition Repair & Replacement NYC | Mobile Auto Locksmith',
   description: 'Key stuck in ignition or won\'t turn? Quick Car Unlock NYC provides mobile ignition cylinder repair and replacement across all 5 boroughs. Fast, on-site service.',
 };

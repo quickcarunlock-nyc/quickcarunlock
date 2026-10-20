@@ -24,7 +24,7 @@ export const guides: Guide[] = [
   {
     slug: 'will-police-unlock-my-car',
     title: 'Will the Police or Fire Department Unlock Your Car in NYC?',
-    metaTitle: 'Will the Police or Fire Department Unlock Your Car in NYC?',
+    metaTitle: 'Will Police or Fire Unlock Your Car in NYC?',
     metaDescription:
       'Locked out in NYC? Learn when police or fire will help (emergencies only), when to call 911, and who to call for a routine lockout.',
     summary:
@@ -99,7 +99,7 @@ export const guides: Guide[] = [
   {
     slug: 'how-much-does-it-cost-to-unlock-a-car-nyc',
     title: 'How Much Does It Cost to Unlock a Car in NYC?',
-    metaTitle: 'How Much Does It Cost to Unlock a Car in NYC? Price Guide',
+    metaTitle: 'Car Unlock Cost in NYC: Price Guide',
     metaDescription:
       'What a car lockout costs in NYC, what changes the price, and how to avoid surprise fees. Our standard unlocks start from $55, quoted before work begins.',
     summary:

@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
-import { Phone, MapPin, ShieldCheck, Mail } from "lucide-react";
-import Image from "next/image";
 import Script from "next/script";
 import "./globals.css";
 
@@ -11,7 +8,7 @@ const inter = Inter({
 });
 
 import Header from "@/components/Header";
-import { trustLine } from "@/lib/business";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.quickcarunlock.com'),
@@ -100,65 +97,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Premium Dark Footer */}
-        <footer className="site-footer">
-          <div className="container">
-            <div className="footer-grid">
-              <div className="footer-col">
-                <Link href="/" className="logo mb-3" style={{ fontSize: '1.5rem' }}>
-                  <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={64} height={64} style={{ objectFit: 'contain' }} />
-                  QuickCar<span className="highlight">Unlock</span>
-                </Link>
-                <p style={{ color: 'var(--slate-light)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
-                  Mobile auto locksmith service for New York City. Lockouts, key replacement and ignition repair, 24/7, dispatched to your vehicle.
-                </p>
-                <a href="tel:3478017119" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontSize: '1.2rem', fontWeight: 'bold' }}>
-                  <Phone size={20} className="highlight" /> (347) 801-7119
-                </a>
-              </div>
-
-              <div className="footer-col">
-                <h4>Our Services</h4>
-                <Link href="/services/emergency-lockout" className="footer-link">Emergency Car Lockout</Link>
-                <Link href="/services/key-replacement" className="footer-link">Transponder Key Replacement</Link>
-                <Link href="/services/ignition-repair" className="footer-link">Ignition Cylinder Repair</Link>
-                <Link href="/request-a-quote" className="footer-link">Request a Custom Quote</Link>
-                <Link href="/guides" className="footer-link">Car Lockout Guides</Link>
-                <Link href="/price-estimator" className="footer-link">Price Estimator</Link>
-                <Link href="/es/abrir-carro-nyc" className="footer-link">Abrir carro en NYC (Español)</Link>
-              </div>
-
-              <div className="footer-col">
-                <h4>Service Areas</h4>
-                <Link href="/locations/manhattan" className="footer-link">Manhattan</Link>
-                <Link href="/locations/brooklyn" className="footer-link">Brooklyn</Link>
-                <Link href="/locations/queens" className="footer-link">Queens</Link>
-                <Link href="/locations/bronx" className="footer-link">The Bronx</Link>
-                <Link href="/locations/staten-island" className="footer-link">Staten Island</Link>
-              </div>
-
-              <div className="footer-col">
-                <h4>Trust & Safety</h4>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '1rem', color: 'var(--slate-light)' }}>
-                  <ShieldCheck size={24} color="var(--safety-green)" />
-                  <p>{trustLine}</p>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '1rem', color: 'var(--slate-light)' }}>
-                  <MapPin size={24} color="var(--action-orange)" />
-                  <p>Centralized GPS Dispatching</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="footer-bottom">
-              <p>&copy; {new Date().getFullYear()} Quick Car Unlock NYC. All Rights Reserved.</p>
-              <div style={{ display: 'flex', gap: '20px', marginTop: '10px', justifyContent: 'center' }}>
-                <Link href="/privacy" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Privacy Policy</Link>
-                <Link href="/terms" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Terms of Service</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   );

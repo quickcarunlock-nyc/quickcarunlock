@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import { business } from '@/lib/business';
@@ -8,6 +9,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/contact', 'en'),
   title: 'Contact Quick Car Unlock NYC | 24/7 Emergency Auto Locksmith Support',
   description: 'Need immediate assistance? Contact Quick Car Unlock NYC for 24/7 mobile auto locksmith services across all five boroughs. Call for a live ETA.',
 };

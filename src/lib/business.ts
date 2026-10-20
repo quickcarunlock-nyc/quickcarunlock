@@ -15,6 +15,13 @@ export const business = {
    * Example once confirmed: '#0000000'
    */
   licenseNumber: null as string | null,
+  /**
+   * Set true ONLY after the client confirms Spanish-speaking dispatch/technicians
+   * answer the phone. Controls the "Se habla español" promise on /es pages.
+   */
+  spanishSupport: false,
+  /** WhatsApp number in E.164 digits (no +), or null if the client has no WhatsApp line. */
+  whatsapp: null as string | null,
   /** Starting prices. Client has agreed to confirm these; update here to change everywhere that imports them. */
   startingPrices: [
     { service: 'Emergency car unlock', price: '$55+' },
@@ -29,3 +36,22 @@ export const trustLine = business.licenseNumber
   : business.insured
     ? 'Insured technicians'
     : '';
+
+export const trustLineEs = business.licenseNumber
+  ? `Técnicos con licencia (licencia de NYC ${business.licenseNumber}) y asegurados`
+  : business.insured
+    ? 'Técnicos asegurados'
+    : '';
+
+const serviceEs: Record<string, string> = {
+  'Emergency car unlock': 'Apertura de carro de emergencia',
+  'Key replacement': 'Llave nueva',
+  'Ignition repair': 'Reparación de encendido',
+  'Fob programming': 'Programación de fob',
+};
+
+/** Same prices as startingPrices, with Spanish labels. Edit prices only in startingPrices. */
+export const startingPricesEs = business.startingPrices.map(p => ({
+  service: serviceEs[p.service] ?? p.service,
+  price: p.price,
+}));

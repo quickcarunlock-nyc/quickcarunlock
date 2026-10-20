@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import PriceEstimator from '@/components/PriceEstimator';
 import Link from 'next/link';
 import { ShieldCheck, Info, Clock, CheckCircle2, Phone, ArrowRight, DollarSign } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/price-estimator', 'en'),
   title: 'Instant Price Estimator | Auto Locksmith | Quick Car Unlock NYC',
   description: 'Get an immediate estimate for your car lockout, key replacement, or ignition repair needs in NYC. Transparent pricing starting at $55.',
 };

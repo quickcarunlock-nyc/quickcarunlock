@@ -2,12 +2,19 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Globe } from "lucide-react";
+import { ui, isSpanishPath, counterpartPath } from "@/lib/i18n";
 import Image from "next/image";
 import { Phone, Menu, X, Zap } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname() || '/';
+  const es = isSpanishPath(pathname);
+  const t = es ? ui.es : ui.en;
+  const other = counterpartPath(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,18 +42,20 @@ export default function Header() {
     <>
       <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container header-content">
-          <Link href="/" className="logo" onClick={closeMenu}>
+          <Link href={t.home} className="logo" onClick={closeMenu}>
             <Image src="/car-unlock.webp" alt="QuickCarUnlock Logo" width={64} height={64} style={{ objectFit: 'contain' }} />
             <span className="logo-text">QuickCar<span className="highlight">Unlock</span></span>
           </Link>
 
           <nav className="nav-links desktop-only">
-            <Link href="/services" className="nav-link">Services</Link>
-            <Link href="/locations" className="nav-link">Locations</Link>
-            <Link href="/guides" className="nav-link">Guides</Link>
-            <Link href="/request-a-quote" className="nav-link">Request a Quote</Link>
-            <Link href="/about" className="nav-link">About</Link>
-            <Link href="/contact" className="nav-link">Contact</Link>
+            {t.nav.map(([href, label]) => (
+              <Link key={href} href={href} className="nav-link">{label}</Link>
+            ))}
+            {other && (
+              <Link href={other} className="nav-link" hrefLang={es ? "en" : "es"} lang={es ? "en" : "es"} aria-label={t.switchAria} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <Globe size={16} /> {t.switchLabel}
+              </Link>
+            )}
           </nav>
 
           <div className="header-actions">
@@ -64,24 +73,16 @@ export default function Header() {
         {/* Mobile Menu Overlay */}
         <div className={`mobile-menu-overlay ${isMenuOpen ? "open" : ""}`}>
           <nav className="mobile-nav">
-            <Link href="/services" className="mobile-nav-link" onClick={closeMenu}>
-              Services <Zap size={18} />
-            </Link>
-            <Link href="/locations" className="mobile-nav-link" onClick={closeMenu}>
-              Locations
-            </Link>
-            <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>
-              Guides
-            </Link>
-            <Link href="/request-a-quote" className="mobile-nav-link" onClick={closeMenu}>
-              Request a Quote
-            </Link>
-            <Link href="/about" className="mobile-nav-link" onClick={closeMenu}>
-              About
-            </Link>
-            <Link href="/contact" className="mobile-nav-link" onClick={closeMenu}>
-              Contact
-            </Link>
+            {t.nav.map(([href, label], i) => (
+              <Link key={href} href={href} className="mobile-nav-link" onClick={closeMenu}>
+                {label} {i === 0 && <Zap size={18} />}
+              </Link>
+            ))}
+            {other && (
+              <Link href={other} className="mobile-nav-link" onClick={closeMenu} hrefLang={es ? "en" : "es"} lang={es ? "en" : "es"} aria-label={t.switchAria}>
+                {t.switchLabel} <Globe size={18} />
+              </Link>
+            )}
 
             <div style={{ marginTop: '2rem', padding: '0 1rem' }}>
               <a href="tel:3478017119" className="btn btn-primary w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', whiteSpace: 'nowrap' }} onClick={closeMenu}>

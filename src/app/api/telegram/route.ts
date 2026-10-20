@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
     const vehicle = formData.get('vehicle') as string || 'Not provided';
     const issue = formData.get('issue') as string || 'Not provided';
     const image = formData.get('image') as File | null;
+    const lang = (formData.get('lang') as string) === 'es' ? 'es' : 'en';
 
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -20,7 +21,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Server configuration error.' }, { status: 500 });
     }
 
-    const message = `🚨 *New Lead: QuickCarUnlock.com* 🚨\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${location}\n*Vehicle:* ${vehicle}\n*Issue:* ${issue}`;
+    const message = `🚨 *New Lead: QuickCarUnlock.com* 🚨\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${location}\n*Vehicle:* ${vehicle}\n*Issue:* ${issue}${lang === 'es' ? '\n*Idioma:* 🇪🇸 Español — responder en español' : ''}`;
 
     let url = `https://api.telegram.org/bot${botToken}`;
 

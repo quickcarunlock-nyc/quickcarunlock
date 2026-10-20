@@ -2,15 +2,17 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, CheckCircle2 } from 'lucide-react';
 import Schema from '@/components/Schema';
+import RichText, { plain } from '@/components/RichText';
 import ContextNote from '@/components/ContextNote';
+import RelatedLinks from '@/components/RelatedLinks';
+import { alternatesFor } from '@/lib/i18n';
+import { business } from '@/lib/business';
 
 export const metadata: Metadata = {
   title: 'Abrir Carro en Nueva York | Cerrajero de Autos 24 Horas | Quick Car Unlock',
   description:
     '¿Se le quedaron las llaves dentro del carro en Nueva York? Cerrajero móvil de autos, 24 horas, en los cinco condados. Llame para saber el tiempo de llegada y el precio antes de empezar.',
-  alternates: {
-    canonical: '/es/abrir-carro-nyc',
-  },
+  alternates: alternatesFor('/services/emergency-lockout', 'es'),
   openGraph: {
     title: 'Abrir Carro en Nueva York | Cerrajero de Autos 24 Horas',
     description: 'Cerrajero móvil de autos en los cinco condados de Nueva York, 24 horas.',
@@ -38,7 +40,13 @@ const faqs = [
   },
   {
     q: '¿Atienden en español?',
-    a: 'Llame al (347) 801-7119 y pida atención en español. Confirme con el despachador si hay alguien disponible en ese momento.',
+    a: business.spanishSupport
+      ? 'Sí. Llame al (347) 801-7119 y pida atención en español.'
+      : 'Llame al (347) 801-7119 y pida atención en español. El despachador le confirmará si hay alguien disponible en ese momento.',
+  },
+  {
+    q: '¿Qué hago si dejé las llaves dentro del baúl?',
+    a: 'Normalmente un técnico puede abrir una puerta y usar el seguro interior del baúl. Vea la guía de [llaves dentro del baúl](/es/guias/llaves-dentro-del-baul).',
   },
 ];
 
@@ -56,7 +64,7 @@ export default function SpanishPage() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     inLanguage: 'es',
-    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: plain(f.a) } })),
   };
 
   return (
@@ -85,9 +93,9 @@ export default function SpanishPage() {
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-bold mb-6">Qué hacemos</h2>
           <ul className="space-y-4 text-lg text-[var(--text-secondary)] leading-relaxed list-none p-0">
-            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Abrir el carro</strong> cuando las llaves quedaron adentro o en la cajuela, sin dañar la puerta ni la pintura. <Link href="/services/emergency-lockout" className="text-blue-400 hover:text-blue-300">Ver el servicio en inglés</Link>.</span></li>
-            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Hacer una llave nueva</strong> o programar un control (fob) si perdió la llave. <Link href="/services/key-replacement" className="text-blue-400 hover:text-blue-300">Ver llaves y controles</Link>.</span></li>
-            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Reparar el interruptor de encendido</strong> cuando la llave no gira. <Link href="/services/ignition-repair" className="text-blue-400 hover:text-blue-300">Ver reparación de encendido</Link>.</span></li>
+            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Abrir el carro</strong> cuando las llaves quedaron adentro o dentro del baúl, sin dañar la puerta ni la pintura. <Link href="/es/guias/deje-las-llaves-dentro-del-carro" className="text-blue-400 hover:text-blue-300">Qué hacer si dejó las llaves adentro</Link>.</span></li>
+            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Hacer una llave nueva</strong> o programar un control (fob) si perdió la llave. <Link href="/es/servicios/duplicado-de-llaves-de-carro" className="text-blue-400 hover:text-blue-300">Ver llaves y fobs</Link>.</span></li>
+            <li className="flex gap-3"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Reparar el interruptor de encendido</strong> cuando la llave no gira. <Link href="/es/servicios/reparacion-de-encendido" className="text-blue-400 hover:text-blue-300">Ver reparación de encendido</Link>.</span></li>
           </ul>
 
           <h2 className="text-3xl font-bold mt-12 mb-6">Tenga esto listo cuando llame</h2>
@@ -108,7 +116,7 @@ export default function SpanishPage() {
             {faqs.map((f, i) => (
               <div key={i}>
                 <h3 className="text-xl font-bold mb-2">{f.q}</h3>
-                <p className="text-[var(--text-secondary)] text-lg leading-relaxed m-0">{f.a}</p>
+                <p className="text-[var(--text-secondary)] text-lg leading-relaxed m-0"><RichText text={f.a} /></p>
               </div>
             ))}
           </div>
@@ -124,10 +132,11 @@ export default function SpanishPage() {
       <ContextNote
         heading="Zonas de servicio y guías"
         paragraphs={[
-          'Atendemos [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [el Bronx](/locations/bronx) y [Staten Island](/locations/staten-island).',
-          'Las guías están en inglés: [qué hacer si dejó las llaves en el carro](/guides/locked-keys-in-car-what-to-do), [cuánto cuesta abrir un carro](/guides/how-much-does-it-cost-to-unlock-a-car-nyc) y [todas las guías](/guides). También puede [pedir un presupuesto](/request-a-quote) o usar el [estimador de precios](/price-estimator).',
+          'Atendemos [Manhattan](/es/zonas/manhattan), [Brooklyn](/es/zonas/brooklyn), [Queens](/es/zonas/queens), [el Bronx](/es/zonas/bronx) y [Staten Island](/es/zonas/staten-island). Vea [todas las zonas](/es/zonas).',
+          'Guías: [qué hacer si dejó las llaves en el carro](/es/guias/deje-las-llaves-dentro-del-carro), [cuánto cuesta abrir un carro](/es/guias/cuanto-cuesta-abrir-un-carro-nyc), [si la policía abre el carro](/es/guias/la-policia-abre-carros-gratis) y [todas las guías](/es/guias). También puede [pedir una cotización](/es/cotizacion) o usar el [estimador de precios](/es/estimador-de-precios).',
         ]}
       />
+      <RelatedLinks current="/es/abrir-carro-nyc" lang="es" />
     </div>
   );
 }

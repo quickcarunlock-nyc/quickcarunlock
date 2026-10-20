@@ -402,7 +402,7 @@ export const boroughs: Borough[] = [
     name: 'The Bronx',
     label: 'the Bronx',
     metaDescription:
-      'Car locked out in the Bronx? Mobile car unlock, key extraction, key replacement and ignition repair in Fordham, Riverdale, Pelham Bay and the South Bronx. Insured technicians, 24/7. Call for a live ETA.',
+      'Car locked out in the Bronx? Mobile car unlock, key extraction, key replacement and ignition repair in Fordham, Riverdale, Pelham Bay and the South Bronx. Insured, 24/7. Call for a live ETA.',
     intro: [
       `The Bronx has everything from busy street parking near the Grand Concourse to driveways in Riverdale and Throgs Neck. Lockouts here happen outside Yankee Stadium on game nights, on the crowded blocks around Fordham Road, and in the lots near Pelham Bay Park. Quick Car Unlock sends an insured mobile locksmith to your vehicle anywhere in the borough.`,
       `Call (347) 801-7119. The dispatcher asks for your location and vehicle details, gives you a live ETA, and quotes the price before work starts.`,

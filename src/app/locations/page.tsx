@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { alternatesFor } from '@/lib/i18n';
 import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import MapWrapper from '@/components/MapWrapper';
@@ -7,6 +8,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: alternatesFor('/locations', 'en'),
   title: 'NYC Auto Locksmith Service Areas | Quick Car Unlock',
   description: 'Mobile auto locksmith serving all five NYC boroughs: Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Call 24/7 for a live ETA and a quote before work starts.',
 };

@@ -6,6 +6,7 @@ import Schema from '@/components/Schema';
 import RelatedLinks from '@/components/RelatedLinks';
 import RichText, { plain } from '@/components/RichText';
 import { guides, guideBySlug } from '@/lib/guides';
+import { alternatesFor } from '@/lib/i18n';
 
 export const dynamicParams = false;
 
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${g.metaTitle} | Quick Car Unlock`,
     description: g.metaDescription,
+    alternates: alternatesFor(`/guides/${g.slug}`, 'en'),
     openGraph: { type: 'article', title: g.metaTitle, description: g.metaDescription, url: `/guides/${g.slug}`, publishedTime: g.datePublished, modifiedTime: g.dateModified },
   };
 }
