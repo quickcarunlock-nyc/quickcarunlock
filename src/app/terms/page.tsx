@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import { Scale, FileText, AlertCircle, HelpCircle, Lock, User, Users, Globe, ShieldCheck, Link2, MessageSquare, Copyright, Gavel, BookOpen, FileX, RefreshCw } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -237,6 +238,8 @@ export default function TermsPage() {
 
         </div>
       </section>
+
+      <ContextNote paragraphs={["Questions about these terms? [Contact us](/contact). See also our [Privacy Policy](/privacy), or learn about our [services](/services)."]} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import ContextNote from '@/components/ContextNote';
 import { 
   Send, Car, MapPin, Phone, User, 
   MessageSquare, Camera, CheckCircle2, Zap, FileText
@@ -103,7 +104,7 @@ export default function RequestQuotePage() {
               <div className="card p-8 bg-[var(--bg-secondary)] border border-[var(--border-color)] text-center shadow-xl">
                 <Zap size={48} className="text-[var(--action-orange)] mx-auto mb-6" />
                 <h3 className="text-2xl font-bold mb-3">In an Emergency?</h3>
-                <p className="text-[var(--text-secondary)] mb-6 text-lg">Don't wait for a quote. Call us immediately for the fastest dispatch.</p>
+                <p className="text-[var(--text-secondary)] mb-6 text-lg">Don't wait for a quote. Call us for immediate dispatch and a live ETA.</p>
                 <a href="tel:3478017119" className="text-3xl font-bold text-[var(--action-orange)] hover:text-orange-400 transition-colors block">(347) 801-7119</a>
               </div>
             </div>
@@ -194,6 +195,8 @@ export default function RequestQuotePage() {
         </div>
       </section>
 
+
+      <ContextNote paragraphs={["Want a ballpark first? Try the [price estimator](/price-estimator) and read [how much it costs to unlock a car in NYC](/guides/how-much-does-it-cost-to-unlock-a-car-nyc).", "See what we offer: [emergency car lockout](/services/emergency-lockout), [car key replacement](/services/key-replacement), [ignition repair](/services/ignition-repair). For an emergency, [contact us](/contact) and call. Learn [about us](/about). By submitting a request you agree to our [Terms of Service](/terms) and [Privacy Policy](/privacy)."]} />
     </div>
   );
 }

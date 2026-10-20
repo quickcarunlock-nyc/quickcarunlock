@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import { Shield, ShieldAlert, Lock, Eye, FileText, Share2, Globe, Users, RefreshCw, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -79,7 +80,7 @@ export default function PrivacyPage() {
             <p className="mb-4">We do not sell your personal information to third parties. We may share your information in the following circumstances:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Service Providers:</strong> With trusted third-party vendors who perform services on our behalf, such as payment processing, website hosting, analytics, and marketing assistance. These providers are obligated to protect your information and use it only for the purposes for which it was disclosed.</li>
-              <li><strong>Technicians & Dispatch:</strong> Your name, location, vehicle details, and contact information are shared with our certified technicians and dispatch team to facilitate service delivery.</li>
+              <li><strong>Technicians & Dispatch:</strong> Your name, location, vehicle details, and contact information are shared with our technicians and dispatch team to facilitate service delivery.</li>
               <li><strong>Legal Requirements:</strong> When required by law, such as in response to a subpoena, court order, or other legal process.</li>
               <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.</li>
               <li><strong>With Your Consent:</strong> We may share your information with third parties when we have your explicit consent to do so.</li>
@@ -151,6 +152,8 @@ export default function PrivacyPage() {
           
         </div>
       </section>
+
+      <ContextNote paragraphs={["Questions about this policy? [Contact us](/contact). You can also read our [Terms of Service](/terms) or learn about our [services](/services)."]} />
     </div>
   );
 }

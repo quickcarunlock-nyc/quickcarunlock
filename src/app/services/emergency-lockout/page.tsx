@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
+import RelatedLinks from '@/components/RelatedLinks';
 import {
   Unlock, ShieldCheck, Zap, AlertTriangle, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Search, HelpCircle, Car, MapPin
@@ -7,14 +9,19 @@ import {
 import Schema from '@/components/Schema';
 
 export const metadata: Metadata = {
-  title: 'Emergency Car Lockout Service NYC | Fast 15-Min Response',
-  description: 'Locked out of your vehicle in NYC? Quick Car Unlock NYC provides rapid, damage-free emergency car lockout services across all five boroughs 24/7.',
+  title: 'Car Lockout Service NYC | Mobile Car Unlock, 24/7 | Quick Car Unlock',
+  description: 'Locked out of your car in NYC? Mobile car lockout service in all five boroughs, 24/7. Non-destructive entry, price quoted before work starts. Call for a live ETA.',
+  openGraph: {
+    title: 'Car Lockout Service NYC | Mobile Car Unlock, 24/7',
+    description: 'Mobile car lockout service in all five NYC boroughs. Non-destructive entry, price quoted before work starts.',
+    url: '/services/emergency-lockout',
+  },
 };
 
 export default function EmergencyLockoutPage() {
   const faqs = [
     { q: "What if my car has a dead battery? Can you still unlock it?", a: "Yes. Many modern cars use electronic locks that fail when the battery is dead. We use a combination of physical manipulation and emergency power-jumping to safely gain entry without damaging the electronics." },
-    { q: "Is it really 100% scratch-free?", a: "Correct. We never use metal-on-metal tools. Our air wedges are soft polymer and our reach tools are heat-shrunk in protective rubber to ensure your paint and trim are never touched." },
+    { q: "Will unlocking my car scratch it?", a: "Not when it is done properly. We avoid metal-on-metal tools. Our air wedges are soft polymer and our reach tools are heat-shrunk in protective rubber to ensure your paint and trim are never touched." },
     { q: "What proof do I need to show the technician?", a: "For your safety and ours, we require a valid ID and proof of vehicle ownership (Registration or Insurance) before we can legally open any vehicle." }
   ];
 
@@ -22,10 +29,10 @@ export default function EmergencyLockoutPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Emergency Car Lockout NYC",
-    "description": "24/7 professional car unlocking service in NYC with 15-minute response time. Damage-free entry for all vehicle makes and models.",
+    "description": "24/7 mobile car unlocking service in NYC. Non-destructive entry for most vehicle makes and models.",
     "provider": {
       "@type": "Locksmith",
-      "name": "QuickCarUnlock NYC",
+      "name": "Quick Car Unlock",
       "telephone": "+13478017119"
     },
     "areaServed": "New York City",
@@ -65,14 +72,14 @@ export default function EmergencyLockoutPage() {
             <Zap size={16} /> Rapid Emergency Response
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Fast, Damage-Free <br />
-            <span className="text-orange-gradient">Vehicle Entry</span>
+            Car Lockout Service in NYC: <br />
+            <span className="text-orange-gradient">Fast, Damage-Free Entry</span>
           </h1>
           <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-6 leading-relaxed">
-            Finding yourself locked out of your car in New York City can be a frustrating and stressful experience. Quick Car Unlock NYC gets you back inside, fast.
+            Locked out of your car in New York City? Quick Car Unlock sends a mobile locksmith to your vehicle to open it without damaging the lock, door or paint.
           </p>
           <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
-            Our certified automotive security specialists are available 24/7, ready to respond to your call and get you back on the road in 15 minutes or less across all five boroughs.
+            Our automotive locksmiths are available 24/7 across all five boroughs. Call, and the dispatcher gives you an ETA before a technician is sent.
           </p>
         </div>
       </section>
@@ -90,9 +97,9 @@ export default function EmergencyLockoutPage() {
               <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Clock size={32} className="text-[#3B82F6]" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Unrivaled Speed & Availability</h3>
+              <h3 className="text-2xl font-bold mb-4">Fast Dispatch & 24/7 Availability</h3>
               <ul className="space-y-4 text-[var(--slate-light)]">
-                <li className="flex gap-3"><span className="text-[#3B82F6] shrink-0 mt-1">•</span> <strong>15-Minute Response Goal:</strong> Advanced GPS dispatch routes the closest tech.</li>
+                <li className="flex gap-3"><span className="text-[#3B82F6] shrink-0 mt-1">•</span> <strong>Live ETA:</strong> The dispatcher routes the closest available technician and tells you the ETA.</li>
                 <li className="flex gap-3"><span className="text-[#3B82F6] shrink-0 mt-1">•</span> <strong>24/7 Emergency Service:</strong> Available day and night, every day of the year.</li>
                 <li className="flex gap-3"><span className="text-[#3B82F6] shrink-0 mt-1">•</span> <strong>City-Wide Coverage:</strong> Always patrolling NYC to be nearby when needed.</li>
               </ul>
@@ -105,8 +112,8 @@ export default function EmergencyLockoutPage() {
               <h3 className="text-2xl font-bold mb-4">Damage-Free Expertise</h3>
               <ul className="space-y-4 text-[var(--slate-light)]">
                 <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Non-Destructive Entry:</strong> No scratches, dents, or damage to finish.</li>
-                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Specialized Tools:</strong> State-of-the-art tools for precision entry.</li>
-                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Certified Professionals:</strong> Highly trained automotive security specialists.</li>
+                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Specialized Tools:</strong> Professional non-destructive entry tools.</li>
+                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Trained Professionals:</strong> Automotive locksmiths experienced with modern vehicles.</li>
               </ul>
             </div>
 
@@ -153,20 +160,54 @@ export default function EmergencyLockoutPage() {
         </div>
       </section>
 
+      {/* What affects the price + what to have ready */}
+      <section className="py-20 bg-[var(--bg-primary)] border-b border-[var(--border-color)]">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">What affects the price of a car lockout</h2>
+              <ul className="space-y-3 text-[var(--text-secondary)] text-lg leading-relaxed">
+                <li><strong>Vehicle:</strong> Older cars with manual locks are usually simpler than newer keyless models with high-security locks.</li>
+                <li><strong>Which door or trunk:</strong> A trunk or a lost-key situation can cost more than a standard door.</li>
+                <li><strong>Time and location:</strong> Late-night calls and hard-to-reach locations can affect the quote.</li>
+                <li><strong>Whether you also need a key:</strong> Opening the car and making a new key are separate jobs.</li>
+              </ul>
+              <p className="text-[var(--slate-light)] mt-4">
+                Standard unlocks start from $55, and the exact price is quoted before work begins.{' '}
+                <Link href="/guides/how-much-does-it-cost-to-unlock-a-car-nyc" className="text-blue-400 hover:text-blue-300">See the full NYC car unlock cost guide</Link>.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Have this ready when you call</h2>
+              <ul className="space-y-3 text-[var(--text-secondary)] text-lg leading-relaxed">
+                <li>Your exact location: address or nearest cross street, and which side of the street.</li>
+                <li>Your vehicle&apos;s year, make and model.</li>
+                <li>Whether the key is a metal key, a transponder key or a push-to-start fob.</li>
+                <li>A photo ID and your registration or insurance card showing your name.</li>
+              </ul>
+              <p className="text-[var(--slate-light)] mt-4">
+                Not sure whether to call the police or fire department first?{' '}
+                <Link href="/guides/will-police-unlock-my-car" className="text-blue-400 hover:text-blue-300">Read when they will and will not help</Link>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Don't Get Scammed */}
       <section className="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
         <div className="container max-w-5xl">
           <div className="card border-2 border-red-500/50 bg-red-500/5 p-8 md:p-12 rounded-3xl">
             <div className="flex items-center gap-4 mb-6">
               <AlertTriangle size={48} className="text-red-500 shrink-0" />
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Avoid The "Drill-and-Replace" Scam</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">How to Avoid the "Drill-and-Replace" Upsell</h2>
             </div>
             <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-8">
-              Many uncertified locksmiths will arrive and immediately claim that your lock is "too advanced" or "broken," insisting that they must drill out the lock cylinder. This is almost always a scam designed to charge you hundreds extra for a new lock.
+              Some locksmiths arrive, claim your lock is "too advanced" or "broken," and insist on drilling out the lock cylinder to charge for a new lock. A standard car lockout rarely needs drilling. Ask for the price before work starts, and be wary of any technician who pushes drilling as the first option.
             </p>
             <div className="flex items-start gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 shadow-lg">
               <CheckCircle2 size={32} className="text-[var(--safety-green)] shrink-0 mt-1" />
-              <p className="text-[var(--text-secondary)] text-xl m-0"><strong>Our Policy:</strong> We have a 99% success rate in non-destructive entry. We never drill unless there is a pre-existing mechanical lock failure.</p>
+              <p className="text-[var(--text-secondary)] text-xl m-0"><strong>Our policy:</strong> We attempt non-destructive entry first and quote the price before any work begins. We drill only if there is a pre-existing mechanical lock failure, and we explain why first.</p>
             </div>
           </div>
         </div>
@@ -182,8 +223,8 @@ export default function EmergencyLockoutPage() {
               <div className="space-y-10">
                 {[
                   { step: "1", title: "Call Us 24/7", text: "Contact our emergency hotline at (347) 801-7119. Our dispatchers gather location & details." },
-                  { step: "2", title: "Rapid Dispatch", text: "The closest certified technician is immediately dispatched to your GPS coordinates." },
-                  { step: "3", title: "On-Site Arrival", text: "Our technician arrives, typically within 15 minutes, equipped with all necessary tools." },
+                  { step: "2", title: "Rapid Dispatch", text: "The closest available technician is dispatched to your location." },
+                  { step: "3", title: "On-Site Arrival", text: "Our technician arrives with the tools needed for your vehicle. The ETA you were given on the call is the one to expect." },
                   { step: "4", title: "Damage-Free Entry", text: "Using specialized techniques, your vehicle is opened safely and efficiently." },
                   { step: "5", title: "Problem Solved", text: "You regain access, and we ensure everything is in order before we leave." }
                 ].map((item, idx) => (
@@ -257,7 +298,10 @@ export default function EmergencyLockoutPage() {
           </a>
         </div>
       </section>
+      <ContextNote paragraphs={["Locked out and also missing the key? See [car key replacement and fob programming](/services/key-replacement) and our guide to [losing your only car key](/guides/lost-car-key-no-spare). If the key will not turn once you are inside, that may be an [ignition repair](/services/ignition-repair).", "Not sure what to do first? Read [locked keys in your car: what to do right now](/guides/locked-keys-in-car-what-to-do), [keys locked in the trunk](/guides/keys-locked-in-trunk), or [will the police unlock my car](/guides/will-police-unlock-my-car).", "We come to you in [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). See [all service areas](/locations) or learn [about us](/about). ¿Quiere información en español? Visita [abrir carro en NYC](/es/abrir-carro-nyc)."]} />
 
+
+      <RelatedLinks current="/services/emergency-lockout" />
     </div>
   );
 }

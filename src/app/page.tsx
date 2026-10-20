@@ -5,40 +5,42 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Clock, Navigation, Zap, Phone, Star, CheckCircle, Award, KeyRound, Wrench, CarFront, HelpCircle, MapPin, ArrowRight } from "lucide-react";
 import Schema from "@/components/Schema";
+import RelatedLinks from "@/components/RelatedLinks";
+import RichText, { plain } from "@/components/RichText";
+import ContextNote from "@/components/ContextNote";
 
 export default function Home() {
   const faqs = [
-    { q: "Will unlocking my car cause any damage?", a: "Absolutely not. We use specialized, non-destructive tools like professional air wedges and long-reach tools to bypass the lock without scratching paint or damaging weather stripping." },
-    { q: "Do you need the original key to make a replacement?", a: "No. Our mobile vans are equipped with key cutting machines and programming software that allow us to generate a brand new transponder key from scratch using your vehicle's VIN and lock code." },
-    { q: "What proof of ownership do I need?", a: "To legally perform a lockout or key replacement service, we require a valid driver's license and the vehicle registration or insurance card matching your name." },
-    { q: "How fast can you arrive in NYC traffic?", a: "Because our fleet is dispersed across all 5 boroughs with a centralized dispatch, our average arrival time is 15-20 minutes, regardless of heavy local traffic." },
+    { q: "Will unlocking my car cause any damage?", a: "Not when it is done properly. We use specialized, non-destructive tools like professional air wedges and long-reach tools to bypass the lock without scratching paint or damaging weather stripping." },
+    { q: "Do you need the original key to make a replacement?", a: "For many vehicles, no. Our vans carry key cutting machines and programming software that can generate a new transponder key using your vehicle's VIN and lock code. See [car key replacement](/services/key-replacement) and our guide to [losing your only key](/guides/lost-car-key-no-spare)." },
+    { q: "What proof of ownership do I need?", a: "To perform a lockout or key replacement, we require a valid driver's license and the vehicle registration or insurance card matching your name. See [emergency car lockout](/services/emergency-lockout) for the full process." },
+    { q: "How fast can you arrive in NYC traffic?", a: "Arrival time depends on where you are, traffic and demand. The dispatcher gives you an ETA on the call, before anyone is sent. See [where we work](/locations) or [what a lockout costs](/guides/how-much-does-it-cost-to-unlock-a-car-nyc)." },
   ];
 
-  const neighborhoods = [
-    "Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island"
+  const boroughLinks = [
+    { name: "Manhattan", slug: "manhattan" },
+    { name: "Brooklyn", slug: "brooklyn" },
+    { name: "Queens", slug: "queens" },
+    { name: "The Bronx", slug: "bronx" },
+    { name: "Staten Island", slug: "staten-island" },
   ];
 
   const locksmithSchema = {
     "@context": "https://schema.org",
     "@type": "Locksmith",
-    "name": "QuickCarUnlock NYC",
+    "name": "Quick Car Unlock",
     "image": "https://www.quickcarunlock.com/quick-car-unlock-van.webp",
     "@id": "https://www.quickcarunlock.com",
     "url": "https://www.quickcarunlock.com",
     "telephone": "+13478017119",
     "priceRange": "$$",
+    // Service-area business: no fake street address, ZIP or coordinates.
+    // TODO(client): once a real business address / GBP is confirmed, add PostalAddress + geo here and match it everywhere.
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Mobile Service",
       "addressLocality": "New York",
       "addressRegion": "NY",
-      "postalCode": "10001",
       "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.7128,
-      "longitude": -74.0060
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -63,7 +65,7 @@ export default function Home() {
       "name": f.q,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": f.a
+        "text": plain(f.a)
       }
     }))
   };
@@ -83,12 +85,12 @@ export default function Home() {
             <LiveDispatch />
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
-              Locked Out in NYC? Get Back on the Road in <br />
-              <span className="text-orange-gradient">15 Minutes or Less.</span>
+              Locked Out of Your Car in NYC? <br />
+              <span className="text-orange-gradient">We Come to You, 24/7.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed max-w-3xl mx-auto">
-              <strong>Quick Car Unlock NYC</strong> is New York City's highest-rated emergency auto locksmith service, dedicated to providing rapid, damage-free vehicle entry, mobile key replacement, and ignition repair across all five boroughs. When you're locked out, every minute counts.
+              <strong>Quick Car Unlock NYC</strong> is a mobile auto locksmith service for New York City: damage-free car lockout entry, key replacement and fob programming, and ignition repair, dispatched to your vehicle in all five boroughs. When you're locked out, every minute counts.
             </p>
             
             <div className="flex flex-col items-center gap-4">
@@ -117,7 +119,7 @@ export default function Home() {
                 <Clock size={32} className="text-[var(--action-orange)]" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Unmatched Speed & Reliability</h3>
-              <p className="text-[var(--text-secondary)] mb-4"><strong>15-Minute Response Goal:</strong> Our advanced GPS dispatch system bypasses traffic to ensure the fastest possible arrival.</p>
+              <p className="text-[var(--text-secondary)] mb-4"><strong>Live ETA:</strong> The dispatcher finds the closest available technician and gives you an ETA before anyone is sent.</p>
               <p className="text-[var(--text-secondary)] text-sm">24/7 Emergency Service across all 5 boroughs.</p>
             </div>
 
@@ -126,7 +128,7 @@ export default function Home() {
                 <ShieldCheck size={32} className="text-[#3B82F6]" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Expert & Damage-Free</h3>
-              <p className="text-[var(--text-secondary)] mb-4"><strong>Certified Specialists:</strong> Highly trained in complex vehicle electronics and transponder systems.</p>
+              <p className="text-[var(--text-secondary)] mb-4"><strong>Trained Specialists:</strong> Experienced with vehicle electronics and transponder systems.</p>
               <p className="text-[var(--text-secondary)] text-sm">Damage-Free Guarantee with non-destructive entry methods.</p>
             </div>
 
@@ -156,7 +158,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Emergency Car Lockout</h3>
               <p className="text-[var(--text-secondary)] mb-6">Fast, non-destructive entry for keys locked in the car, trunk, or lost keys.</p>
               <Link href="/services/emergency-lockout" className="text-blue-400 font-semibold flex items-center gap-2 hover:text-blue-300 transition-colors">
-                Learn More <Zap size={16} />
+                Car lockout service details <Zap size={16} />
               </Link>
             </div>
             
@@ -165,7 +167,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Transponder Key Replacement & Programming</h3>
               <p className="text-[var(--text-secondary)] mb-6">On-site cutting and programming for all types of car keys, smart fobs, and transponder keys, even if you've lost your only set.</p>
               <Link href="/services/key-replacement" className="text-blue-400 font-semibold flex items-center gap-2 hover:text-blue-300 transition-colors">
-                Learn More <Zap size={16} />
+                Car key replacement details <Zap size={16} />
               </Link>
             </div>
             
@@ -174,7 +176,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Ignition Cylinder Repair & Replacement</h3>
               <p className="text-[var(--text-secondary)] mb-6">Expert diagnosis and repair for keys that won't turn, steering wheels that are locked, or other ignition-related issues.</p>
               <Link href="/services/ignition-repair" className="text-blue-400 font-semibold flex items-center gap-2 hover:text-blue-300 transition-colors">
-                Learn More <Zap size={16} />
+                Ignition repair details <Zap size={16} />
               </Link>
             </div>
           </div>
@@ -218,9 +220,9 @@ export default function Home() {
       <section className="py-24 bg-[#0B1120] border-y border-[var(--border-color)]">
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6">Mobile Dealership Alternatives</h2>
+            <h2 className="text-4xl font-bold mb-6">A Mobile Alternative to the Dealership</h2>
             <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-6">
-              Our mobile fleet consists of high-end service vans equipped with state-of-the-art tools and technology, identical to a manufacturer's service center, ensuring we can handle 99% of vehicles on the road today.
+              Our service vans carry key cutting and transponder programming equipment, so most key and fob jobs can be done at your vehicle. Call with your vehicle's year, make and model to confirm what we can do on-site.
             </p>
             <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-8">
               By bringing the shop to your breakdown location, we save you hundreds of dollars in towing fees and days of waiting time.
@@ -228,11 +230,11 @@ export default function Home() {
             <ul className="space-y-4 font-medium">
               <li className="flex items-center gap-3"><CheckCircle size={20} className="text-[var(--safety-green)]" /> Precision Laser Key Cutting</li>
               <li className="flex items-center gap-3"><CheckCircle size={20} className="text-[var(--safety-green)]" /> On-Board Transponder Programming</li>
-              <li className="flex items-center gap-3"><CheckCircle size={20} className="text-[var(--safety-green)]" /> Real-time OEM Security Database Access</li>
+              <li className="flex items-center gap-3"><CheckCircle size={20} className="text-[var(--safety-green)]" /> Key code lookup and programming for most makes and models</li>
             </ul>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 aspect-video group">
-            <Image src="/quick-car-unlock-van.webp" alt="QuickCarUnlock NYC Service Van" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <Image src="/quick-car-unlock-van.webp" alt="Quick Car Unlock service van" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
         </div>
       </section>
@@ -280,7 +282,7 @@ export default function Home() {
             {faqs.map((faq, i) => (
               <div key={i} className="card p-8">
                 <h3 className="text-xl font-bold mb-3">{faq.q}</h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">{faq.a}</p>
+                <p className="text-[var(--text-secondary)] leading-relaxed"><RichText text={faq.a} /></p>
               </div>
             ))}
           </div>
@@ -312,14 +314,23 @@ export default function Home() {
           <MapPin size={32} className="text-[var(--action-orange)] mx-auto mb-4" />
           <h2 className="text-2xl font-bold mb-8">Serving All Five Boroughs of New York City</h2>
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {neighborhoods.map((n, i) => (
-              <Link href={`/locations/${n.toLowerCase().replace(/ /g, '-')}`} key={i} className="text-[var(--slate-light)] text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md transition-colors border border-white/5">
-                {n} Locksmith
+            {boroughLinks.map((b) => (
+              <Link href={`/locations/${b.slug}`} key={b.slug} className="text-[var(--slate-light)] text-sm bg-white/5 hover:bg-white/10 px-4 py-2 rounded-md transition-colors border border-white/5">
+                Car Unlock Service in {b.name}
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      <ContextNote
+        heading="Learn more"
+        paragraphs={[
+          "New to Quick Car Unlock? Read [about us](/about) or [contact us](/contact). See [all of our service areas](/locations) or browse [our services](/services).",
+          "Stuck right now? Start with [what to do when you lock your keys in the car](/guides/locked-keys-in-car-what-to-do). Want a ballpark? Try the [price estimator](/price-estimator) or [request a quote](/request-a-quote). \u00bfNecesita ayuda en espa\u00f1ol? Vea [abrir carro en NYC](/es/abrir-carro-nyc).",
+        ]}
+      />
+      <RelatedLinks />
 
       {/* Sticky Mobile CTA */}
       <div className="mobile-sticky-cta md:hidden fixed bottom-0 inset-x-0 bg-[var(--bg-primary)] p-4 border-t border-[var(--border-color)] z-50 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">

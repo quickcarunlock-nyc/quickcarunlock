@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
+import { business } from '@/lib/business';
 import { 
   Phone, Mail, MapPin, Clock, ShieldCheck, 
   CheckCircle2, ArrowRight, MessageSquare, Car, Radio
@@ -7,7 +9,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'Contact Quick Car Unlock NYC | 24/7 Emergency Auto Locksmith Support',
-  description: 'Need immediate assistance? Contact Quick Car Unlock NYC for 24/7 mobile auto locksmith services across all five boroughs. We arrive in 15 minutes or less.',
+  description: 'Need immediate assistance? Contact Quick Car Unlock NYC for 24/7 mobile auto locksmith services across all five boroughs. Call for a live ETA.',
 };
 
 export default function ContactPage() {
@@ -26,7 +28,7 @@ export default function ContactPage() {
             When you're facing a car lockout, lost keys, or ignition problems in New York City, every second counts. Quick Car Unlock NYC is here to provide rapid, reliable, and professional assistance 24 hours a day, 7 days a week.
           </p>
           <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-            Our local dispatch team is always ready to route the closest certified technician to your location across Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.
+            Our local dispatch team is always ready to send the closest available technician to your location across Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.
           </p>
         </div>
       </section>
@@ -108,7 +110,7 @@ export default function ContactPage() {
                   </li>
                   <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
                     <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
-                    <span><strong>Rapid Response:</strong> Our goal is to reach you in 15 minutes or less.</span>
+                    <span><strong>Live ETA:</strong> Call and the dispatcher tells you when to expect a technician.</span>
                   </li>
                   <li className="flex items-start gap-3 text-[var(--slate-light)] bg-white/5 p-3 rounded-lg">
                     <CheckCircle2 size={22} className="text-[var(--safety-green)] shrink-0 mt-0.5" /> 
@@ -130,14 +132,19 @@ export default function ContactPage() {
       <section className="py-12 bg-[#0B1120] border-y border-[var(--border-color)]">
         <div className="container">
           <div className="flex justify-center gap-8 md:gap-16 flex-wrap opacity-70">
-            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Licensed</div>
-            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Insured</div>
-            <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Background Checked</div>
+            {business.licenseNumber && (
+              <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Licensed (NYC license {business.licenseNumber})</div>
+            )}
+            {business.insured && (
+              <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> Insured</div>
+            )}
             <div className="flex items-center gap-3 text-white font-medium"><CheckCircle2 size={20} className="text-[var(--action-orange)]" /> 24/7 Available</div>
           </div>
         </div>
       </section>
 
+
+      <ContextNote paragraphs={["Want a price before you call? Use the [price estimator](/price-estimator) or [request a quote](/request-a-quote). Browse our [services](/services) or read [what to do when you are locked out](/guides/locked-keys-in-car-what-to-do).", "We serve [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). Learn [about us](/about) and see [all service areas](/locations). By contacting us you agree to our [Terms of Service](/terms) and [Privacy Policy](/privacy)."]} />
     </div>
   );
 }

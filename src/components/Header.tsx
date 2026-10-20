@@ -43,6 +43,7 @@ export default function Header() {
           <nav className="nav-links desktop-only">
             <Link href="/services" className="nav-link">Services</Link>
             <Link href="/locations" className="nav-link">Locations</Link>
+            <Link href="/guides" className="nav-link">Guides</Link>
             <Link href="/request-a-quote" className="nav-link">Request a Quote</Link>
             <Link href="/about" className="nav-link">About</Link>
             <Link href="/contact" className="nav-link">Contact</Link>
@@ -68,6 +69,9 @@ export default function Header() {
             </Link>
             <Link href="/locations" className="mobile-nav-link" onClick={closeMenu}>
               Locations
+            </Link>
+            <Link href="/guides" className="mobile-nav-link" onClick={closeMenu}>
+              Guides
             </Link>
             <Link href="/request-a-quote" className="mobile-nav-link" onClick={closeMenu}>
               Request a Quote

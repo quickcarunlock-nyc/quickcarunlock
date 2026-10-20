@@ -12,16 +12,16 @@ QuickCarUnlock provide rapid-response mobile locksmith services across all five 
 
 ## Service Areas
 - [Manhattan](https://www.quickcarunlock.com/locations/manhattan): Serving Midtown, Downtown, and all neighborhoods.
-- [Brooklyn](https://www.quickcarunlock.com/locations/brooklyn): Full coverage from Williamsburg to Bay Ridge.
-- [Queens](https://www.quickcarunlock.com/locations/queens): Rapid response including JFK and LGA airport assistance.
-- [The Bronx](https://www.quickcarunlock.com/locations/bronx): Expert technicians serving all North and South Bronx areas.
-- [Staten Island](https://www.quickcarunlock.com/locations/staten-island): Dedicated local units based on the island.
+- [Brooklyn](https://www.quickcarunlock.com/locations/brooklyn): Mobile service across Brooklyn.
+- [Queens](https://www.quickcarunlock.com/locations/queens): Mobile service across Queens, including airport-area parking lots (call ahead for access details).
+- [The Bronx](https://www.quickcarunlock.com/locations/bronx): Mobile service across the Bronx.
+- [Staten Island](https://www.quickcarunlock.com/locations/staten-island): Mobile service across Staten Island.
 
 ## Technical Details
-- **Response Time**: ~15 minutes (centralized GPS dispatching).
+- **Response Time**: The dispatcher gives a live ETA on the call, based on location and traffic.
 - **Availability**: 24/7/365.
-- **Service Type**: 100% Mobile (No physical storefront).
-- **Tools**: Professional Lishi tools, dealer-level diagnostic tablets.
+- **Service Type**: Mobile (no walk-in storefront).
+- **Tools**: Professional non-destructive entry tools and key programming equipment.
 
 ## Contact
 - **Phone**: (347) 801-7119

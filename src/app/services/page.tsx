@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
+import RelatedLinks from '@/components/RelatedLinks';
 import { 
   CarFront, KeyRound, Wrench, AlertTriangle, BatteryWarning, Unlock, 
   Clock, DollarSign, Building2, Cpu, ShieldCheck, Tag, CheckCircle2, XCircle, Phone, ArrowRight, Settings, MapPin
@@ -75,7 +77,7 @@ export default function ServicesPage() {
                 Locked your keys in the car or trunk? Lost them entirely? We use advanced, non-destructive entry techniques to unlock your vehicle quickly and safely.
               </p>
               <ul className="space-y-3 mb-8 text-[var(--slate-light)]">
-                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Fast 15-minute response</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> 24/7 mobile service, ETA on the call</li>
                 <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> Damage-free entry</li>
                 <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-[var(--safety-green)]" /> 24/7 availability</li>
               </ul>
@@ -145,7 +147,7 @@ export default function ServicesPage() {
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg">
               <ShieldCheck className="text-[var(--safety-green)] mb-6" size={40} />
-              <h4 className="text-2xl font-bold mb-3">Certified Professionals</h4>
+              <h4 className="text-2xl font-bold mb-3">Professional Technicians</h4>
               <p className="text-[var(--text-secondary)] leading-relaxed">Highly trained and experienced automotive locksmiths dedicated to security.</p>
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors shadow-lg md:col-span-2 lg:col-span-1">
@@ -216,7 +218,10 @@ export default function ServicesPage() {
           </a>
         </div>
       </section>
+      <ContextNote paragraphs={["Not sure which service you need? Start with [emergency car lockout](/services/emergency-lockout) if you cannot get in, [car key replacement](/services/key-replacement) if the key is lost or broken, or [ignition repair](/services/ignition-repair) if the key will not turn.", "Helpful guides: [what to do when you lock your keys in the car](/guides/locked-keys-in-car-what-to-do), [what it costs](/guides/how-much-does-it-cost-to-unlock-a-car-nyc), and [all of our guides](/guides). Get a ballpark with the [price estimator](/price-estimator) or [request a quote](/request-a-quote).", "Where we work: [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). Learn [about us](/about) or see [all service areas](/locations)."]} />
 
+
+      <RelatedLinks current="/services" />
     </div>
   );
 }

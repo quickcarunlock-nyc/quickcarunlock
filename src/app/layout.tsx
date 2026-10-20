@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 import Header from "@/components/Header";
+import { trustLine } from "@/lib/business";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.quickcarunlock.com'),
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     canonical: './',
   },
   title: "Car Unlock Service NYC | 24/7 Emergency Locksmith | QuickCarUnlock",
-  description: "Quick Car Unlock offers 24/7 emergency car unlock service in NYC. Fast, reliable, and affordable auto locksmiths for all vehicle types. Get a free quote!",
+  description: "24/7 mobile car unlock service in NYC. Lockouts, key replacement and ignition repair in all five boroughs. Call for a live ETA and a quote before work starts.",
   icons: {
     icon: [
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
@@ -38,20 +39,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'QuickCarUnlock',
     title: 'Car Unlock Service NYC | 24/7 Emergency Locksmith',
-    description: 'Fast, damage-free car unlocking and mobile auto locksmith services across NYC. 15-minute response time.',
+    description: 'Damage-free car unlocking, key replacement and ignition repair, 24/7 across all five NYC boroughs. Call for a live ETA.',
     images: [
       {
         url: '/quick-car-unlock-van.webp',
         width: 1200,
         height: 630,
-        alt: 'QuickCarUnlock NYC Service Van',
+        alt: 'Quick Car Unlock service van',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'QuickCarUnlock NYC | 24/7 Car Unlock Service',
-    description: 'Locked out? We arrive in 15 minutes or less. Mobile car locksmith services across all 5 boroughs.',
+    title: 'Quick Car Unlock | 24/7 Car Unlock Service in NYC',
+    description: 'Locked out of your car in NYC? Mobile car locksmith, 24/7 in all 5 boroughs. Call for a live ETA.',
     images: ['/quick-car-unlock-van.webp'],
   },
 };
@@ -109,7 +110,7 @@ export default function RootLayout({
                   QuickCar<span className="highlight">Unlock</span>
                 </Link>
                 <p style={{ color: 'var(--slate-light)', marginBottom: '1.5rem', lineHeight: '1.8' }}>
-                  New York City's fastest and most reliable mobile auto locksmith network. We operate 24/7 with a centralized dispatch system.
+                  Mobile auto locksmith service for New York City. Lockouts, key replacement and ignition repair, 24/7, dispatched to your vehicle.
                 </p>
                 <a href="tel:3478017119" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontSize: '1.2rem', fontWeight: 'bold' }}>
                   <Phone size={20} className="highlight" /> (347) 801-7119
@@ -122,6 +123,9 @@ export default function RootLayout({
                 <Link href="/services/key-replacement" className="footer-link">Transponder Key Replacement</Link>
                 <Link href="/services/ignition-repair" className="footer-link">Ignition Cylinder Repair</Link>
                 <Link href="/request-a-quote" className="footer-link">Request a Custom Quote</Link>
+                <Link href="/guides" className="footer-link">Car Lockout Guides</Link>
+                <Link href="/price-estimator" className="footer-link">Price Estimator</Link>
+                <Link href="/es/abrir-carro-nyc" className="footer-link">Abrir carro en NYC (Español)</Link>
               </div>
 
               <div className="footer-col">
@@ -137,7 +141,7 @@ export default function RootLayout({
                 <h4>Trust & Safety</h4>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '1rem', color: 'var(--slate-light)' }}>
                   <ShieldCheck size={24} color="var(--safety-green)" />
-                  <p>Fully Certified & Insured Technicians</p>
+                  <p>{trustLine}</p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '1rem', color: 'var(--slate-light)' }}>
                   <MapPin size={24} color="var(--action-orange)" />
@@ -147,7 +151,7 @@ export default function RootLayout({
             </div>
 
             <div className="footer-bottom">
-              <p>&copy; {new Date().getFullYear()} QuickCarUnlock NYC. All Rights Reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Quick Car Unlock NYC. All Rights Reserved.</p>
               <div style={{ display: 'flex', gap: '20px', marginTop: '10px', justifyContent: 'center' }}>
                 <Link href="/privacy" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Privacy Policy</Link>
                 <Link href="/terms" style={{ color: 'var(--slate-light)', fontSize: '0.85rem' }}>Terms of Service</Link>

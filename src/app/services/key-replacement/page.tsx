@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
+import RelatedLinks from '@/components/RelatedLinks';
 import {
   KeyRound, ShieldCheck, Zap, Cpu, CheckCircle2, Clock,
   Phone, ArrowRight, Star, XCircle, Settings, HelpCircle, HardDrive, Key, MapPin
@@ -25,7 +27,7 @@ export default function KeyReplacementPage() {
     "description": "On-site laser key cutting and transponder programming in NYC. Mobile service for lost keys, smart fobs, and remote programming at 50% less than dealership prices.",
     "provider": {
       "@type": "Locksmith",
-      "name": "QuickCarUnlock NYC",
+      "name": "Quick Car Unlock",
       "telephone": "+13478017119"
     },
     "areaServed": "New York City",
@@ -72,7 +74,7 @@ export default function KeyReplacementPage() {
             Lost your car keys? Need a spare? Quick Car Unlock NYC comes to you with dealership-level technology to cut, program, and sync new keys.
           </p>
           <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
-            Our certified automotive security specialists provide efficient, on-site solutions across all five boroughs, saving you time, money, and the hassle of a tow.
+            Our automotive locksmiths provide efficient, on-site solutions across all five boroughs, saving you time, money, and the hassle of a tow.
           </p>
         </div>
       </section>
@@ -106,7 +108,7 @@ export default function KeyReplacementPage() {
               <ul className="space-y-4 text-[var(--slate-light)]">
                 <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Transponder Specialists:</strong> Seamlessly sync with your immobilizer.</li>
                 <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Smart Fobs:</strong> Programming for push-to-start vehicles.</li>
-                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Vast Coverage:</strong> Covering 99% of vehicles on the road.</li>
+                <li className="flex gap-3"><span className="text-[var(--safety-green)] shrink-0 mt-1">•</span> <strong>Wide Coverage:</strong> Most makes and models. Call with your year, make and model to confirm.</li>
               </ul>
             </div>
 
@@ -306,7 +308,10 @@ export default function KeyReplacementPage() {
           </a>
         </div>
       </section>
+      <ContextNote paragraphs={["Locked out as well as missing a key? See [emergency car lockout service](/services/emergency-lockout). If your key is stuck or will not turn, see [ignition repair](/services/ignition-repair).", "Planning ahead? Read [what to do after losing your only car key](/guides/lost-car-key-no-spare) and [how much it costs to unlock a car in NYC](/guides/how-much-does-it-cost-to-unlock-a-car-nyc), or try the [price estimator](/price-estimator).", "Key and fob work is available in [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). See [all service areas](/locations) or learn [about us](/about). Ready to book? [Request a quote](/request-a-quote)."]} />
 
+
+      <RelatedLinks current="/services/key-replacement" />
     </div>
   );
 }

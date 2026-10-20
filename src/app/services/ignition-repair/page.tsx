@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
+import RelatedLinks from '@/components/RelatedLinks';
 import { 
   Wrench, ShieldCheck, Zap, Key, Hammer, CheckCircle2, Clock, 
   Phone, ArrowRight, XCircle, HelpCircle, MapPin, Settings
@@ -25,7 +27,7 @@ export default function IgnitionRepairPage() {
     "description": "Mobile ignition cylinder repair, broken key extraction, and full ignition unit replacement in NYC. 24/7 on-site service for all vehicle makes.",
     "provider": {
       "@type": "Locksmith",
-      "name": "QuickCarUnlock NYC",
+      "name": "Quick Car Unlock",
       "telephone": "+13478017119"
     },
     "areaServed": "New York City",
@@ -72,7 +74,7 @@ export default function IgnitionRepairPage() {
             Key won't turn? Steering wheel locked? Quick Car Unlock NYC provides expert ignition services across all five boroughs.
           </p>
           <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
-            Our certified automotive security specialists are equipped with the advanced tools and knowledge to diagnose and fix your ignition problems on-site, getting you back on the road quickly and safely.
+            Our automotive locksmiths are equipped with the advanced tools and knowledge to diagnose and fix your ignition problems on-site, getting you back on the road quickly and safely.
           </p>
         </div>
       </section>
@@ -278,7 +280,10 @@ export default function IgnitionRepairPage() {
           </a>
         </div>
       </section>
+      <ContextNote paragraphs={["A worn key can damage an ignition cylinder, and a damaged cylinder can strand you. If the key itself is the problem, see [car key replacement](/services/key-replacement). If you cannot get into the car at all, see [emergency car lockout service](/services/emergency-lockout).", "Read [what a car lockout or key job costs in NYC](/guides/how-much-does-it-cost-to-unlock-a-car-nyc), or get a ballpark with the [price estimator](/price-estimator).", "We serve [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). See [all service areas](/locations) or learn [about us](/about)."]} />
 
+
+      <RelatedLinks current="/services/ignition-repair" />
     </div>
   );
 }

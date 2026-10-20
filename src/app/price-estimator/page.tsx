@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import PriceEstimator from '@/components/PriceEstimator';
 import Link from 'next/link';
 import { ShieldCheck, Info, Clock, CheckCircle2, Phone, ArrowRight, DollarSign } from 'lucide-react';
@@ -26,7 +27,7 @@ export default function PriceEstimatorPage() {
             Get an immediate estimate for your car lockout, key replacement, or ignition needs.
           </p>
           <p className="text-lg text-[var(--slate-light)] leading-relaxed max-w-3xl mx-auto">
-            At Quick Car Unlock NYC, we believe in transparency and helping you understand potential costs upfront. While this tool provides a helpful starting point, please remember that the <strong>final, exact quote will always be provided on-site</strong> by our certified technician before any work begins.
+            At Quick Car Unlock NYC, we believe in transparency and helping you understand potential costs upfront. While this tool provides a helpful starting point, please remember that the <strong>final, exact quote will always be provided on-site</strong> by our technician before any work begins.
           </p>
         </div>
       </section>
@@ -107,7 +108,7 @@ export default function PriceEstimatorPage() {
         <div className="container relative z-10 max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for Service? Contact Us!</h2>
           <p className="text-lg text-[var(--text-secondary)] mb-10 leading-relaxed">
-            Whether you have your estimate or need immediate assistance, our team is ready to help. Call us 24/7 for the fastest response.
+            Whether you have your estimate or need immediate assistance, our team is ready to help. Call us 24/7 for a live ETA.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a href="tel:3478017119" className="btn btn-primary btn-pulse flex items-center gap-3 py-4 px-10 text-xl">
@@ -120,6 +121,8 @@ export default function PriceEstimatorPage() {
         </div>
       </section>
 
+
+      <ContextNote paragraphs={["The estimator gives a ballpark. For how pricing works, read [how much it costs to unlock a car in NYC](/guides/how-much-does-it-cost-to-unlock-a-car-nyc). Compare services: [emergency lockout](/services/emergency-lockout), [key replacement](/services/key-replacement) and [ignition repair](/services/ignition-repair).", "Need a firm quote? [Request a quote](/request-a-quote) or see our service areas: [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). Learn [about us](/about)."]} />
     </div>
   );
 }

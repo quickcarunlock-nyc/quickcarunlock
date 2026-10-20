@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import {
   ShieldCheck, Zap, Cpu, CheckCircle2, Clock,
@@ -7,7 +8,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'About Quick Car Unlock NYC | Your Trusted Automotive Security Specialists',
-  description: 'NYC\'s most reliable mobile auto locksmith network. We combine advanced logistics with dealership-level technology to provide the fastest vehicle rescue in the five boroughs.',
+  description: 'Quick Car Unlock is a mobile auto locksmith service for New York City: car lockouts, key replacement and ignition repair, dispatched 24/7 to wherever your vehicle is.',
 };
 
 export default function AboutPage() {
@@ -101,7 +102,7 @@ export default function AboutPage() {
               </div>
               <h4 className="text-2xl font-bold mb-4">Rapid Dispatch & Response</h4>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                We don't operate from a single storefront; our certified technicians are strategically stationed and actively patrolling NYC's busiest neighborhoods 24/7. Our goal is to arrive in <strong>15 minutes or less</strong>.
+                We don't operate from a single storefront; our technicians work from mobile workshops and come to you, 24/7. When you call, the dispatcher gives you an <strong>ETA before anyone is sent</strong>.
               </p>
             </div>
             
@@ -140,7 +141,7 @@ export default function AboutPage() {
             <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
               <Star className="text-[var(--action-orange)] mb-4" size={40} />
               <h4 className="text-2xl font-bold mb-3">Professionalism</h4>
-              <p className="text-[var(--text-secondary)] text-lg">Highly trained, certified, and courteous technicians.</p>
+              <p className="text-[var(--text-secondary)] text-lg">Trained, courteous technicians.</p>
             </div>
             <div className="card p-8 bg-white/5 border border-white/10 flex flex-col items-start hover:bg-white/10 transition-colors">
               <Clock className="text-[#3B82F6] mb-4" size={40} />
@@ -180,6 +181,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+      <ContextNote paragraphs={["See what we do: [emergency car lockout](/services/emergency-lockout), [car key replacement](/services/key-replacement) and [ignition repair](/services/ignition-repair). Learn [what a car unlock costs](/guides/how-much-does-it-cost-to-unlock-a-car-nyc) before you call.", "We work in [Manhattan](/locations/manhattan), [Brooklyn](/locations/brooklyn), [Queens](/locations/queens), [the Bronx](/locations/bronx) and [Staten Island](/locations/staten-island). Questions? [Contact us](/contact)."]} />
     </div>
   );
 }

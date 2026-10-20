@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContextNote from '@/components/ContextNote';
 import Link from 'next/link';
 import MapWrapper from '@/components/MapWrapper';
 import { 
@@ -6,8 +7,8 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'NYC Auto Locksmith Service Areas | QuickCarUnlock NYC',
-  description: 'Fast, centralized dispatch auto locksmith serving all 5 NYC Boroughs: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island. 15-minute response times.',
+  title: 'NYC Auto Locksmith Service Areas | Quick Car Unlock',
+  description: 'Mobile auto locksmith serving all five NYC boroughs: Manhattan, Brooklyn, Queens, the Bronx and Staten Island. Call 24/7 for a live ETA and a quote before work starts.',
 };
 
 export default function LocationsHubPage() {
@@ -15,35 +16,35 @@ export default function LocationsHubPage() {
     { 
       id: 'manhattan', 
       name: 'Manhattan', 
-      time: '15-20 Min',
+      time: 'Live ETA by phone',
       desc: 'From the Financial District to Harlem, we cover every Manhattan neighborhood.',
       neighborhoods: ['Financial District', 'Tribeca', 'SoHo', 'Chelsea', 'Midtown', 'Upper East Side', 'Upper West Side', 'Harlem', 'Washington Heights', 'Inwood']
     },
     { 
       id: 'brooklyn', 
       name: 'Brooklyn', 
-      time: '15-25 Min',
+      time: 'Live ETA by phone',
       desc: 'Servicing Williamsburg, Park Slope, Bay Ridge, Coney Island, and beyond.',
       neighborhoods: ['Williamsburg', 'Greenpoint', 'DUMBO', 'Downtown Brooklyn', 'Park Slope', 'Bedford-Stuyvesant', 'Crown Heights', 'Flatbush', 'Bay Ridge', 'Coney Island']
     },
     { 
       id: 'queens', 
       name: 'Queens', 
-      time: '20-30 Min',
+      time: 'Live ETA by phone',
       desc: 'Rapid response throughout Astoria, Long Island City, Flushing, Jamaica, and Rockaway Beach.',
       neighborhoods: ['Astoria', 'Long Island City', 'Sunnyside', 'Jackson Heights', 'Flushing', 'Jamaica', 'Forest Hills', 'Bayside', 'Rockaway Beach']
     },
     { 
       id: 'bronx', 
       name: 'The Bronx', 
-      time: '15-25 Min',
+      time: 'Live ETA by phone',
       desc: 'Covering Morris Park, Riverdale, Fordham, Mott Haven, and all Bronx communities.',
       neighborhoods: ['South Bronx', 'Riverdale', 'Fordham', 'Pelham Bay', 'Throgs Neck', 'Co-op City', 'Woodlawn', 'Kingsbridge']
     },
     { 
       id: 'staten-island', 
       name: 'Staten Island', 
-      time: '20-30 Min',
+      time: 'Live ETA by phone',
       desc: 'Reliable service in St. George, New Springville, Tottenville, New Dorp, and across the island.',
       neighborhoods: ['St. George', 'Tompkinsville', 'Tottenville', 'Great Kills', 'New Dorp', 'West New Brighton', 'Stapleton', 'Eltingville']
     },
@@ -61,13 +62,13 @@ export default function LocationsHubPage() {
             City-Wide Fleet Currently Active
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            New York City's Largest <br /><span className="text-orange-gradient">Mobile Dispatch Network</span>
+            Mobile Car Locksmith Service <br /><span className="text-orange-gradient">in All Five Boroughs</span>
           </h1>
           <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-8 leading-relaxed">
-            We don't operate out of a single storefront. Our certified technicians are stationed in fully-equipped mobile workshops across all 5 boroughs, ensuring rapid response times no matter where you are stranded.
+            We don't operate out of a single storefront. Our technicians work from mobile workshops and come to wherever you are stranded in the five boroughs.
           </p>
           <p className="text-lg text-[var(--slate-light)] mb-8 leading-relaxed max-w-3xl mx-auto">
-            Quick Car Unlock NYC is proud to be New York City's largest and most efficient mobile dispatch network for emergency auto locksmith services. We guarantee rapid response times—often within <strong>15 minutes or less</strong>—directly to your GPS coordinates.
+            Quick Car Unlock NYC is a mobile auto locksmith service for emergency lockouts, key replacement and ignition repair. Call and the dispatcher gives you an <strong>ETA based on your location and current traffic</strong>, then sends a technician to your vehicle.
           </p>
         </div>
       </section>
@@ -125,7 +126,7 @@ export default function LocationsHubPage() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Average Arrival Times</h2>
               <p className="text-[var(--text-secondary)] text-xl leading-relaxed mb-10">
-                We set realistic expectations based on current NYC traffic patterns. Because our vans are already on the road, we consistently beat industry average response times.
+                We set expectations based on current NYC traffic patterns, and the dispatcher gives you an ETA on the call before anyone is sent.
               </p>
               
               <div className="space-y-4">
@@ -191,7 +192,7 @@ export default function LocationsHubPage() {
           <ul className="text-left text-xl text-[var(--text-secondary)] leading-relaxed space-y-6 bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10">
             <li className="flex gap-4 items-start"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>NYC-Native Dispatchers:</strong> Our dispatchers understand the city's unique landmarks and traffic nuances.</span></li>
             <li className="flex gap-4 items-start"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Specialized Local Fleet:</strong> Equipped to navigate NYC's urban environment, including tight streets and garages.</span></li>
-            <li className="flex gap-4 items-start"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Rapid Local Response:</strong> Designed to minimize your wait time and get you back to your day quickly.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Live ETA:</strong> You are told how long the wait will be before a technician is sent.</span></li>
             <li className="flex gap-4 items-start"><CheckCircle2 className="text-[var(--safety-green)] shrink-0 mt-1" /> <span><strong>Trusted Local Experts:</strong> We are part of the community, committed to honest and professional service.</span></li>
           </ul>
         </div>
@@ -210,6 +211,8 @@ export default function LocationsHubPage() {
         </div>
       </section>
 
+
+      <ContextNote paragraphs={["Every borough page covers local parking, traffic and neighborhoods. For service details, see [emergency car lockout](/services/emergency-lockout), [car key replacement](/services/key-replacement) and [ignition repair](/services/ignition-repair).", "Read our [car lockout guides](/guides) or [abrir carro en NYC (en español)](/es/abrir-carro-nyc)."]} />
     </div>
   );
 }
