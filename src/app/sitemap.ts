@@ -31,6 +31,8 @@ const pages: { path: string; lastModified: string; priority: number; changeFrequ
   { path: '/terms', lastModified: '2026-08-01', priority: 0.2, changeFrequency: 'yearly' },
 ]
 
+// hreflang lives in each page's <head> (reciprocal, verified). It is deliberately NOT repeated here:
+// xhtml:link entries make browsers render the sitemap as plain text instead of an XML tree.
 export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = []
   for (const p of pages) {
@@ -43,9 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       continue
     }
     const esUrl = `${baseUrl}${es}`
-    const languages = { 'en-US': enUrl, 'es-US': esUrl, 'x-default': enUrl }
-    out.push({ url: enUrl, ...base, priority: p.priority, alternates: { languages } })
-    out.push({ url: esUrl, ...base, priority: Math.max(0.3, +(p.priority - 0.1).toFixed(1)), alternates: { languages } })
+    out.push({ url: enUrl, ...base, priority: p.priority })
+    out.push({ url: esUrl, ...base, priority: Math.max(0.3, +(p.priority - 0.1).toFixed(1)) })
   }
   return out
 }
